@@ -621,33 +621,6 @@ class InsertRLSState(StrEnum):
     FOUND_TABLE = "FOUND_TABLE"
 
 
-def has_table_query(expression: str, engine: str) -> bool:
-    """
-    Return if a statement has a query reading from a table.
-
-        >>> has_table_query("COUNT(*)", "postgresql")
-        False
-        >>> has_table_query("SELECT * FROM table", "postgresql")
-        True
-
-    Note that queries reading from constant values return false:
-
-        >>> has_table_query("SELECT * FROM (SELECT 1)", "postgresql")
-        False
-
-    """
-    # Remove trailing semicolon.
-    expression = expression.strip().rstrip(";")
-
-    # Wrap the expression in parentheses if it's not already.
-    if not expression.startswith("("):
-        expression = f"({expression})"
-
-    sql = f"SELECT {expression}"
-    statement = SQLStatement(sql, engine)
-    return any(statement.tables)
-
-
 def add_table_name(rls: TokenList, table: str) -> None:
     """
     Modify a RLS expression inplace ensuring columns are fully qualified.

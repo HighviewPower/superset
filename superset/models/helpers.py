@@ -69,7 +69,6 @@ from superset.extensions import feature_flag_manager
 from superset.jinja_context import BaseTemplateProcessor
 from superset.sql.parse import SQLScript
 from superset.sql_parse import (
-    has_table_query,
     insert_rls_in_predicate,
     ParsedQuery,
     sanitize_clause,
@@ -110,16 +109,16 @@ ADVANCED_DATA_TYPES = config["ADVANCED_DATA_TYPES"]
 
 
 def validate_adhoc_subquery(
-    sql: str,
+    expression: str,
     database_id: int,
     engine: str,
     default_schema: str,
 ) -> str:
     """
-    Check if adhoc SQL contains sub-queries or nested sub-queries with table.
+    Check if adhoc expression contains subqueries or nested subqueries with table.
 
-    If sub-queries are allowed, the adhoc SQL is modified to insert any applicable RLS
-    predicates to it.
+    If subqueries are allowed, the adhoc expression is modified to insert any applicable
+    RLS predicates to it.
 
     :param sql: adhoc sql expression
     :raise SupersetSecurityException if sql contains sub-queries or
@@ -805,7 +804,9 @@ class ExploreMixin:  # pylint: disable=too-many-public-methods
 
     def get_sqla_row_level_filters(
         self,
-        template_processor: Optional[BaseTemplateProcessor] = None,  # pylint: disable=unused-argument
+        template_processor: Optional[
+            BaseTemplateProcessor
+        ] = None,  # pylint: disable=unused-argument
     ) -> list[TextClause]:
         # TODO: We should refactor this mixin and remove this method
         # as it exists in the BaseDatasource and is not applicable
@@ -818,7 +819,7 @@ class ExploreMixin:  # pylint: disable=too-many-public-methods
         database_id: int,
         engine: str,
         schema: str,
-        template_processor: Optional[BaseTemplateProcessor],
+        template_processor: Optional[BaseTemplateProcessor] = None,
     ) -> Optional[str]:
         if template_processor and expression:
             expression = template_processor.process_template(expression)
@@ -831,7 +832,7 @@ class ExploreMixin:  # pylint: disable=too-many-public-methods
             )
             try:
                 expression = sanitize_clause(expression)
-            except QueryClauseValidationException as ex:
+            except (QueryClauseValidationException, SupersetSecurityException) as ex:
                 raise QueryObjectValidationError(ex.message) from ex
         return expression
 
