@@ -52,19 +52,23 @@ class ChartWarmUpCacheCommand(BaseCommand):
         try:
             form_data = get_form_data(chart.id, use_slice_data=True)[0]
 
+            if self._extra_filters:
+                form_data["extra_filters"] = json.loads(self._extra_filters)
+            elif self._dashboard_id:
+                form_data["extra_filters"] = get_dashboard_extra_filters(
+                    chart.id, self._dashboard_id
+                )
+
+            g.form_data = form_data
+
+            error = None
+            status = None
+
             if form_data.get("viz_type") in viz_types:
                 # Legacy visualizations.
                 if not chart.datasource:
                     raise ChartInvalidError("Chart's datasource does not exist")
 
-                if self._dashboard_id:
-                    form_data["extra_filters"] = (
-                        json.loads(self._extra_filters)
-                        if self._extra_filters
-                        else get_dashboard_extra_filters(chart.id, self._dashboard_id)
-                    )
-
-                g.form_data = form_data
                 payload = get_viz(
                     datasource_type=chart.datasource.type,
                     datasource_id=chart.datasource.id,
