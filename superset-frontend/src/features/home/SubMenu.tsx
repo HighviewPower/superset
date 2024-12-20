@@ -24,7 +24,7 @@ import cx from 'classnames';
 import { Tooltip } from 'src/components/Tooltip';
 import { debounce } from 'lodash';
 import { Row } from 'src/components';
-import { Menu, MenuMode, MainNav } from 'src/components/Menu';
+import { Menu, MenuMode, MainNav as DropdownMenu } from 'src/components/Menu';
 import Button, { OnClickHandler } from 'src/components/Button';
 import Icons from 'src/components/Icons';
 import { MenuObjectProps } from 'src/types/bootstrapTypes';
@@ -48,7 +48,7 @@ const StyledHeader = styled.div`
     float: right;
     position: absolute;
     right: 0;
-    ul.antd5-menu-root {
+    ul.ant-menu-root {
       padding: 0px;
     }
     li[role='menuitem'] {
@@ -68,28 +68,76 @@ const StyledHeader = styled.div`
     padding-left: 10px;
   }
   .menu {
-    background-color: ${({ theme }) => theme.colors.grayscale.light5};
+    background-color: ${({ theme }) => theme.antd.colorBgBase};
+    .ant-menu-horizontal {
+      line-height: inherit;
+      .ant-menu-item {
+        border-bottom: none;
+        &:hover {
+          border-bottom: none;
+          text-decoration: none;
+        }
+      }
+    }
+    .ant-menu {
+      padding: ${({ theme }) => theme.gridUnit * 4}px 0px;
+    }
   }
 
-  .menu > .antd5-menu {
-    padding: ${({ theme }) => theme.gridUnit * 5}px
-      ${({ theme }) => theme.gridUnit * 8}px;
+  .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item {
+    margin: 0 ${({ theme }) => theme.gridUnit + 1}px;
+  }
 
-    .antd5-menu-item {
-      border-radius: ${({ theme }) => theme.borderRadius}px;
-      font-size: ${({ theme }) => theme.typography.sizes.s}px;
-      padding: ${({ theme }) => theme.gridUnit}px
-        ${({ theme }) => theme.gridUnit * 4}px;
-      margin-right: ${({ theme }) => theme.gridUnit}px;
+  .menu .ant-menu-item {
+    li,
+    div {
+      a,
+      div {
+        font-size: ${({ theme }) => theme.typography.sizes.s}px;
+
+        a {
+          margin: 0;
+          padding: ${({ theme }) => theme.gridUnit * 2}px
+            ${({ theme }) => theme.gridUnit * 4}px;
+          line-height: ${({ theme }) => theme.gridUnit * 5}px;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+
+      &.no-router a {
+        padding: ${({ theme }) => theme.gridUnit * 2}px
+          ${({ theme }) => theme.gridUnit * 4}px;
+      }
+
+      &.active a {
+        background-color: ${({ theme }) => theme.colors.primary.light4};
+        border-radius: ${({ theme }) => theme.borderRadius}px;
+      }
     }
-    .antd5-menu-item:hover,
-    .antd5-menu-item:has(> span > .active) {
-      background-color: ${({ theme }) => theme.colors.secondary.light4};
+
+    li.active > a,
+    li.active > div,
+    div.active > div,
+    li > a:hover,
+    li > a:focus,
+    li > div:hover,
+    div > div:hover,
+    div > a:hover {
+      border-bottom: none;
+      border-radius: ${({ theme }) => theme.borderRadius}px;
+      margin-bottom: ${({ theme }) => theme.gridUnit * 2}px;
+      text-decoration: none;
     }
   }
 
   .btn-link {
     padding: 10px 0;
+  }
+  .ant-menu-horizontal {
+    border: none;
   }
   @media (max-width: 767px) {
     .header,
@@ -98,6 +146,14 @@ const StyledHeader = styled.div`
       margin-left: ${({ theme }) => theme.gridUnit * 2}px;
     }
   }
+  .ant-menu-submenu {
+    span[role='img'] {
+      position: absolute;
+      right: ${({ theme }) => -theme.gridUnit + -2}px;
+      top: ${({ theme }) => theme.gridUnit + 1}px !important;
+    }
+  }
+  .dropdown-menu-links > div.ant-menu-submenu-title,
 `;
 
 const styledDisabled = (theme: SupersetTheme) => css`
@@ -108,7 +164,7 @@ const styledDisabled = (theme: SupersetTheme) => css`
     color: ${theme.colors.grayscale.light1};
   }
 
-  .antd5-menu-item-selected {
+  .ant-menu-item-selected {
     background-color: ${theme.colors.grayscale.light1};
   }
 `;
@@ -149,7 +205,7 @@ export interface SubMenuProps {
   dropDownLinks?: Array<MenuObjectProps>;
 }
 
-const { SubMenu } = MainNav;
+const { SubMenu } = DropdownMenu;
 
 const SubMenuComponent: FunctionComponent<SubMenuProps> = props => {
   const [showMenu, setMenu] = useState<MenuMode>('horizontal');
@@ -194,7 +250,7 @@ const SubMenuComponent: FunctionComponent<SubMenuProps> = props => {
     <StyledHeader>
       <Row className="menu" role="navigation">
         {props.name && <div className="header">{props.name}</div>}
-        <Menu mode={showMenu} disabledOverflow>
+        <Menu mode={showMenu} style={{ backgroundColor: 'transparent' }}>
           {props.tabs?.map(tab => {
             if ((props.usesRouter || hasHistory) && !!tab.usesRouter) {
               return (
@@ -229,7 +285,7 @@ const SubMenuComponent: FunctionComponent<SubMenuProps> = props => {
           })}
         </Menu>
         <div className={navRightStyle}>
-          <Menu mode="horizontal" triggerSubMenuAction="click" disabledOverflow>
+          <Menu mode="horizontal" triggerSubMenuAction="click">
             {props.dropDownLinks?.map((link, i) => (
               <SubMenu
                 key={i}
@@ -241,7 +297,7 @@ const SubMenuComponent: FunctionComponent<SubMenuProps> = props => {
                 {link.childs?.map(item => {
                   if (typeof item === 'object') {
                     return item.disable ? (
-                      <MainNav.Item
+                      <DropdownMenu.Item
                         key={item.label}
                         css={styledDisabled}
                         disabled
@@ -254,13 +310,13 @@ const SubMenuComponent: FunctionComponent<SubMenuProps> = props => {
                         >
                           {item.label}
                         </Tooltip>
-                      </MainNav.Item>
+                      </DropdownMenu.Item>
                     ) : (
-                      <MainNav.Item key={item.label}>
+                      <DropdownMenu.Item key={item.label}>
                         <a href={item.url} onClick={item.onClick}>
                           {item.label}
                         </a>
-                      </MainNav.Item>
+                      </DropdownMenu.Item>
                     );
                   }
                   return null;

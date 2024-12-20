@@ -19,71 +19,73 @@
 
 /************************************************************************/
 /* COLORS                                                               */
-/* Please attempt to use and standardize on these colors,               */
-/* rather than including specific color values in                       */
-/* component styles. This will allow us to more easily adjust theming   */
 /************************************************************************/
 
-@primary-color: #20a7c9;
+@primary-color: #1e91ae;
 @indicator-color: @primary-color;
 
-@brand-primary-dark1: #1a85a0;
-@brand-primary-dark2: #156378;
-@brand-primary-light1: #79cade;
-@brand-primary-light2: #a5dae9;
-@brand-primary-light3: #d2edf4;
-@brand-primary-light4: #e9f6f9;
-@brand-primary-light5: #f3f8fa;
+@brand-primary-dark1: #4ba7be;
+@brand-primary-dark2: #83c3d2;
+@brand-primary-light1: #1b839d;
+@brand-primary-light2: #18748b;
+@brand-primary-light3: #125768;
+@brand-primary-light4: #0c3a46;
+@brand-primary-light5: #061d23;
 
-@brand-secondary: #444e7c;
-@brand-secondary-dark1: #363e63;
-@brand-secondary-dark2: #282e4a;
-@brand-secondary-dark3: #1b1f31;
-@brand-secondary-light1: #8e94b0;
-@brand-secondary-light2: #b4b8ca;
-@brand-secondary-light3: #d9dbe4;
-@brand-secondary-light4: #eceef2;
-@brand-secondary-light5: #f5f5f8;
+@brand-secondary: #50a777;
+@brand-secondary-dark1: #73b992;
+@brand-secondary-dark2: #9fcfb4;
+@brand-secondary-dark3: #cbe5d6;
+@brand-secondary-light1: #48966b;
+@brand-secondary-light2: #40865f;
+@brand-secondary-light3: #306447;
+@brand-secondary-light4: #204330;
+@brand-secondary-light5: #102118;
 
-@almost-black: #263238;
-@gray-dark: #484848;
-@gray-light: #e0e0e0;
-@gray-light5: #666666;
-@gray: #879399;
-@gray-bg: #f7f7f7;
-@gray-heading: #a3a3a3;
-@menu-hover: #f2f3f5;
-@lightest: #ffffff;
-@darkest: #000000;
+// TODO line up with theme
+@almost-black: #f9f9f9;
+@gray-dark: #dbdbdb;
+@gray-light: #363636;
+@gray-light5: ;
+@gray: #1e91ae;
+@gray-bg: #363636;
+@gray-heading: #a0a0a0;
+@menu-hover: ;
+@lightest: ;
+@darkest: ;
+
+@body-bg: ;
 
 /**************************** text-specific *****************************/
-@link: #1985a0;
-@link-hover: darken(@link, @colorstop-one);
+@text-color: #fff;
+@heading-color: #fff;
+@link: #4ba7be;
+@link-hover: #83c3d2;
 
 /***************************** status colors ****************************/
-@info: #66bcfe;
-@info-dark1: #4d8cbe;
-@info-dark2: #315e7e;
-@info-light1: #b3defe;
-@info-light2: #eff8fe;
+@info: #5aa3db;
+@info-dark1: #7bb5e2;
+@info-dark2: #a4cceb;
+@info-light1: #5193c5;
+@info-light2: #4882af;
 
-@danger: #e04355;
-@danger-dark1: #a7323f;
-@danger-dark2: #6f212a;
-@danger-light1: #efa1aa;
-@danger-light2: #faedee;
+@danger: #c13c4b;
+@danger-dark1: #cd636f;
+@danger-dark2: #dd949c;
+@danger-light1: #ae3644;
+@danger-light2: #9a303c;
 
-@success: #5ac189;
-@success-dark1: #439066;
-@success-dark2: #2b6144;
-@success-light1: #ace1c4;
-@success-light2: #eef8f3;
+@success: #50a777;
+@success-dark1: #73b992;
+@success-dark2: #9fcfb4;
+@success-light1: #48966b;
+@success-light2: #40865f;
 
-@warning: #fcc700;
-@warning-dark1: #bc9501;
-@warning-dark2: #7d6300;
-@warning-light1: #fde380;
-@warning-light2: #fef9e6;
+@warning: #d9ac03;
+@warning-dark1: #e1bd35;
+@warning-dark2: #ead174;
+@warning-light1: #c39b03;
+@warning-light2: #ae8a02;
 
 /* general component effects */
 @shadow-highlight: @primary-color;
@@ -141,22 +143,19 @@
 /* Commonly used font weights, line heights, etc. These should be the   */
 /* core values used to build more complex styles for headers, etc.      */
 /************************************************************************/
+@font-size-base: 14px; // Base `rem` units on this, as needed.
 
-// *************************** Weights **********************************
 @font-weight-light: 200;
 @font-weight-normal: 400;
 @font-weight-bold: 600;
 
-// ***************************** Font Sizes *****************************
-@font-size-base: 14px; // Base `rem` units on this, as needed.
-
 @font-size-xxs: 9px;
 @font-size-xs: 10px;
 @font-size-s: 12px;
-@font-size-m: @font-size-base;
+@font-size-m: 14px;
 @font-size-l: 16px;
-@font-size-xl: 21px;
-@font-size-xxl: 28px;
+@font-size-xl: 20px;
+@font-size-xxl: 24px;
 
 // **************************** Line Heights ****************************
 @line-height-base: 1.4;
@@ -184,14 +183,16 @@
 }
 
 // ****************************** Families ******************************
-@font-family-sans-serif: 'Inter', Helvetica, Arial;
-@font-family-serif: Georgia, 'Times New Roman', Times, serif;
-@font-family-monospace: 'Fira Code', 'Courier New', monospace;
+
+@font-family-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+'Noto Color Emoji';
+@font-family-monospace: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 @font-family-base: @font-family-sans-serif;
+@line-height-tight: 1;
 
 /************************************************************************/
 /* TRANSITIONS                                                          */
-/* Timing and easings presets used in CSS transitions                   */
 /************************************************************************/
 @timing-normal: 0.3s;
 

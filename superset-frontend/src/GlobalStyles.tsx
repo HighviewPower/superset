@@ -18,7 +18,6 @@
  */
 import { css } from '@superset-ui/core';
 import { Global } from '@emotion/react';
-import { mix } from 'polished';
 import 'react-js-cron/dist/styles.css';
 
 export const GlobalStyles = () => (
@@ -48,33 +47,6 @@ export const GlobalStyles = () => (
 
       // TODO: Remove when buttons have been upgraded to Ant Design 5.
       // Check src/components/Modal for more info.
-      .ant-modal-confirm {
-        button {
-          border: none;
-          border-radius: ${theme.borderRadius}px;
-          line-height: 1.5715;
-          font-size: ${theme.typography.sizes.s}px;
-          font-weight: ${theme.typography.weights.bold};
-        }
-        .ant-btn-primary:not(.btn-danger) {
-          background: ${theme.colors.primary.base};
-          color: ${theme.colors.grayscale.light5};
-          &:hover {
-            background: ${theme.colors.primary.dark1};
-          }
-        }
-        .ant-btn-default:not(.btn-danger) {
-          background: ${theme.colors.primary.light4};
-          color: ${theme.colors.primary.dark1};
-          &:hover {
-            background: ${mix(
-              0.1,
-              theme.colors.primary.base,
-              theme.colors.primary.light4,
-            )};
-          }
-        }
-      }
       .column-config-popover {
         & .antd5-input-number {
           width: 100%;

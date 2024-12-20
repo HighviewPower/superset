@@ -73,14 +73,14 @@ const ControlHeader: FC<ControlHeaderProps> = ({
 
     if (hasHadNoErrors.current) {
       if (validationErrors.length) {
-        return colors.error.base;
+        return colors.error.text;
       }
 
       return 'unset';
     }
 
-    return colors.alert.base;
-  }, [colors.error.base, colors.alert.base, validationErrors.length]);
+    return colors.warning.text;
+  }, [colors.error.text, colors.warning.text, validationErrors.length]);
 
   if (!label) {
     return null;
@@ -151,14 +151,17 @@ const ControlHeader: FC<ControlHeaderProps> = ({
           {warning && (
             <span>
               <Tooltip id="error-tooltip" placement="top" title={warning}>
-                <Icons.AlertSolid iconColor={colors.alert.base} iconSize="s" />
+                <Icons.AlertSolid
+                  iconColor={colors.warning.text}
+                  iconSize="s"
+                />
               </Tooltip>{' '}
             </span>
           )}
           {danger && (
             <span>
               <Tooltip id="error-tooltip" placement="top" title={danger}>
-                <Icons.ErrorSolid iconColor={colors.error.base} iconSize="s" />
+                <Icons.ErrorSolid iconColor={colors.error.text} iconSize="s" />
               </Tooltip>{' '}
             </span>
           )}

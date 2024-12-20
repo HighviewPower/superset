@@ -28,19 +28,19 @@ function getStatusColor(
 ) {
   switch (status) {
     case AlertState.Working:
-      return theme.colors.primary.base;
+      return theme.colors.primary.text;
     case AlertState.Error:
-      return theme.colors.error.base;
+      return theme.colors.error.text;
     case AlertState.Success:
       return isReportEnabled
-        ? theme.colors.success.base
-        : theme.colors.alert.base;
+        ? theme.colors.success.text
+        : theme.colors.error.text;
     case AlertState.Noop:
-      return theme.colors.success.base;
+      return theme.colors.success.text;
     case AlertState.Grace:
-      return theme.colors.alert.base;
+      return theme.colors.error.text;
     default:
-      return theme.colors.grayscale.base;
+      return theme.colors.grayscale.text;
   }
 }
 

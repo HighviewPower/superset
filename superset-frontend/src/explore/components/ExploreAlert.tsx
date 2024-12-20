@@ -37,8 +37,8 @@ const AlertContainer = styled.div`
     margin: ${theme.gridUnit * 4}px;
     padding: ${theme.gridUnit * 4}px;
 
-    border: 1px solid ${theme.colors.info.base};
-    background-color: ${theme.colors.info.light2};
+    border: 1px solid ${theme.colors.info.border};
+    background-color: ${theme.colors.info.bg};
     border-radius: 2px;
 
     color: ${theme.colors.info.dark2};
@@ -53,21 +53,21 @@ const AlertContainer = styled.div`
       color: inherit;
       text-decoration: underline;
       &:hover {
-        color: ${theme.colors.info.dark1};
+        color: ${theme.colors.info.text};
       }
     }
 
     &.alert-type-warning {
-      border-color: ${theme.colors.alert.base};
-      background-color: ${theme.colors.alert.light2};
+      border-color: ${theme.colors.error.border};
+      background-color: ${theme.colors.error.bg};
 
       p {
-        color: ${theme.colors.alert.dark2};
+        color: ${theme.colors.error.text};
       }
 
       & a:hover,
       & span[role='button']:hover {
-        color: ${theme.colors.alert.dark1};
+        color: ${theme.colors.error.text};
       }
     }
   `}
