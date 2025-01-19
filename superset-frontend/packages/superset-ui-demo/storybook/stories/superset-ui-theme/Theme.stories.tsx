@@ -19,24 +19,32 @@
 
 import { supersetTheme } from '@superset-ui/core';
 
+const colorTypes = [
+  'primary',
+  'secondary',
+  'error',
+  'warning',
+  'success',
+  'info',
+];
+
 const AntDFunctionalColors = ({ antdTheme }) => {
   const { antd } = supersetTheme;
 
   // Define color types and variations dynamically
-  const colorTypes = ['Primary', 'Success', 'Error', 'Warning', 'Info'];
   const variations = [
-    '',
-    'Active',
-    'TextActive',
-    'Text',
-    'TextHover',
-    'Hover',
-    'BorderHover',
-    'Border',
-    'BgHover',
-    'Bg',
+    'active',
+    'textActive',
+    'text',
+    'textHover',
+    'hover',
+    'borderHover',
+    'border',
+    'bgHover',
+    'bg',
   ];
 
+  const { colors } = supersetTheme;
   return (
     <table
       style={{ borderCollapse: 'collapse', width: '100%', textAlign: 'left' }}
@@ -63,8 +71,7 @@ const AntDFunctionalColors = ({ antdTheme }) => {
                 <strong>{type}</strong>
               </td>
               {variations.map(variation => {
-                const tokenKey = `${typeKey}${variation}`;
-                const color = antd[tokenKey];
+                const color = colors[type][variation];
                 return (
                   <td
                     key={variation}
@@ -72,7 +79,7 @@ const AntDFunctionalColors = ({ antdTheme }) => {
                       border: '1px solid #ddd',
                       padding: '8px',
                       backgroundColor: color || 'transparent',
-                      color: antdTheme[`color${type}${variation}`],
+                      color: [`color${type}${variation}`],
                     }}
                   >
                     {color ? <code>{color}</code> : '-'}
@@ -103,19 +110,10 @@ export const ThemeColors = () => {
     'light4',
     'light5',
   ];
-  const colorTypes = [
-    'primary',
-    'secondary',
-    'grayscale',
-    'error',
-    'warning',
-    'success',
-    'info',
-  ];
   return (
     <div>
       <h1>Theme Colors</h1>
-      <h2>Color Palette</h2>
+      <h2>Legacy Theme Colors</h2>
       <table
         style={{ borderCollapse: 'collapse', width: '100%', textAlign: 'left' }}
       >
