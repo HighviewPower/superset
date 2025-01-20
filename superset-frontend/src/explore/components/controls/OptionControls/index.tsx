@@ -42,11 +42,11 @@ export const OptionControlContainer = styled.div<{
   width: 100%;
   font-size: ${({ theme }) => theme.typography.sizes.s}px;
   height: ${({ theme }) => theme.gridUnit * 6}px;
-  background-color: ${({ theme }) => theme.colors.grayscale.light4};
+  background-color: ${({ theme }) => theme.colors.gray.bg};
   border-radius: 3px;
   cursor: ${({ withCaret }) => (withCaret ? 'pointer' : 'default')};
   :hover {
-    background-color: ${({ theme }) => theme.colors.grayscale.light3};
+    background-color: ${({ theme }) => theme.colors.gray.bgHover};
   }
 `;
 export const Label = styled.div`
@@ -103,7 +103,7 @@ export const HeaderContainer = styled.div`
 
 export const LabelsContainer = styled.div`
   padding: ${({ theme }) => theme.gridUnit}px;
-  border: solid 1px ${({ theme }) => theme.colors.grayscale.light2};
+  border: solid 1px ${({ theme }) => theme.colors.grayscale.borderSecondary};
   border-radius: ${({ theme }) => theme.gridUnit}px;
 `;
 

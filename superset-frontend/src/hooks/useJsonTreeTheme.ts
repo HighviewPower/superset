@@ -22,14 +22,14 @@ export const useJsonTreeTheme = () => {
   const theme = useTheme();
 
   return {
-    base00: theme.colors.grayscale.bg,
-    base01: theme.colors.grayscale.bgHover,
-    base02: theme.colors.grayscale.border,
-    base03: theme.colors.grayscale.borderHover,
-    base04: theme.colors.grayscale.textHover,
-    base05: theme.colors.grayscale.text,
-    base06: theme.colors.grayscale.textActive,
-    base07: theme.colors.grayscale.base,
+    base00: theme.colors.gray.bg,
+    base01: theme.colors.gray.bgHover,
+    base02: theme.colors.gray.border,
+    base03: theme.colors.gray.borderHover,
+    base04: theme.colors.gray.textHover,
+    base05: theme.colors.gray.text,
+    base06: theme.colors.gray.textActive,
+    base07: theme.colors.gray.base,
     base08: theme.colors.error.base,
     base09: theme.colors.error.hover,
     base0A: theme.colors.error.text,

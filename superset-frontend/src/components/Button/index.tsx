@@ -112,7 +112,7 @@ export default function Button(props: ButtonProps) {
   let colorHover;
   let borderWidth = 0;
   let borderStyle = 'none';
-  let borderColor;
+  let borderColor = grayscale.border;
   let borderColorHover;
   let borderColorDisabled = 'transparent';
 
@@ -123,8 +123,8 @@ export default function Button(props: ButtonProps) {
     backgroundColorDisabled = grayscale.light5;
     borderWidth = 1;
     borderStyle = buttonStyle === 'dashed' ? 'dashed' : 'solid';
-    borderColor = primary.dark1;
-    borderColorHover = primary.light1;
+    borderColor = primary.border;
+    borderColorHover = primary.borderHover;
     borderColorDisabled = grayscale.light2;
   } else if (buttonStyle === 'danger') {
     colorHover = color;
