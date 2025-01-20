@@ -17,9 +17,16 @@
  * under the License.
  */
 
-import { supersetTheme } from '@superset-ui/core';
+import { supersetTheme, themeObject } from '@superset-ui/core';
 
-const colorTypes = ['primary', 'error', 'warning', 'success', 'info'];
+const colorTypes = [
+  'primary',
+  'error',
+  'warning',
+  'success',
+  'info',
+  'grayscale',
+];
 
 const AntDFunctionalColors = ({ antdTheme }) => {
   const { antd } = supersetTheme;
@@ -57,7 +64,7 @@ const AntDFunctionalColors = ({ antdTheme }) => {
         </tr>
       </thead>
       <tbody>
-        {[...colorTypes, 'gray'].map(type => {
+        {colorTypes.map(type => {
           const typeKey = `color${type}`;
           return (
             <tr key={type}>
@@ -127,7 +134,7 @@ export const ThemeColors = () => {
           </tr>
         </thead>
         <tbody>
-          {[...colorTypes, 'grayscale'].map(category => (
+          {colorTypes.map(category => (
             <tr key={category}>
               <td style={{ border: '1px solid #ddd', padding: '8px' }}>
                 <strong>{category}</strong>
@@ -155,9 +162,15 @@ export const ThemeColors = () => {
       <h3>Functional Colors</h3>
       <AntDFunctionalColors antdTheme={supersetTheme.antd} />
       <h2>The supersetTheme object</h2>
-      <code>
-        <pre>{JSON.stringify(supersetTheme, null, 2)}</pre>
-      </code>
+      <pre>
+        <code>{JSON.stringify(supersetTheme, null, 2)}</code>
+      </pre>
+      <h2>AntD Computed Tokens</h2>
+      <pre>
+        <code>
+          {JSON.stringify(themeObject.getFilteredAntdTheme(), null, 2)}
+        </code>
+      </pre>
     </div>
   );
 };

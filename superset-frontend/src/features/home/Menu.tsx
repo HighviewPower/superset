@@ -137,7 +137,7 @@ const StyledHeader = styled.header`
       }
       .ant-menu-item a {
         &:hover {
-          color: ${theme.colors.gray.textHover};
+          color: ${theme.colors.grayscale.textHover};
           background-color: ${theme.colors.primary.bg};
           border-bottom: none;
           margin: 0;

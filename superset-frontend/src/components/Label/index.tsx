@@ -66,7 +66,7 @@ export default function Label(props: LabelProps) {
 
   let baseColor;
   if (type === 'default' || type === 'secondary') {
-    baseColor = colors.gray;
+    baseColor = colors.grayscale;
   } else {
     baseColor = colors[type];
   }

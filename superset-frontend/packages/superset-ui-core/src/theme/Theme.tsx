@@ -74,7 +74,11 @@ interface NewColorVariations {
   text: string;
   textActive: string;
 }
-interface GrayscaleVariations extends DeprecatedColorVariations {
+interface ColorVariations
+  extends DeprecatedColorVariations,
+    NewColorVariations {}
+
+interface GrayscaleVariations extends ColorVariations {
   bgBase: string;
   bgBlur: string;
   bgContainer: string;
@@ -99,10 +103,6 @@ interface GrayscaleVariations extends DeprecatedColorVariations {
   textTertiary: string;
 }
 
-interface ColorVariations
-  extends DeprecatedColorVariations,
-    NewColorVariations {}
-
 interface ThemeColors {
   text: {
     label: string;
@@ -113,7 +113,6 @@ interface ThemeColors {
   warning: ColorVariations;
   success: ColorVariations;
   info: ColorVariations;
-  gray: ColorVariations;
   grayscale: GrayscaleVariations;
 }
 
@@ -227,7 +226,7 @@ export class Theme {
     const antd = this.getFilteredAntdTheme();
     const grayScale = (perc: number) =>
       tinycolor.mix('white', 'black', perc).toHexString();
-    const standardColors = {
+    const colors = {
       ...Object.fromEntries(
         ['primary', 'error', 'warning', 'success', 'info'].map(k => {
           const cappedK = k.charAt(0).toUpperCase() + k.slice(1);
@@ -249,24 +248,22 @@ export class Theme {
           ];
         }),
       ),
-      gray: {
+      grayscale: {
+        ...this.generateColorVariations(grayScale(50), false),
+        // Common variations to match other theme colors tokens
         base: grayScale(50),
         active: grayScale(80),
         textActive: grayScale(70),
-        text: grayScale(60),
         textHover: grayScale(50),
         hover: grayScale(40),
         borderHover: grayScale(30),
-        border: grayScale(20),
         bgHover: grayScale(10),
         bg: grayScale(5),
-      },
-    } as ThemeColors;
 
-    const colors: ThemeColors = {
-      ...standardColors,
-      grayscale: {
-        ...this.legacyTheme.colors.grayscale,
+        // Gray-specific variations, populated from antd theme
+        border: antd.colorBorder,
+        text: antd.colorText,
+
         bgBase: antd.colorBgBase,
         bgBlur: antd.colorBgBlur,
         bgContainer: antd.colorBgContainer,
@@ -276,10 +273,8 @@ export class Theme {
         bgSpotlight: antd.colorBgSpotlight,
         bgTextActive: antd.colorBgTextActive,
         bgTextHover: antd.colorBgTextHover,
-        border: antd.colorBorder,
         borderSecondary: antd.colorBorderSecondary,
         highlight: antd.colorHighlight,
-        text: antd.colorText,
         textDescription: antd.colorTextDescription,
         textDisabled: antd.colorTextDisabled,
         textHeading: antd.colorTextHeading,
@@ -290,7 +285,7 @@ export class Theme {
         textSecondary: antd.colorTextSecondary,
         textTertiary: antd.colorTextTertiary,
       },
-    };
+    } as ThemeColors;
 
     return {
       ...this.legacyTheme,

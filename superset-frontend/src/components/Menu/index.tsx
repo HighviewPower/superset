@@ -104,7 +104,7 @@ const StyledNav = styled(AntdMenu)`
   & > .ant-menu-submenu {
     vertical-align: inherit;
     &:hover {
-      color: ${({ theme }) => theme.colors.gray.text};
+      color: ${({ theme }) => theme.colors.grayscale.text};
     }
   }
 
@@ -126,13 +126,13 @@ const StyledNav = styled(AntdMenu)`
 `;
 
 const StyledSubMenu = styled(AntdMenu.SubMenu)`
-  color: ${({ theme }) => theme.colors.gray.text};
+  color: ${({ theme }) => theme.colors.grayscale.text};
   background-color: ${({ theme }) => theme.colors.grayscale.bgBase};
   border-bottom: none;
   .ant-menu-submenu-open,
   .ant-menu-submenu-active {
     .ant-menu-submenu-title {
-      color: ${({ theme }) => theme.colors.gray.text};
+      color: ${({ theme }) => theme.colors.grayscale.text};
       background-color: ${({ theme }) => theme.colors.primary.bgHover};
       border-bottom: none;
       margin: 0;

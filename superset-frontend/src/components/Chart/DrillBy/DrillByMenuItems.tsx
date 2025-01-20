@@ -299,7 +299,10 @@ export const DrillByMenuItems = ({
             <Input
               ref={ref}
               prefix={
-                <Icons.Search iconSize="l" iconColor={theme.colors.gray.text} />
+                <Icons.Search
+                  iconSize="l"
+                  iconColor={theme.colors.grayscale.text}
+                />
               }
               onChange={e => {
                 e.stopPropagation();
