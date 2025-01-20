@@ -33,7 +33,7 @@ export type OnClickHandler = MouseEventHandler<HTMLElement>;
 export type Type =
   | 'success'
   | 'warning'
-  | 'danger'
+  | 'error'
   | 'info'
   | 'default'
   | 'primary'
@@ -63,44 +63,19 @@ export default function Label(props: LabelProps) {
     icon,
     ...rest
   } = props;
-  const { primary, secondary, grayscale, success, warning, error, info } =
-    colors;
 
   let baseColor;
-  if (type === 'primary') {
-    baseColor = primary;
-  } else if (type === 'secondary') {
-    baseColor = secondary;
-  } else if (type === 'success') {
-    baseColor = success;
-  } else if (type === 'warning') {
-    baseColor = warning;
-  } else if (type === 'danger') {
-    baseColor = error;
-  } else if (type === 'info') {
-    baseColor = info;
+  if (type === 'default' || type === 'secondary') {
+    baseColor = colors.gray;
   } else {
-    baseColor = grayscale;
+    baseColor = colors[type];
   }
-  const color = baseColor.dark2;
-  let borderColor = baseColor.light1;
-  let backgroundColor = baseColor.light2;
+  const color = baseColor.active;
+  let borderColor = baseColor.border;
+  let backgroundColor = baseColor.bg;
 
-  // TODO - REMOVE IF BLOCK LOGIC WHEN shades are fixed to be aligned in terms of brightness
-  // currently shades for >=light2 are not aligned for primary, default and secondary
-  if (['default', 'primary', 'secondary'].includes(type)) {
-    // @ts-ignore
-    backgroundColor = baseColor.light4;
-    borderColor = baseColor.light2;
-  }
-
-  const backgroundColorHover = onClick ? baseColor.light1 : backgroundColor;
-  const borderColorHover = onClick ? baseColor.base : borderColor;
-
-  if (type === 'default') {
-    // Lighter for default
-    backgroundColor = grayscale.light3;
-  }
+  const backgroundColorHover = onClick ? baseColor.bgHover : backgroundColor;
+  const borderColorHover = onClick ? baseColor.borderHover : borderColor;
 
   const css = {
     transition: `background-color ${transitionTiming}s`,

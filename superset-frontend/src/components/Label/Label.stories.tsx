@@ -33,7 +33,7 @@ export const options: Type[] = [
   'info',
   'success',
   'warning',
-  'danger',
+  'error',
   'primary',
   'secondary',
 ];

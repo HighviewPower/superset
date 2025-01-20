@@ -76,9 +76,9 @@ const collapseStyles = (theme: SupersetTheme) => css`
     padding: 0 !important;
     bottom: ${theme.gridUnit}px !important;
     right: ${theme.gridUnit * 4}px !important;
-    color: ${theme.colors.primary.dark1} !important;
+    color: ${theme.colors.primary.text} !important;
     &:hover {
-      color: ${theme.colors.primary.dark2} !important;
+      color: ${theme.colors.primary.textHover} !important;
     }
   }
 `;
@@ -90,7 +90,7 @@ const LeftBarStyles = styled.div`
     flex-direction: column;
 
     .divider {
-      border-bottom: 1px solid ${theme.colors.grayscale.light4};
+      border-bottom: 1px solid ${theme.colors.grayscale.border};
       margin: ${theme.gridUnit * 4}px 0;
     }
   `}

@@ -116,6 +116,7 @@ interface ThemeColors {
   warning: ColorVariations;
   success: ColorVariations;
   info: ColorVariations;
+  gray: ColorVariations;
   grayscale: GrayscaleVariations;
 }
 
@@ -232,35 +233,45 @@ export class Theme {
 
   getTheme(): SupersetTheme {
     const antd = this.getFilteredAntdTheme();
-
-    const standardColors = Object.fromEntries(
-      ['primary', 'secondary', 'error', 'warning', 'success', 'info'].map(k => {
-        const cappedK = k.charAt(0).toUpperCase() + k.slice(1);
-        return [
-          k,
-          {
-            ...this.legacyTheme.colors[k],
-            bg: antd[`color${cappedK}Bg`],
-            bgBase: antd[`color${cappedK}BgBase`],
-            bgHover: antd[`color${cappedK}BgHover`],
-            border: antd[`color${cappedK}Border`],
-            borderHover: antd[`color${cappedK}BorderHover`],
-            hover: antd[`color${cappedK}Hover`],
-            active: antd[`color${cappedK}Active`],
-            textHover: antd[`color${cappedK}TextHover`],
-            text: antd[`color${cappedK}Text`],
-            textActive: antd[`color${cappedK}TextActive`],
+    const grayScale = (perc: number) =>
+      tinycolor.mix('white', 'black', perc).toHexString();
+    const standardColors = {
+      ...Object.fromEntries(
+        ['primary', 'secondary', 'error', 'warning', 'success', 'info'].map(
+          k => {
+            const cappedK = k.charAt(0).toUpperCase() + k.slice(1);
+            return [
+              k,
+              {
+                ...this.legacyTheme.colors[k],
+                bg: antd[`color${cappedK}Bg`],
+                bgBase: antd[`color${cappedK}BgBase`],
+                bgHover: antd[`color${cappedK}BgHover`],
+                border: antd[`color${cappedK}Border`],
+                borderHover: antd[`color${cappedK}BorderHover`],
+                hover: antd[`color${cappedK}Hover`],
+                active: antd[`color${cappedK}Active`],
+                textHover: antd[`color${cappedK}TextHover`],
+                text: antd[`color${cappedK}Text`],
+                textActive: antd[`color${cappedK}TextActive`],
+              },
+            ];
           },
-        ];
-      }),
-    ) as {
-      primary: ColorVariations;
-      secondary: ColorVariations;
-      error: ColorVariations;
-      warning: ColorVariations;
-      success: ColorVariations;
-      info: ColorVariations;
-    };
+        ),
+      ),
+      gray: {
+        base: grayScale(50),
+        active: grayScale(80),
+        textActive: grayScale(70),
+        text: grayScale(60),
+        textHover: grayScale(50),
+        hover: grayScale(40),
+        borderHover: grayScale(30),
+        border: grayScale(20),
+        bgHover: grayScale(10),
+        bg: grayScale(5),
+      },
+    } as ThemeColors;
 
     const colors: ThemeColors = {
       text: this.legacyTheme.colors.text,

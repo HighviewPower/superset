@@ -57,9 +57,9 @@ export interface TableElementProps {
 }
 
 const StyledSpan = styled.span`
-  color: ${({ theme }) => theme.colors.primary.dark1};
+  color: ${({ theme }) => theme.colors.primary.text};
   &:hover {
-    color: ${({ theme }) => theme.colors.primary.dark2};
+    color: ${({ theme }) => theme.colors.primary.textHover};
   }
   cursor: pointer;
 `;

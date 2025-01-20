@@ -22,10 +22,12 @@ import { supersetTheme } from '@superset-ui/core';
 const colorTypes = [
   'primary',
   'secondary',
+  'gray',
   'error',
   'warning',
   'success',
   'info',
+  'grayscale',
 ];
 
 const AntDFunctionalColors = ({ antdTheme }) => {

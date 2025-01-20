@@ -100,17 +100,14 @@ export const StyledButtonComponent = styled(Button)`
     background: none;
     text-transform: none;
     padding: 0px;
-    color: ${theme.colors.grayscale.dark2};
     font-size: 14px;
     font-weight: ${theme.typography.weights.normal};
     margin-left: 0;
     &:disabled {
       margin-left: 0;
       background: none;
-      color: ${theme.colors.grayscale.dark2};
       &:hover {
         background: none;
-        color: ${theme.colors.grayscale.dark2};
       }
     }
   `}
