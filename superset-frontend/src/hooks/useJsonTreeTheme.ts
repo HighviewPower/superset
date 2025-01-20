@@ -20,22 +20,23 @@ import { useTheme } from '@superset-ui/core';
 
 export const useJsonTreeTheme = () => {
   const theme = useTheme();
+
   return {
-    base00: theme.colors.grayscale.dark2,
-    base01: theme.colors.grayscale.dark1,
-    base02: theme.colors.grayscale.base,
-    base03: theme.colors.grayscale.light1,
-    base04: theme.colors.grayscale.light2,
-    base05: theme.colors.grayscale.light3,
-    base06: theme.colors.grayscale.light4,
-    base07: theme.colors.grayscale.light5,
+    base00: theme.colors.grayscale.bg,
+    base01: theme.colors.grayscale.bgHover,
+    base02: theme.colors.grayscale.border,
+    base03: theme.colors.grayscale.borderHover,
+    base04: theme.colors.grayscale.textHover,
+    base05: theme.colors.grayscale.text,
+    base06: theme.colors.grayscale.textActive,
+    base07: theme.colors.grayscale.base,
     base08: theme.colors.error.base,
-    base09: theme.colors.error.light1,
-    base0A: theme.colors.error.light2,
+    base09: theme.colors.error.hover,
+    base0A: theme.colors.error.text,
     base0B: theme.colors.success.base,
-    base0C: theme.colors.primary.light1,
+    base0C: theme.colors.primary.bgHover,
     base0D: theme.colors.primary.base,
-    base0E: theme.colors.primary.dark1,
+    base0E: theme.colors.primary.active,
     base0F: theme.colors.error.dark1,
   };
 };

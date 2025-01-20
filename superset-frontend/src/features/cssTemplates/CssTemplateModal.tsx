@@ -44,7 +44,7 @@ const StyledCssTemplateTitle = styled.div`
 
 const StyledCssEditor = styled(CssEditor)`
   border-radius: ${({ theme }) => theme.borderRadius}px;
-  border: 1px solid ${({ theme }) => theme.colors.secondary.light2};
+  border: 1px solid ${({ theme }) => theme.colors.primary.border};
 `;
 
 const TemplateContainer = styled.div`
@@ -62,7 +62,7 @@ const TemplateContainer = styled.div`
   input[type='text'] {
     padding: ${({ theme }) => theme.gridUnit * 1.5}px
       ${({ theme }) => theme.gridUnit * 2}px;
-    border: 1px solid ${({ theme }) => theme.colors.grayscale.light2};
+    border: 1px solid ${({ theme }) => theme.colors.grayscale.border};
     border-radius: ${({ theme }) => theme.gridUnit}px;
     width: 50%;
   }

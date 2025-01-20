@@ -34,7 +34,7 @@ export const FilterTitle = styled.div`
       &.active {
         color: ${theme.colors.grayscale.dark1};
         border-radius: ${theme.borderRadius}px;
-        background-color: ${theme.colors.secondary.light4};
+        background-color: ${theme.colors.primary.bg};
         span, .anticon {
           color: ${theme.colors.grayscale.dark1};
         }

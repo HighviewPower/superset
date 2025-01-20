@@ -65,14 +65,14 @@ const onMenuHover = (theme: SupersetTheme) => css`
     }
   }
   :hover {
-    background-color: ${theme.colors.secondary.light5};
+    background-color: ${theme.colors.primary.bg};
   }
 `;
 
 const onMenuItemHover = (theme: SupersetTheme) => css`
   &:hover {
     color: ${theme.colors.grayscale.dark1};
-    background-color: ${theme.colors.secondary.light5};
+    background-color: ${theme.colors.primary.bg};
   }
 `;
 

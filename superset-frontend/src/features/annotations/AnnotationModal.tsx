@@ -47,7 +47,7 @@ const StyledAnnotationTitle = styled.div`
 
 const StyledJsonEditor = styled(JsonEditor)`
   border-radius: ${({ theme }) => theme.borderRadius}px;
-  border: 1px solid ${({ theme }) => theme.colors.secondary.light2};
+  border: 1px solid ${({ theme }) => theme.colors.primary.light2};
 `;
 
 const AnnotationContainer = styled.div`

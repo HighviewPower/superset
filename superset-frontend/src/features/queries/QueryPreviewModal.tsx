@@ -29,7 +29,7 @@ import useQueryPreviewState from 'src/features/queries/hooks/useQueryPreviewStat
 import { QueryObject } from 'src/views/CRUD/types';
 
 const QueryTitle = styled.div`
-  color: ${({ theme }) => theme.colors.secondary.light2};
+  color: ${({ theme }) => theme.colors.primary.light2};
   font-size: ${({ theme }) => theme.typography.sizes.s}px;
   margin-bottom: 0;
 `;
@@ -50,19 +50,19 @@ const TabButton = styled.div`
   padding: ${({ theme }) => theme.gridUnit * 2}px
     ${({ theme }) => theme.gridUnit * 4}px;
   margin-right: ${({ theme }) => theme.gridUnit * 4}px;
-  color: ${({ theme }) => theme.colors.secondary.dark1};
+  color: ${({ theme }) => theme.colors.primary.dark1};
 
   &.active,
   &:focus,
   &:hover {
-    background: ${({ theme }) => theme.colors.secondary.light4};
+    background: ${({ theme }) => theme.colors.primary.light4};
     border-bottom: none;
     border-radius: ${({ theme }) => theme.borderRadius}px;
     margin-bottom: ${({ theme }) => theme.gridUnit * 2}px;
   }
 
   &:hover:not(.active) {
-    background: ${({ theme }) => theme.colors.secondary.light5};
+    background: ${({ theme }) => theme.colors.primary.light5};
   }
 `;
 const StyledModal = styled(Modal)`

@@ -164,7 +164,7 @@ const StyledAlert = styled(Alert)`
     font-weight: ${theme.typography.weights.normal};
 
     &:hover {
-      color: ${theme.colors.secondary.dark3};
+      color: ${theme.colors.primary.hover};
       text-decoration: underline;
     }
   }

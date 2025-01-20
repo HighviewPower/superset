@@ -32,7 +32,6 @@ import createCache from '@emotion/cache';
 
 const DEFAULT_SYSTEM_COLORS = {
   primary: '#20a7c9',
-  secondary: '#444e7c',
   error: '#e04355',
   warning: '#fcc700',
   success: '#5ac189',
@@ -42,7 +41,6 @@ const DEFAULT_SYSTEM_COLORS = {
 
 interface SystemColors {
   primary: string;
-  secondary: string;
   error: string;
   warning: string;
   success: string;
@@ -111,7 +109,6 @@ interface ThemeColors {
     help: string;
   };
   primary: ColorVariations;
-  secondary: ColorVariations;
   error: ColorVariations;
   warning: ColorVariations;
   success: ColorVariations;
@@ -122,7 +119,6 @@ interface ThemeColors {
 
 interface LegacyThemeColors {
   primary: DeprecatedColorVariations;
-  secondary: DeprecatedColorVariations;
   error: DeprecatedColorVariations;
   warning: DeprecatedColorVariations;
   success: DeprecatedColorVariations;
@@ -233,27 +229,25 @@ export class Theme {
       tinycolor.mix('white', 'black', perc).toHexString();
     const standardColors = {
       ...Object.fromEntries(
-        ['primary', 'secondary', 'error', 'warning', 'success', 'info'].map(
-          k => {
-            const cappedK = k.charAt(0).toUpperCase() + k.slice(1);
-            return [
-              k,
-              {
-                ...this.legacyTheme.colors[k],
-                bg: antd[`color${cappedK}Bg`],
-                bgBase: antd[`color${cappedK}BgBase`],
-                bgHover: antd[`color${cappedK}BgHover`],
-                border: antd[`color${cappedK}Border`],
-                borderHover: antd[`color${cappedK}BorderHover`],
-                hover: antd[`color${cappedK}Hover`],
-                active: antd[`color${cappedK}Active`],
-                textHover: antd[`color${cappedK}TextHover`],
-                text: antd[`color${cappedK}Text`],
-                textActive: antd[`color${cappedK}TextActive`],
-              },
-            ];
-          },
-        ),
+        ['primary', 'error', 'warning', 'success', 'info'].map(k => {
+          const cappedK = k.charAt(0).toUpperCase() + k.slice(1);
+          return [
+            k,
+            {
+              ...this.legacyTheme.colors[k],
+              bg: antd[`color${cappedK}Bg`],
+              bgBase: antd[`color${cappedK}BgBase`],
+              bgHover: antd[`color${cappedK}BgHover`],
+              border: antd[`color${cappedK}Border`],
+              borderHover: antd[`color${cappedK}BorderHover`],
+              hover: antd[`color${cappedK}Hover`],
+              active: antd[`color${cappedK}Active`],
+              textHover: antd[`color${cappedK}TextHover`],
+              text: antd[`color${cappedK}Text`],
+              textActive: antd[`color${cappedK}TextActive`],
+            },
+          ];
+        }),
       ),
       gray: {
         base: grayScale(50),
@@ -359,7 +353,6 @@ export class Theme {
   ): LegacyThemeColors {
     return {
       primary: this.generateColorVariations(systemColors.primary, isDark),
-      secondary: this.generateColorVariations(systemColors.secondary, isDark),
       error: this.generateColorVariations(systemColors.error, isDark),
       warning: this.generateColorVariations(systemColors.warning, isDark),
       success: this.generateColorVariations(systemColors.success, isDark),
@@ -510,8 +503,6 @@ export class Theme {
     this.legacyTheme = {
       colors: {
         primary: this.generateColorVariations(tokens.colorPrimary, isDark),
-        // antd does not have secondary color, using success color as filler
-        secondary: this.generateColorVariations(tokens.colorSuccess, isDark),
         error: this.generateColorVariations(tokens.colorError, isDark),
         warning: this.generateColorVariations(tokens.colorWarning, isDark),
         success: this.generateColorVariations(tokens.colorSuccess, isDark),

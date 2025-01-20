@@ -19,16 +19,7 @@
 
 import { supersetTheme } from '@superset-ui/core';
 
-const colorTypes = [
-  'primary',
-  'secondary',
-  'gray',
-  'error',
-  'warning',
-  'success',
-  'info',
-  'grayscale',
-];
+const colorTypes = ['primary', 'error', 'warning', 'success', 'info'];
 
 const AntDFunctionalColors = ({ antdTheme }) => {
   const { antd } = supersetTheme;
@@ -66,7 +57,7 @@ const AntDFunctionalColors = ({ antdTheme }) => {
         </tr>
       </thead>
       <tbody>
-        {colorTypes.map(type => {
+        {[...colorTypes, 'gray'].map(type => {
           const typeKey = `color${type}`;
           return (
             <tr key={type}>
@@ -136,7 +127,7 @@ export const ThemeColors = () => {
           </tr>
         </thead>
         <tbody>
-          {colorTypes.map(category => (
+          {[...colorTypes, 'grayscale'].map(category => (
             <tr key={category}>
               <td style={{ border: '1px solid #ddd', padding: '8px' }}>
                 <strong>{category}</strong>

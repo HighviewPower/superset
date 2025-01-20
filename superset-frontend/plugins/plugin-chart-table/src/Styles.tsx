@@ -71,11 +71,11 @@ export default styled.div`
       cursor: pointer;
     }
     td.dt-is-filter:hover {
-      background-color: ${theme.colors.secondary.light4};
+      background-color: ${theme.colors.primary.bgHover};
     }
     td.dt-is-active-filter,
     td.dt-is-active-filter:hover {
-      background-color: ${theme.colors.secondary.light3};
+      background-color: ${theme.colors.primary.bgHover};
     }
 
     .dt-global-filter {
