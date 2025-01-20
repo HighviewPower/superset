@@ -71,8 +71,8 @@ export default function Label(props: LabelProps) {
     baseColor = colors[type];
   }
   const color = baseColor.active;
-  let borderColor = baseColor.border;
-  let backgroundColor = baseColor.bg;
+  const borderColor = baseColor.border;
+  const backgroundColor = baseColor.bg;
 
   const backgroundColorHover = onClick ? baseColor.bgHover : backgroundColor;
   const borderColorHover = onClick ? baseColor.borderHover : borderColor;
