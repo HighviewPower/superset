@@ -102,8 +102,8 @@ const StyledResizable = styled(Resizable)`
 
       &--bottom-right {
         position: absolute;
-        border-right: 1px solid ${theme.colors.text.label};
-        border-bottom: 1px solid ${theme.colors.text.label};
+        border-right: 1px solid ${theme.colors.grayscale.border};
+        border-bottom: 1px solid ${theme.colors.grayscale.border};
         right: ${theme.gridUnit * 4}px;
         bottom: ${theme.gridUnit * 4}px;
         width: ${theme.gridUnit * 2}px;
@@ -117,8 +117,8 @@ const StyledResizable = styled(Resizable)`
         top: 50%;
         transform: translate(0, -50%);
         position: absolute;
-        border-left: 1px solid ${theme.colors.text.label};
-        border-right: 1px solid ${theme.colors.text.label};
+        border-left: 1px solid ${theme.colors.grayscale.border};
+        border-right: 1px solid ${theme.colors.grayscale.border};
       }
 
       &--bottom {
@@ -128,8 +128,8 @@ const StyledResizable = styled(Resizable)`
         left: 50%;
         transform: translate(-50%);
         position: absolute;
-        border-top: 1px solid ${theme.colors.text.label};
-        border-bottom: 1px solid ${theme.colors.text.label};
+        border-top: 1px solid ${theme.colors.grayscale.border};
+        border-bottom: 1px solid ${theme.colors.grayscale.border};
       }
     }
   `}

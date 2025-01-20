@@ -122,7 +122,7 @@ const ChartHeaderStyles = styled.div`
       display: block;
       height: ${theme.gridUnit * 4}px;
       margin: ${theme.gridUnit}px 0;
-      color: ${theme.colors.text.label};
+      color: ${theme.colors.grayscale.textLabel};
     }
   `}
 `;

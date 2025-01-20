@@ -74,7 +74,7 @@ const KeyMapByCommand = Object.entries(KEY_MAP).reduce(
 
 const ShortcutDescription = styled.span`
   font-size: ${({ theme }) => theme.typography.sizes.m}px;
-  color: ${({ theme }) => theme.colors.text.help};
+  color: ${({ theme }) => theme.colors.grayscale.textLabel};
   padding-left: ${({ theme }) => theme.gridUnit * 2}px;
 `;
 

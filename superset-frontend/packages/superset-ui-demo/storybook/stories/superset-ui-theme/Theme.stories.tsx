@@ -160,24 +160,6 @@ export const ThemeColors = () => {
           ))}
         </tbody>
       </table>
-      <h3>
-        text.label: <code>{colors.text.label}</code>
-      </h3>
-      <div style={{ color: `#${colors.text.label}` }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </div>
-      <h3>
-        text.help: <code>{colors.text.help}</code>
-      </h3>
-      <div style={{ color: `#${colors.text.help}` }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </div>
       <h2>Ant Design Theme Colors</h2>
       <h3>Functional Colors</h3>
       <AntDFunctionalColors antdTheme={supersetTheme.antd} />

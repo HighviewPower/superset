@@ -156,7 +156,7 @@ const ScopeSelector = styled.div`
         width: 40%;
         padding: ${theme.gridUnit * 4}px;
         padding-left: 0;
-        border-right: 1px solid ${theme.colors.grayscale.light2};
+        border-right: 1px solid ${theme.colors.grayscale.border};
 
         .filter-container label {
           font-weight: ${theme.typography.weights.normal};
@@ -173,9 +173,9 @@ const ScopeSelector = styled.div`
           margin-left: ${theme.gridUnit * -6}px;
 
           &.is-selected {
-            border: 1px solid ${theme.colors.text.label};
+            border: 1px solid ${theme.colors.grayscale.border};
             border-radius: ${theme.borderRadius}px;
-            background-color: ${theme.colors.grayscale.light4};
+            background-color: ${theme.colors.grayscale.bg};
             margin-left: ${theme.gridUnit * -6}px;
           }
         }
@@ -200,7 +200,7 @@ const ScopeSelector = styled.div`
 
       .react-checkbox-tree {
         flex-direction: column;
-        color: ${theme.colors.grayscale.dark1};
+        color: ${theme.colors.grayscale.text};
         font-size: ${theme.typography.sizes.m}px;
 
         .filter-scope-type {
@@ -215,7 +215,7 @@ const ScopeSelector = styled.div`
           &.selected-filter {
             padding-left: ${theme.gridUnit * 7}px;
             position: relative;
-            color: ${theme.colors.text.label};
+            color: ${theme.colors.grayscale.bgTextActive};
 
             &::before {
               content: ' ';
@@ -226,7 +226,7 @@ const ScopeSelector = styled.div`
               height: ${theme.gridUnit * 4}px;
               border-radius: ${theme.borderRadius}px;
               margin-top: ${theme.gridUnit * -2}px;
-              box-shadow: inset 0 0 0 2px ${theme.colors.grayscale.light2};
+              box-shadow: inset 0 0 0 2px ${theme.colors.grayscale.border};
               background: ${theme.colors.grayscale.light3};
             }
           }

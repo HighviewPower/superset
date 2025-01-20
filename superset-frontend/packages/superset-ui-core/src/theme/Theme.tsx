@@ -121,10 +121,6 @@ interface ThemeColors {
 }
 
 interface LegacyThemeColors {
-  text: {
-    label: string;
-    help: string;
-  };
   primary: DeprecatedColorVariations;
   secondary: DeprecatedColorVariations;
   error: DeprecatedColorVariations;
@@ -274,7 +270,6 @@ export class Theme {
     } as ThemeColors;
 
     const colors: ThemeColors = {
-      text: this.legacyTheme.colors.text,
       ...standardColors,
       grayscale: {
         ...this.legacyTheme.colors.grayscale,
@@ -363,10 +358,6 @@ export class Theme {
     isDark = false,
   ): LegacyThemeColors {
     return {
-      text: {
-        label: '#879399',
-        help: '#737373',
-      },
       primary: this.generateColorVariations(systemColors.primary, isDark),
       secondary: this.generateColorVariations(systemColors.secondary, isDark),
       error: this.generateColorVariations(systemColors.error, isDark),
@@ -518,10 +509,6 @@ export class Theme {
 
     this.legacyTheme = {
       colors: {
-        text: {
-          label: tokens.colorTextBase,
-          help: tokens.colorTextBase,
-        },
         primary: this.generateColorVariations(tokens.colorPrimary, isDark),
         // antd does not have secondary color, using success color as filler
         secondary: this.generateColorVariations(tokens.colorSuccess, isDark),

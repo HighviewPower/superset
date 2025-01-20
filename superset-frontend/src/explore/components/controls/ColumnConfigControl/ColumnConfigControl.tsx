@@ -141,7 +141,7 @@ export default function ColumnConfigControl<T extends ColumnConfig>({
               textAlign: 'center',
               cursor: 'pointer',
               fontSize: theme.typography.sizes.xs,
-              color: theme.colors.text.label,
+              color: theme.colors.grayscale.textLabel,
               ':hover': {
                 backgroundColor: theme.colors.grayscale.light4,
               },
