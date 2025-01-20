@@ -125,19 +125,19 @@ const IconButton = styled(
   ),
 )`
   text-transform: none;
-  background-color: ${({ theme }) => theme.colors.grayscale.light5};
+  background-color: ${({ theme }) => theme.colors.grayscale.bg};
   font-weight: ${({ theme }) => theme.typography.weights.normal};
-  color: ${({ theme }) => theme.colors.grayscale.dark2};
-  border: 1px solid ${({ theme }) => theme.colors.grayscale.light2};
+  color: ${({ theme }) => theme.colors.grayscale.text};
+  border: 1px solid ${({ theme }) => theme.colors.grayscale.border};
   margin: 0;
   width: 100%;
 
   &:hover,
   &:focus {
-    background-color: ${({ theme }) => theme.colors.grayscale.light5};
-    color: ${({ theme }) => theme.colors.grayscale.dark2};
-    border: 1px solid ${({ theme }) => theme.colors.grayscale.light2};
-    box-shadow: 4px 4px 20px ${({ theme }) => theme.colors.grayscale.light2};
+    background-color: ${({ theme }) => theme.colors.grayscale.bgHover};
+    color: ${({ theme }) => theme.colors.grayscale.textHover};
+    border: 1px solid ${({ theme }) => theme.colors.grayscale.borderHover};
+    box-shadow: 4px 4px 10px ${({ theme }) => theme.colors.grayscale.text};
   }
 `;
 

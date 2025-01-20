@@ -89,16 +89,17 @@ const Actions = styled.div`
     i {
       &:hover {
         path {
-          fill: ${({ theme }) => theme.colors.grayscale.light1};
+          fill: ${({ theme }) => theme.colors.grayscale.textHover};
         }
       }
     }
-    color: ${({ theme }) => theme.colors.grayscale.light1};
-    .antd5-menu-item:hover {
+    color: ${({ theme }) => theme.colors.grayscale.text};
+    .ant-menu-item:hover {
+      color: ${({ theme }) => theme.colors.grayscale.textHover};
       cursor: default;
     }
     &::after {
-      color: ${({ theme }) => theme.colors.grayscale.light1};
+      color: ${({ theme }) => theme.colors.grayscale.text};
     }
   }
 `;

@@ -75,7 +75,7 @@ const StyledContainer = styled.div`
     max-width: ${MAX_ADVISABLE_VIZ_GALLERY_WIDTH}px;
     max-height: calc(100vh - ${ESTIMATED_NAV_HEIGHT}px);
     border-radius: ${theme.gridUnit}px;
-    background-color: ${theme.colors.grayscale.light5};
+    background-color: ${theme.colors.grayscale.bg};
     margin-left: auto;
     margin-right: auto;
     padding-left: ${theme.gridUnit * 4}px;
@@ -98,13 +98,13 @@ const StyledContainer = styled.div`
       }
 
       & > span {
-        color: ${theme.colors.grayscale.light1};
+        color: ${theme.colors.grayscale.text};
         margin-left: ${theme.gridUnit * 4}px;
       }
     }
 
     & .viz-gallery {
-      border: 1px solid ${theme.colors.grayscale.light2};
+      border: 1px solid ${theme.colors.grayscale.border};
       border-radius: ${theme.gridUnit}px;
       margin: ${theme.gridUnit}px 0px;
       max-height: calc(100vh - ${ELEMENTS_EXCEPT_VIZ_GALLERY}px);
@@ -119,7 +119,7 @@ const StyledContainer = styled.div`
       align-items: center;
 
       & > span {
-        color: ${theme.colors.grayscale.light1};
+        color: ${theme.colors.grayscale.text};
         margin-right: ${theme.gridUnit * 4}px;
       }
     }

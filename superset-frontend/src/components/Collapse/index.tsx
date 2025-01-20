@@ -58,9 +58,9 @@ const Collapse = Object.assign(
         ${({ light, theme }) =>
           light &&
           `
-            color: ${theme.colors.grayscale.light4};
+            color: ${theme.colors.grayscale.bgHover};
             .ant-collapse-arrow svg {
-              color: ${theme.colors.grayscale.light4};
+              color: ${theme.colors.grayscale.bgHover};
             }
           `}
 
@@ -68,7 +68,7 @@ const Collapse = Object.assign(
           ghost &&
           bordered &&
           `
-            border-bottom: 1px solid ${theme.colors.grayscale.light3};
+            border-bottom: 1px solid ${theme.colors.grayscale.border};
           `}
       }
       .ant-collapse-content {
