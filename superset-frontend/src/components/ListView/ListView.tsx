@@ -92,7 +92,7 @@ const BulkSelectWrapper = styled(Alert)`
     border-radius: 0;
     margin-bottom: 0;
     color: ${theme.colors.grayscale.dark1};
-    background-color: ${theme.colors.primary.light4};
+    background-color: ${theme.colors.primary.bg};
 
     .selectedCopy {
       display: inline-block;
@@ -110,7 +110,7 @@ const BulkSelectWrapper = styled(Alert)`
       }px`};
       width: 1px;
       height: ${theme.gridUnit * 8}px;
-      box-shadow: inset -1px 0px 0px ${theme.colors.grayscale.light2};
+      box-shadow: inset -1px 0px 0px ${theme.colors.grayscale.border};
       display: inline-flex;
       vertical-align: middle;
       position: relative;
@@ -156,7 +156,7 @@ const ViewModeContainer = styled.div`
   .active {
     background-color: ${({ theme }) => theme.colors.grayscale.base};
     svg {
-      color: ${({ theme }) => theme.colors.grayscale.light5};
+      color: ${({ theme }) => theme.colors.grayscale.bgHover};
     }
   }
 `;
@@ -165,7 +165,7 @@ const EmptyWrapper = styled.div`
   padding: ${({ theme }) => theme.gridUnit * 40}px 0;
 
   &.table {
-    background: ${({ theme }) => theme.colors.grayscale.light5};
+    background: ${({ theme }) => theme.colors.grayscale.bg};
   }
 `;
 
