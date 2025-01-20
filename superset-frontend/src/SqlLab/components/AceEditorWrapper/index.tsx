@@ -50,10 +50,10 @@ type AceEditorWrapperProps = {
 
 const StyledAceEditor = styled(AceEditor)`
   ${({ theme }) => css`
-    color: ${theme.antd.colorText};
+    color: ${theme.colors.grayscale.text};
     && {
       // double class is better than !important
-      border: 1px solid ${theme.antd.colorBorder};
+      border: 1px solid ${theme.colors.grayscale.border};
       font-feature-settings:
         'liga' off,
         'calt' off;
@@ -61,28 +61,27 @@ const StyledAceEditor = styled(AceEditor)`
       .ace_editor {
         font-family: 'Roboto Mono', monospace;
         font-size: 14px;
-        background-color: ${theme.antd.colorBgContainer};
-        color: ${theme.antd.colorText};
+        background-color: ${theme.colors.grayscale.bgContainerDisabled};
       }
       .ace-github {
-        color: ${theme.antd.colorText};
+        color: ${theme.colors.grayscale.text};
       }
 
       .ace_gutter {
-        background: ${theme.antd.colorBgElevated};
-        color: ${theme.antd.colorText};
+        background: ${theme.colors.grayscale.bgTextHover};
+        color: ${theme.colors.grayscale.text};
       }
 
       .ace_cursor {
-        color: ${theme.antd.colorPrimary};
+        color: ${theme.colors.primary.text};
       }
 
       .ace_marker-layer .ace_active-line {
-        background: ${theme.antd.colorFillTertiary};
+        background: ${theme.colors.grayscale.bgTextHover};
       }
 
       .ace_marker-layer .ace_selection {
-        background: ${theme.antd.colorPrimaryHover};
+        background: ${theme.colors.primary.bgHover};
       }
     }
   `}

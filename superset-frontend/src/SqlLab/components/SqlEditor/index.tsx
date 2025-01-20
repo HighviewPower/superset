@@ -137,7 +137,7 @@ const StyledToolbar = styled.div`
   background: ${({ theme }) => theme.colors.grayscale.light5};
   display: flex;
   justify-content: space-between;
-  border: 1px solid ${({ theme }) => theme.antd.colorBorder};
+  border: 1px solid ${({ theme }) => theme.colors.grayscale.border};
   border-top: 0;
   column-gap: ${({ theme }) => theme.gridUnit}px;
 

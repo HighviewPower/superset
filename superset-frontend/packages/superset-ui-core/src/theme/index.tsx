@@ -55,13 +55,12 @@ const styled = emotionStyled;
 const themeObject = Theme.fromAntdConfig({
   token: {
     colorPrimary: '#20a7c9',
-    // secondary: '#444e7c',
     colorError: '#e04355',
     colorWarning: '#fcc700',
     colorSuccess: '#5ac189',
     colorInfo: '#66bcfe',
   },
-  algorithm: antdThemeImport.darkAlgorithm,
+  algorithm: antdThemeImport.defaultAlgorithm,
 });
 
 const { theme } = themeObject;

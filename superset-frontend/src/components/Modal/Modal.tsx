@@ -112,7 +112,7 @@ export const StyledModal = styled(BaseModal)<StyledModalProps>`
     `}
 
   .antd5-modal-content {
-    background-color: ${({ theme }) => theme.antd.colorBgBase};
+    background-color: ${({ theme }) => theme.colors.grayscale.bgBase};
     display: flex;
     flex-direction: column;
     max-height: ${({ theme }) => `calc(100vh - ${theme.gridUnit * 8}px)`};

@@ -90,7 +90,7 @@ const StyledTabsContainer = styled.div`
 
     .ant-tabs-nav-wrap {
       min-height: ${({ theme }) => theme.gridUnit * 12.5}px;
-      background-color: ${({ theme }) => theme.antd.colorBgBase};
+      background-color: ${({ theme }) => theme.colors.grayscale.bgBase};
     }
 
     .ant-tabs-content-holder {

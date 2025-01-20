@@ -77,25 +77,28 @@ interface NewColorVariations {
   textActive: string;
 }
 interface GrayscaleVariations extends DeprecatedColorVariations {
+  bgBase: string;
+  bgBlur: string;
+  bgContainer: string;
+  bgContainerDisabled: string;
+  bgElevated: string;
+  bgMask: string;
+  bgSpotlight: string;
+  bgTextActive: string;
+  bgTextHover: string;
+  border: string;
+  borderSecondary: string;
+  highlight: string;
   text: string;
-  textSecondary: string;
-  textTertiary: string;
-  textQuaternary: string;
-  textPlaceholder: string;
+  textDescription: string;
   textDisabled: string;
   textHeading: string;
   textLabel: string;
-  textDescription: string;
   textLightSolid: string;
-  highlight: string;
-  bgTextHover: string;
-  bgTextActive: string;
-  bgBase: string;
-  bgContainer: string;
-  bgElevated: string;
-  bgSpotlight: string;
-  bgBlur: string;
-  bgMask: string;
+  textPlaceholder: string;
+  textQuaternary: string;
+  textSecondary: string;
+  textTertiary: string;
 }
 
 interface ColorVariations
@@ -176,7 +179,6 @@ interface LegacySupersetTheme {
 
 export interface SupersetTheme extends LegacySupersetTheme {
   colors: ThemeColors;
-  antd: Record<string, any>;
 }
 
 export class Theme {
@@ -239,6 +241,7 @@ export class Theme {
           {
             ...this.legacyTheme.colors[k],
             bg: antd[`color${cappedK}Bg`],
+            bgBase: antd[`color${cappedK}BgBase`],
             bgHover: antd[`color${cappedK}BgHover`],
             border: antd[`color${cappedK}Border`],
             borderHover: antd[`color${cappedK}BorderHover`],
@@ -264,32 +267,34 @@ export class Theme {
       ...standardColors,
       grayscale: {
         ...this.legacyTheme.colors.grayscale,
+        bgBase: antd.colorBgBase,
+        bgBlur: antd.colorBgBlur,
+        bgContainer: antd.colorBgContainer,
+        bgContainerDisabled: antd.colorBgContainerDisabled,
+        bgElevated: antd.colorBgElevated,
+        bgMask: antd.colorBgMask,
+        bgSpotlight: antd.colorBgSpotlight,
+        bgTextActive: antd.colorBgTextActive,
+        bgTextHover: antd.colorBgTextHover,
+        border: antd.colorBorder,
+        borderSecondary: antd.colorBorderSecondary,
+        highlight: antd.colorHighlight,
         text: antd.colorText,
-        textSecondary: antd.colorTextSecondary,
-        textTertiary: antd.colorTextTertiary,
-        textQuaternary: antd.colorTextQuaternary,
-        textPlaceholder: antd.colorTextPlaceholder,
+        textDescription: antd.colorTextDescription,
         textDisabled: antd.colorTextDisabled,
         textHeading: antd.colorTextHeading,
         textLabel: antd.colorTextLabel,
-        textDescription: antd.colorTextDescription,
         textLightSolid: antd.colorTextLightSolid,
-        highlight: antd.colorHighlight,
-        bgTextHover: antd.colorBgTextHover,
-        bgTextActive: antd.colorBgTextActive,
-        bgBase: antd.colorBgBase,
-        bgContainer: antd.colorBgContainer,
-        bgElevated: antd.colorBgElevated,
-        bgSpotlight: antd.colorBgSpotlight,
-        bgBlur: antd.colorBgBlur,
-        bgMask: antd.colorBgMask,
+        textPlaceholder: antd.colorTextPlaceholder,
+        textQuaternary: antd.colorTextQuaternary,
+        textSecondary: antd.colorTextSecondary,
+        textTertiary: antd.colorTextTertiary,
       },
     };
 
     return {
       ...this.legacyTheme,
       colors,
-      antd,
     };
   }
 

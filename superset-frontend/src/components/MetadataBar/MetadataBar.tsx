@@ -41,15 +41,15 @@ const Bar = styled.div<{ count: number }>`
     display: flex;
     align-items: center;
     padding: ${VERTICAL_PADDING}px ${HORIZONTAL_PADDING}px;
-    background-color: ${theme.antd.colorBgElevated};
-    color: ${theme.antd.colorTextTertiary};
+    background-color: ${theme.colors.grayscale.bgElevated};
+    color: ${theme.colors.grayscale.textTertiary};
     font-size: ${theme.typography.sizes.s}px;
     min-width: ${
       HORIZONTAL_PADDING * 2 +
       (ICON_WIDTH + SPACE_BETWEEN_ITEMS) * count -
       SPACE_BETWEEN_ITEMS
     }px;
-    border-radius: ${theme.antd.borderRadiusOuter}px;
+    border-radius: ${theme.borderRadius}px;
     line-height: 1;
   `}
 `;

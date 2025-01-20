@@ -42,7 +42,7 @@ interface MenuProps {
 
 const StyledHeader = styled.header`
   ${({ theme }) => `
-      background-color: ${theme.antd.colorBgBase};
+      background-color: ${theme.colors.grayscale.bgBase};
       margin-bottom: 2px;
       z-index: 10;
 
@@ -53,7 +53,7 @@ const StyledHeader = styled.header`
         display: none;
       }
       .ant-menu-item-active {
-        background-color: ${theme.antd.colorPrimaryBgHover};
+        background-color: ${theme.colors.grayscale.bgTextActive};
       }
       .navbar-brand {
         display: flex;

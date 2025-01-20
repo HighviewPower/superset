@@ -63,9 +63,7 @@ const ErrorAlert: React.FC<ErrorAlertProps> = ({
     const icon =
       type === 'warning' ? <WarningOutlined /> : <ExclamationCircleOutlined />;
     const color =
-      type === 'warning'
-        ? theme.antd.colorWarningText
-        : theme.antd.colorErrorText;
+      type === 'warning' ? theme.colors.warning.text : theme.colors.error.text;
     return (
       <div style={{ cursor: 'pointer' }}>
         <span style={{ color }}>{icon} </span>
@@ -75,7 +73,7 @@ const ErrorAlert: React.FC<ErrorAlertProps> = ({
   };
   const preStyle = {
     whiteSpace: 'pre-wrap',
-    fontFamily: theme.antd.fontFamilyCode,
+    fontFamily: theme.typography.families.monospace,
   };
   const renderDescription = () => (
     <div>

@@ -81,7 +81,7 @@ const StyledTabs = ({
         }
       }
       .ant-tabs-ink-bar {
-        background: ${theme.colors.secondary.base};
+        background: ${theme.colors.primary.base};
       }
     `}
   />
@@ -95,6 +95,10 @@ const Tabs = Object.assign(StyledTabs, {
 
 const StyledEditableTabs = styled(StyledTabs)`
   ${({ theme, fullWidth }) => `
+    .ant-tabs-content-holder {
+      background: ${theme.colors.grayscale.light5};
+    }
+
     & > .ant-tabs-nav {
       margin-bottom: 0;
     }

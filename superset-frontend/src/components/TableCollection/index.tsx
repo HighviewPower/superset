@@ -36,10 +36,9 @@ interface TableCollectionProps {
 
 export const Table = styled.table`
   ${({ theme }) => `
-    background-color: ${theme.antd.colorBgBase};
+    background-color: ${theme.colors.grayscale.bgBase};
     border-collapse: separate;
     border-radius: ${theme.borderRadius}px;
-    color: ${theme.antd.colorTextBase};
 
     thead > tr > th {
       border: 0;
@@ -51,7 +50,6 @@ export const Table = styled.table`
       }
     }
     th {
-      background-color: ${theme.antd.colorBgBase};
       position: sticky;
       top: 0;
 
@@ -116,7 +114,7 @@ export const Table = styled.table`
       position: relative;
 
       .loading-bar {
-        background-color: ${theme.colors.secondary.light4};
+        background-color: ${theme.colors.grayscale.bgTextHover};
         border-radius: 7px;
 
         span {
@@ -155,7 +153,7 @@ export const Table = styled.table`
       }
 
       &:hover {
-        background-color: ${theme.colors.secondary.light5};
+        background-color: ${theme.colors.grayscale.bgTextHover};
 
         .actions {
           opacity: 1;
@@ -165,10 +163,10 @@ export const Table = styled.table`
     }
 
     .table-row-selected {
-      background-color: ${theme.colors.secondary.light4};
+      background-color: ${theme.colors.primary.bgHover};
 
       &:hover {
-        background-color: ${theme.colors.secondary.light4};
+        background-color: ${theme.colors.primary.bgHover};
       }
     }
 

@@ -154,7 +154,7 @@ const DashboardContentWrapper = styled.div`
       }
 
       .dropdown-toggle.btn.btn-primary .caret {
-        color: ${theme.antd.colorBgBase};
+        color: ${theme.colors.grayscale.text};
       }
 
       .background--transparent {
@@ -162,7 +162,7 @@ const DashboardContentWrapper = styled.div`
       }
 
       .background--white {
-        background-color: ${theme.antd.colorBgBase};
+        background-color: ${theme.colors.grayscale.bgBase};
       }
     }
     &.dashboard--editing {
@@ -325,7 +325,7 @@ const StyledDashboardContent = styled.div<{
     .dashboard-component-chart-holder {
       width: 100%;
       height: 100%;
-      background-color: ${theme.antd.colorBgBase};
+      background-color: ${theme.colors.grayscale.bgBase};
       position: relative;
       padding: ${theme.gridUnit * 4}px;
       overflow-y: visible;

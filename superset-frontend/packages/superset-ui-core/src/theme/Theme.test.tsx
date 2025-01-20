@@ -25,14 +25,12 @@ describe('Theme Class', () => {
     const theme = Theme.fromSystemColors();
     const themeConfig = theme.getTheme();
     expect(themeConfig.colors.primary.base).toBe('#20a7c9');
-    expect(themeConfig.antd.colorBgBase).toBe('#fff');
   });
 
   test('should apply custom system colors and dark mode', () => {
     const theme = Theme.fromSystemColors();
     const themeConfig = theme.getTheme();
     expect(themeConfig.colors.primary.base).toBe('#ff0000');
-    expect(themeConfig.antd.colorBgBase).toBe('#000');
   });
 });
 

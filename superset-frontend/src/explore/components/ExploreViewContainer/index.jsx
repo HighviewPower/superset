@@ -97,11 +97,11 @@ const propTypes = {
 
 const ExplorePanelContainer = styled.div`
   ${({ theme }) => css`
-    background: ${theme.colors.lightest};
     text-align: left;
     position: relative;
     width: 100%;
     max-height: 100%;
+    background-color: ${theme.colors.grayscale.bgBase};
     min-height: 0;
     display: flex;
     flex: 1;
@@ -149,7 +149,6 @@ const ExplorePanelContainer = styled.div`
     }
     .sidebar {
       height: 100%;
-      background-color: ${theme.colors.lightest};
       padding: ${theme.gridUnit * 2}px;
       width: ${theme.gridUnit * 8}px;
     }

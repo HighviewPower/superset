@@ -53,7 +53,7 @@ const headerStyles = (theme: SupersetTheme) => css`
   align-items: center;
   flex-wrap: nowrap;
   justify-content: space-between;
-  background-color: ${theme.antd.colorBgBase};
+  background-color: ${theme.colors.grayscale.bgBase};
   height: ${theme.gridUnit * 16}px;
   padding: 0 ${theme.gridUnit * 4}px;
 

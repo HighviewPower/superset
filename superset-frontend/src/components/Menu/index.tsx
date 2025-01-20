@@ -98,7 +98,7 @@ const MenuItem = styled(AntdMenu.Item)`
 const StyledNav = styled(AntdMenu)`
   line-height: 51px;
   border: none;
-  background-color: ${({ theme }) => theme.antd.colorBgBase};
+  background-color: ${({ theme }) => theme.colors.grayscale.bgBase};
 
   & > .ant-menu-item,
   & > .ant-menu-submenu {
@@ -127,7 +127,7 @@ const StyledNav = styled(AntdMenu)`
 
 const StyledSubMenu = styled(AntdMenu.SubMenu)`
   color: ${({ theme }) => theme.colors.grayscale.dark1};
-  background-color: ${({ theme }) => theme.antd.colorBgBase};
+  background-color: ${({ theme }) => theme.colors.grayscale.bgBase};
   border-bottom: none;
   .ant-menu-submenu-open,
   .ant-menu-submenu-active {
