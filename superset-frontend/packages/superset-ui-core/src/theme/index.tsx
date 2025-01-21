@@ -51,7 +51,8 @@ export function useTheme() {
 const styled = emotionStyled;
 
 // launching in in dark mode for now while iterating
-// const themeObject = Theme.fromSystemColors({}, true);
+const themeObject = Theme.fromSystemColors({}, false);
+/*
 const themeObject = Theme.fromAntdConfig({
   token: {
     colorPrimary: '#20a7c9',
@@ -62,6 +63,7 @@ const themeObject = Theme.fromAntdConfig({
   },
   algorithm: antdThemeImport.defaultAlgorithm,
 });
+ */
 
 const { theme } = themeObject;
 const supersetTheme = theme;

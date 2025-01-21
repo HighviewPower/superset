@@ -33,9 +33,9 @@ const AntDFunctionalColors = ({ antdTheme }) => {
 
   // Define color types and variations dynamically
   const variations = [
-    'base',
     'active',
     'textActive',
+    'base',
     'text',
     'textHover',
     'hover',
