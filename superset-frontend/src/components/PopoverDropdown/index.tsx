@@ -50,8 +50,8 @@ const MenuItem = styled(Menu.Item)`
     height: auto;
     line-height: 1.4;
 
-    padding-top: ${({ theme }) => theme.gridUnit}px;
-    padding-bottom: ${({ theme }) => theme.gridUnit}px;
+    padding-top: ${({ theme }) => theme.sizeUnit}px;
+    padding-bottom: ${({ theme }) => theme.sizeUnit}px;
 
     margin-top: 0;
     margin-bottom: 0;
@@ -112,7 +112,7 @@ const PopoverDropdown = (props: PopoverDropdownProps) => {
         {selected && renderButton(selected)}
         <Icons.CaretDown
           iconColor={theme.colors.grayscale.base}
-          css={{ marginTop: theme.gridUnit * 0.5 }}
+          css={{ marginTop: theme.sizeUnit * 0.5 }}
         />
       </div>
     </AntdDropdown>

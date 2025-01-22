@@ -22,14 +22,14 @@ import '@testing-library/jest-dom';
 
 describe('Theme Class', () => {
   test('should initialize with default system colors', () => {
-    const theme = Theme.fromSystemColors();
+    const theme = Theme.fromSeed({}, false);
     const themeConfig = theme.theme;
     expect(themeConfig.colors.primary.base).toBe('#20a7c9');
     expect(themeConfig.colorBgBase).toBe('#FFF');
   });
 
   test('should apply custom system colors and dark mode', () => {
-    const theme = Theme.fromSystemColors();
+    const theme = Theme.fromSeed({}, true);
     const themeConfig = theme.theme;
     expect(themeConfig.colors.primary.base).toBe('#20a7c9');
     expect(themeConfig.colorBgBase).toBe('#000');
@@ -38,7 +38,7 @@ describe('Theme Class', () => {
 
 describe('SupersetThemeProvider Component', () => {
   test('should render children without errors', () => {
-    const theme = Theme.fromSystemColors();
+    const theme = Theme.fromSeed({}, true);
     const { getByText } = render(
       <theme.SupersetThemeProvider>
         <div>Test Child</div>

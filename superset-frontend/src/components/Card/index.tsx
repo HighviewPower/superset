@@ -29,7 +29,7 @@ const Card = ({ padded, ...props }: CardProps) => (
     {...props}
     css={(theme: SupersetTheme) => ({
       '.antd5-card-body': {
-        padding: padded ? theme.gridUnit * 4 : theme.gridUnit,
+        padding: padded ? theme.sizeUnit * 4 : theme.sizeUnit,
       },
     })}
   />

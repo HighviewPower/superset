@@ -62,11 +62,11 @@ const StyledHeader = styled.header`
         justify-content: center;
         /* must be exactly the height of the Antd navbar */
         min-height: 50px;
-        padding: ${theme.gridUnit}px
-          ${theme.gridUnit * 2}px
-          ${theme.gridUnit}px
-          ${theme.gridUnit * 4}px;
-        max-width: ${theme.gridUnit * theme.brandIconMaxWidth}px;
+        padding: ${theme.sizeUnit}px
+          ${theme.sizeUnit * 2}px
+          ${theme.sizeUnit}px
+          ${theme.sizeUnit * 4}px;
+        max-width: ${theme.sizeUnit * theme.brandIconMaxWidth}px;
         img {
           height: 100%;
           object-fit: contain;
@@ -83,17 +83,17 @@ const StyledHeader = styled.header`
         border-right: 1px solid ${theme.colors.grayscale.border};
         height: 100%;
         color: ${theme.colors.grayscale.text};
-        padding-left: ${theme.gridUnit * 4}px;
-        padding-right: ${theme.gridUnit * 4}px;
-        margin-right: ${theme.gridUnit * 6}px;
-        font-size: ${theme.gridUnit * 4}px;
+        padding-left: ${theme.sizeUnit * 4}px;
+        padding-right: ${theme.sizeUnit * 4}px;
+        margin-right: ${theme.sizeUnit * 6}px;
+        font-size: ${theme.sizeUnit * 4}px;
         float: left;
         display: flex;
         flex-direction: column;
         justify-content: center;
 
         span {
-          max-width: ${theme.gridUnit * 58}px;
+          max-width: ${theme.sizeUnit * 58}px;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -103,7 +103,7 @@ const StyledHeader = styled.header`
         }
       }
       .main-nav .ant-menu-submenu-title > svg {
-        top: ${theme.gridUnit * 5.25}px;
+        top: ${theme.sizeUnit * 5.25}px;
       }
       @media (max-width: 767px) {
         .navbar-brand {
@@ -115,12 +115,12 @@ const StyledHeader = styled.header`
         line-height: inherit;
       }
       .ant-menu > .ant-menu-item > a {
-        padding: ${theme.gridUnit * 4}px;
+        padding: ${theme.sizeUnit * 4}px;
       }
       @media (max-width: 767px) {
         .ant-menu-item {
-          padding: 0 ${theme.gridUnit * 6}px 0
-            ${theme.gridUnit * 3}px !important;
+          padding: 0 ${theme.sizeUnit * 6}px 0
+            ${theme.sizeUnit * 3}px !important;
         }
         .ant-menu > .ant-menu-item > a {
           padding: 0px;
@@ -159,8 +159,8 @@ const globalStyles = (theme: SupersetTheme) => css`
   .ant-menu-vertical > .ant-menu-submenu.data-menu > .ant-menu-submenu-title {
     height: 28px;
     i {
-      padding-right: ${theme.gridUnit * 2}px;
-      margin-left: ${theme.gridUnit * 1.75}px;
+      padding-right: ${theme.sizeUnit * 2}px;
+      margin-left: ${theme.sizeUnit * 1.75}px;
     }
   }
   .ant-menu-item-selected {

@@ -31,7 +31,7 @@ const Calendar = ({ className, ...otherProps }) => {
         styles={css`
           .d3-tip {
             line-height: 1;
-            padding: ${theme.gridUnit * 3}px;
+            padding: ${theme.sizeUnit * 3}px;
             background: ${theme.colors.grayscale.dark2};
             color: ${theme.colors.grayscale.light5};
             border-radius: 4px;
@@ -53,7 +53,7 @@ const Calendar = ({ className, ...otherProps }) => {
           /* Northward tooltips */
           .d3-tip.n:after {
             content: '\\25BC';
-            margin: -${theme.gridUnit}px 0 0 0;
+            margin: -${theme.sizeUnit}px 0 0 0;
             top: 100%;
             left: 0;
             text-align: center;
@@ -61,22 +61,22 @@ const Calendar = ({ className, ...otherProps }) => {
           /* Eastward tooltips */
           .d3-tip.e:after {
             content: '\\25C0';
-            margin: -${theme.gridUnit}px 0 0 0;
+            margin: -${theme.sizeUnit}px 0 0 0;
             top: 50%;
-            left: -${theme.gridUnit * 2}px;
+            left: -${theme.sizeUnit * 2}px;
           }
           /* Southward tooltips */
           .d3-tip.s:after {
             content: '\\25B2';
             margin: 0;
-            top: -${theme.gridUnit * 2}px;
+            top: -${theme.sizeUnit * 2}px;
             left: 0;
             text-align: center;
           }
           /* Westward tooltips */
           .d3-tip.w:after {
             content: '\\25B6';
-            margin: -${theme.gridUnit}px 0 0 0px;
+            margin: -${theme.sizeUnit}px 0 0 0px;
             top: 50%;
             left: 100%;
           }
@@ -99,19 +99,19 @@ Calendar.propTypes = {
 export default styled(Calendar)`
   ${({ theme }) => `
     .superset-legacy-chart-calendar {
-      padding: ${theme.gridUnit * 3}px;
+      padding: ${theme.sizeUnit * 3}px;
       position: static !important;
       overflow: auto !important;
     }
 
     .superset-legacy-chart-calendar .ch-tooltip {
-      margin-left: ${theme.gridUnit * 5}px;
-      margin-top: ${theme.gridUnit}px;
+      margin-left: ${theme.sizeUnit * 5}px;
+      margin-top: ${theme.sizeUnit}px;
     }
 
     .superset-legacy-chart-calendar .d3-tip {
       line-height: 1;
-      padding: ${theme.gridUnit * 3}px;
+      padding: ${theme.sizeUnit * 3}px;
       background: ${theme.colors.grayscale.dark2};
       color: ${theme.colors.grayscale.light5};
       border-radius: ${theme.borderRadius}px;
@@ -205,7 +205,7 @@ export default styled(Calendar)`
     }
 
     .ch-tooltip {
-      padding: ${theme.gridUnit * 2}px;
+      padding: ${theme.sizeUnit * 2}px;
       background: ${theme.colors.grayscale.dark1};
       color: ${theme.colors.grayscale.light1};
       font-size: ${theme.fontSizeSM}px;
@@ -229,10 +229,10 @@ export default styled(Calendar)`
       content: '';
       padding: 0;
       display: block;
-      bottom: -${theme.gridUnit}px;
+      bottom: -${theme.sizeUnit}px;
       left: 50%;
-      margin-left: -${theme.gridUnit}px;
-      border-width: ${theme.gridUnit}px ${theme.gridUnit}px 0;
+      margin-left: -${theme.sizeUnit}px;
+      border-width: ${theme.sizeUnit}px ${theme.sizeUnit}px 0;
       border-top-color: ${theme.colors.grayscale.dark1};
     }
   `}

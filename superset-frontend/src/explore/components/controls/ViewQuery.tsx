@@ -30,7 +30,7 @@ import jsonSyntax from 'react-syntax-highlighter/dist/cjs/languages/hljs/json';
 const CopyButtonViewQuery = styled(CopyButton)`
   ${({ theme }) => `
 		&& {
-			margin: 0 0 ${theme.gridUnit}px;
+			margin: 0 0 ${theme.sizeUnit}px;
 		}
   `}
 `;

@@ -39,8 +39,8 @@ const StyledCell = styled('div')<{ height?: number }>(
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding-left: ${theme.gridUnit * 2}px;
-  padding-right: ${theme.gridUnit}px;
+  padding-left: ${theme.sizeUnit * 2}px;
+  padding-right: ${theme.sizeUnit}px;
   border-bottom: 1px solid ${theme.colors.grayscale.light3};
   transition: background 0.3s;
   line-height: ${height}px;
@@ -94,7 +94,7 @@ const VirtualTable = <RecordType extends object>(
   const theme = useTheme();
 
   // If a column definition has no width, react-window will use this as the default column width
-  const DEFAULT_COL_WIDTH = theme?.gridUnit * 37 || 150;
+  const DEFAULT_COL_WIDTH = theme?.sizeUnit * 37 || 150;
   const widthColumnCount = columns!.filter(({ width }) => !width).length;
   let staticColWidthTotal = 0;
   columns?.forEach(column => {

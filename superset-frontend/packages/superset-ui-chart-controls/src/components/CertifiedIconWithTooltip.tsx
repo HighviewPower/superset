@@ -27,7 +27,7 @@ interface CertifiedIconWithTooltipProps {
 }
 
 const StyledDiv = styled.div`
-  margin-bottom: ${({ theme }) => theme.gridUnit * 2}px;
+  margin-bottom: ${({ theme }) => theme.sizeUnit * 2}px;
 `;
 
 function CertifiedIconWithTooltip({

@@ -27,9 +27,9 @@ const StyledLegend = styled.div`
     font-size: ${theme.fontSizeSM}px;
     position: absolute;
     background: ${theme.colors.grayscale.light5};
-    box-shadow: 0 0 ${theme.gridUnit}px ${theme.colors.grayscale.light2};
-    margin: ${theme.gridUnit * 6}px;
-    padding: ${theme.gridUnit * 3}px ${theme.gridUnit * 5}px;
+    box-shadow: 0 0 ${theme.sizeUnit}px ${theme.colors.grayscale.light2};
+    margin: ${theme.sizeUnit * 6}px;
+    padding: ${theme.sizeUnit * 3}px ${theme.sizeUnit * 5}px;
     outline: none;
     overflow-y: scroll;
     max-height: 200px;
@@ -43,10 +43,10 @@ const StyledLegend = styled.div`
         display: flex;
         color: ${theme.colors.grayscale.base};
         text-decoration: none;
-        padding: ${theme.gridUnit}px 0;
+        padding: ${theme.sizeUnit}px 0;
 
         & span {
-          margin-right: ${theme.gridUnit}px;
+          margin-right: ${theme.sizeUnit}px;
         }
       }
     }

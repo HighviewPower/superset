@@ -317,7 +317,7 @@ export const DrillByMenuItems = ({
               css={css`
                 width: auto;
                 max-width: 100%;
-                margin: ${theme.gridUnit * 2}px ${theme.gridUnit * 3}px;
+                margin: ${theme.sizeUnit * 2}px ${theme.sizeUnit * 3}px;
                 box-shadow: none;
               `}
               value={searchInput}
@@ -326,7 +326,7 @@ export const DrillByMenuItems = ({
           {isLoadingColumns ? (
             <div
               css={css`
-                padding: ${theme.gridUnit * 3}px 0;
+                padding: ${theme.sizeUnit * 3}px 0;
               `}
             >
               <Loading position="inline-centered" />

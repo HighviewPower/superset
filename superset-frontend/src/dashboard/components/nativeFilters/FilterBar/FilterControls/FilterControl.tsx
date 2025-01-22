@@ -63,7 +63,7 @@ const VerticalFilterControlTitleBox = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: ${({ theme }) => theme.gridUnit}px;
+  margin-bottom: ${({ theme }) => theme.sizeUnit}px;
 `;
 
 const HorizontalFilterControlTitleBox = styled(VerticalFilterControlTitleBox)`
@@ -81,10 +81,10 @@ const VerticalFilterControlContainer = styled(Form)`
   && .ant-form-item-label > label {
     text-transform: none;
     width: 100%;
-    padding-right: ${({ theme }) => theme.gridUnit * 11}px;
+    padding-right: ${({ theme }) => theme.sizeUnit * 11}px;
   }
   .ant-form-item-tooltip {
-    margin-bottom: ${({ theme }) => theme.gridUnit}px;
+    margin-bottom: ${({ theme }) => theme.sizeUnit}px;
   }
 `;
 
@@ -94,7 +94,7 @@ const HorizontalFilterControlContainer = styled(Form)`
     text-transform: none;
   }
   .ant-form-item-tooltip {
-    margin-bottom: ${({ theme }) => theme.gridUnit}px;
+    margin-bottom: ${({ theme }) => theme.sizeUnit}px;
   }
 `;
 
@@ -129,7 +129,7 @@ const HorizontalFormItem = styled(StyledFormItem)`
   .ant-form-item-label {
     overflow: visible;
     padding-bottom: 0;
-    margin-right: ${({ theme }) => theme.gridUnit * 2}px;
+    margin-right: ${({ theme }) => theme.sizeUnit * 2}px;
     label.ant-form-item-required:not(.ant-form-item-required-mark-optional) {
       &::after {
         display: none;
@@ -142,7 +142,7 @@ const HorizontalFormItem = styled(StyledFormItem)`
   }
 
   .ant-form-item-control {
-    width: ${({ theme }) => theme.gridUnit * 41}px;
+    width: ${({ theme }) => theme.sizeUnit * 41}px;
   }
 `;
 
@@ -211,7 +211,7 @@ const DescriptionToolTip = ({ description }: { description: string }) => (
       <i
         className="fa fa-info-circle text-muted"
         css={(theme: SupersetTheme) => ({
-          paddingLeft: `${theme.gridUnit}px`,
+          paddingLeft: `${theme.sizeUnit}px`,
           cursor: 'pointer',
         })}
       />

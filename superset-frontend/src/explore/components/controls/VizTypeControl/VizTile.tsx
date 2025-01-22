@@ -45,7 +45,7 @@ export const VizTile = ({
     setTooltipVisible(false);
     setTimeout(() => {
       setIsTransitioning(false);
-    }, TILE_TRANSITION_TIME * 1000);
+    }, 300);
   }, [onTileClick, TILE_TRANSITION_TIME, vizMeta.name]);
 
   // Antd tooltip seems to be bugged - when elements move, the tooltip sometimes
@@ -100,7 +100,7 @@ export const VizTile = ({
           ${!isActive &&
           css`
             flex-shrink: 0;
-            width: ${theme.gridUnit * 6}px;
+            width: ${theme.sizeUnit * 6}px;
             background-color: transparent;
             transition: none;
             &:hover svg path {
@@ -129,7 +129,7 @@ export const VizTile = ({
             overflow: hidden;
             text-overflow: ellipsis;
             min-width: 0;
-            padding-right: ${theme.gridUnit}px;
+            padding-right: ${theme.sizeUnit}px;
           `}
           ref={chartNameRef}
         >

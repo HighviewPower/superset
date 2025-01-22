@@ -63,8 +63,8 @@ import {
 const extensionsRegistry = getExtensionsRegistry();
 
 const versionInfoStyles = (theme: SupersetTheme) => css`
-  padding: ${theme.gridUnit * 1.5}px ${theme.gridUnit * 4}px
-    ${theme.gridUnit * 4}px ${theme.gridUnit * 7}px;
+  padding: ${theme.sizeUnit * 1.5}px ${theme.sizeUnit * 4}px
+    ${theme.sizeUnit * 4}px ${theme.sizeUnit * 7}px;
   color: ${theme.colors.grayscale.base};
   font-size: ${theme.fontSizeXS}px;
   white-space: nowrap;
@@ -86,9 +86,9 @@ const StyledDiv = styled.div<{ align: string }>`
   flex-direction: row;
   justify-content: ${({ align }) => align};
   align-items: center;
-  margin-right: ${({ theme }) => theme.gridUnit}px;
+  margin-right: ${({ theme }) => theme.sizeUnit}px;
   .ant-menu-submenu-title > svg {
-    top: ${({ theme }) => theme.gridUnit * 5.25}px;
+    top: ${({ theme }) => theme.sizeUnit * 5.25}px;
   }
 `;
 
@@ -100,8 +100,8 @@ const StyledMenuItemWithIcon = styled.div`
 `;
 
 const StyledAnchor = styled.a`
-  padding-right: ${({ theme }) => theme.gridUnit}px;
-  padding-left: ${({ theme }) => theme.gridUnit}px;
+  padding-right: ${({ theme }) => theme.sizeUnit}px;
+  padding-left: ${({ theme }) => theme.sizeUnit}px;
 `;
 
 const tagStyles = (theme: SupersetTheme) => css`
@@ -394,7 +394,7 @@ const RightMenu = ({
       )}
       {environmentTag?.text && (
         <Label
-          css={{ borderRadius: `${theme.gridUnit * 125}px` }}
+          css={{ borderRadius: `${theme.sizeUnit * 125}px` }}
           color={
             /^#(?:[0-9a-f]{3}){1,2}$/i.test(environmentTag.color)
               ? environmentTag.color
@@ -482,7 +482,7 @@ const RightMenu = ({
           <span>
             <Switch
               onChange={(checked: boolean) => {
-                themeObject.setThemeWithSystemColors({}, checked);
+                themeObject.setThemeFromSeed({}, checked);
               }}
             />
           </span>

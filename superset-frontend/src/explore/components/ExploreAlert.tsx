@@ -34,8 +34,8 @@ interface ControlPanelAlertProps {
 
 const AlertContainer = styled.div`
   ${({ theme }) => css`
-    margin: ${theme.gridUnit * 4}px;
-    padding: ${theme.gridUnit * 4}px;
+    margin: ${theme.sizeUnit * 4}px;
+    padding: ${theme.sizeUnit * 4}px;
 
     border: 1px solid ${theme.colors.info.border};
     background-color: ${theme.colors.info.bg};
@@ -45,7 +45,7 @@ const AlertContainer = styled.div`
     font-size: ${theme.fontSize}px;
 
     p {
-      margin-bottom: ${theme.gridUnit}px;
+      margin-bottom: ${theme.sizeUnit}px;
     }
 
     & a,

@@ -40,7 +40,7 @@ const BackgroundStyleOption = styled.div`
       content: '';
       width: 1em;
       height: 1em;
-      margin-right: ${theme.gridUnit * 2}px;
+      margin-right: ${theme.sizeUnit * 2}px;
       display: inline-block;
       vertical-align: middle;
     }
@@ -65,12 +65,12 @@ const BackgroundStyleOption = styled.div`
         linear-gradient(-45deg, ${theme.colorTextLabel} 25%, transparent 25%),
         linear-gradient(45deg, transparent 75%, ${theme.colorTextLabel} 75%),
         linear-gradient(-45deg, transparent 75%, ${theme.colorTextLabel} 75%);
-      background-size: ${theme.gridUnit * 2}px ${theme.gridUnit * 2}px;
+      background-size: ${theme.sizeUnit * 2}px ${theme.sizeUnit * 2}px;
       background-position:
         0 0,
-        0 ${theme.gridUnit}px,
-        ${theme.gridUnit}px ${-theme.gridUnit}px,
-        ${-theme.gridUnit}px 0px;
+        0 ${theme.sizeUnit}px,
+        ${theme.sizeUnit}px ${-theme.sizeUnit}px,
+        ${-theme.sizeUnit}px 0px;
     }
   `}
 `;

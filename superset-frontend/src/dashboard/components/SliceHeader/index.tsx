@@ -66,7 +66,7 @@ const ChartHeaderStyles = styled.div`
   ${({ theme }) => css`
     font-size: ${theme.fontSizeLG}px;
     font-weight: ${theme.fontWeightStrong};
-    margin-bottom: ${theme.gridUnit}px;
+    margin-bottom: ${theme.sizeUnit}px;
     display: flex;
     max-width: 100%;
     align-items: flex-start;
@@ -92,7 +92,7 @@ const ChartHeaderStyles = styled.div`
       height: 24px;
 
       & > * {
-        margin-left: ${theme.gridUnit * 2}px;
+        margin-left: ${theme.sizeUnit * 2}px;
       }
     }
 
@@ -111,17 +111,17 @@ const ChartHeaderStyles = styled.div`
     }
 
     .dropdown-menu.dropdown-menu-right {
-      top: ${theme.gridUnit * 5}px;
+      top: ${theme.sizeUnit * 5}px;
     }
 
     .divider {
-      margin: ${theme.gridUnit}px 0;
+      margin: ${theme.sizeUnit}px 0;
     }
 
     .refresh-tooltip {
       display: block;
-      height: ${theme.gridUnit * 4}px;
-      margin: ${theme.gridUnit}px 0;
+      height: ${theme.sizeUnit * 4}px;
+      margin: ${theme.sizeUnit}px 0;
       color: ${theme.colorTextLabel};
     }
   `}

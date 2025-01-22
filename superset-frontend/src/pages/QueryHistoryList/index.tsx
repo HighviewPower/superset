@@ -66,7 +66,7 @@ const TopAlignedListView = styled(ListView)<ListViewProps<QueryObject>>`
 
 SyntaxHighlighter.registerLanguage('sql', sql);
 const StyledSyntaxHighlighter = styled(SyntaxHighlighter)`
-  height: ${({ theme }) => theme.gridUnit * 26}px;
+  height: ${({ theme }) => theme.sizeUnit * 26}px;
   overflow: hidden !important; /* needed to override inline styles */
   text-overflow: ellipsis;
   white-space: nowrap;

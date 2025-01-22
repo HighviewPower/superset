@@ -51,9 +51,9 @@ export function useTheme() {
 const styled = emotionStyled;
 
 // launching in in dark mode for now while iterating
-const themeObject = Theme.fromSystemColors({}, false);
+const themeObject = Theme.fromSeed({}, false);
 /*
-const themeObject = Theme.fromAntdConfig({
+const themeObject = Theme.fromSeed({
   token: {
     colorPrimary: '#20a7c9',
     colorError: '#e04355',

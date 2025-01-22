@@ -26,15 +26,15 @@ const StyledContainer = styled.div<{ level: ErrorLevel }>`
   border-radius: ${({ theme }) => theme.borderRadius}px;
   border: 1px solid ${({ level, theme }) => theme.colors[level].base};
   color: ${({ level, theme }) => theme.colors[level].dark2};
-  padding: ${({ theme }) => theme.gridUnit * 2}px;
-  margin-bottom: ${({ theme }) => theme.gridUnit}px;
+  padding: ${({ theme }) => theme.sizeUnit * 2}px;
+  margin-bottom: ${({ theme }) => theme.sizeUnit}px;
   width: 100%;
 `;
 
 const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: ${({ theme }) => theme.gridUnit * 2}px;
+  margin-left: ${({ theme }) => theme.sizeUnit * 2}px;
   overflow: hidden;
 `;
 

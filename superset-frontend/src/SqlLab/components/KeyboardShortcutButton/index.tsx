@@ -75,21 +75,21 @@ const KeyMapByCommand = Object.entries(KEY_MAP).reduce(
 const ShortcutDescription = styled.span`
   font-size: ${({ theme }) => theme.fontSize}px;
   color: ${({ theme }) => theme.colorTextLabel};
-  padding-left: ${({ theme }) => theme.gridUnit * 2}px;
+  padding-left: ${({ theme }) => theme.sizeUnit * 2}px;
 `;
 
 const ShortcutWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: ${({ theme }) => theme.gridUnit}px;
-  padding: ${({ theme }) => theme.gridUnit * 2}px;
+  gap: ${({ theme }) => theme.sizeUnit}px;
+  padding: ${({ theme }) => theme.sizeUnit * 2}px;
 `;
 
 const ShortcutCode = styled.code`
   font-size: ${({ theme }) => theme.fontSizeSM}px;
   color: ${({ theme }) => theme.colors.grayscale.dark1};
   border-radius: ${({ theme }) => theme.borderRadius}px;
-  padding: ${({ theme }) => `${theme.gridUnit}px ${theme.gridUnit * 2}px`};
+  padding: ${({ theme }) => `${theme.sizeUnit}px ${theme.sizeUnit * 2}px`};
 `;
 
 const KeyboardShortcutButton: FC<{}> = ({ children }) => (

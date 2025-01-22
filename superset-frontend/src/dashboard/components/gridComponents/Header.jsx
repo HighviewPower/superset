@@ -61,7 +61,7 @@ const HeaderStyles = styled.div`
   ${({ theme }) => css`
     font-weight: ${theme.fontWeightStrong};
     width: 100%;
-    padding: ${theme.gridUnit * 4}px 0;
+    padding: ${theme.sizeUnit * 4}px 0;
 
     &.header-small {
       font-size: ${theme.fontSizeLG}px;
@@ -103,14 +103,14 @@ const HeaderStyles = styled.div`
    * we'll not worry about double padding on top as it can serve as a visual separator
    */
     .grid-column > :not(:last-child) & {
-      margin-bottom: ${theme.gridUnit * -4}px;
+      margin-bottom: ${theme.sizeUnit * -4}px;
     }
 
     .background--white &,
     &.background--white,
     .dashboard-component-tabs & {
-      padding-left: ${theme.gridUnit * 4}px;
-      padding-right: ${theme.gridUnit * 4}px;
+      padding-left: ${theme.sizeUnit * 4}px;
+      padding-right: ${theme.sizeUnit * 4}px;
     }
   `}
 `;

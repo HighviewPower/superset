@@ -227,7 +227,7 @@ const AceEditorWrapper = ({
           .ace_autocomplete {
             // Use !important because Ace Editor applies extra CSS at the last second
             // when opening the autocomplete.
-            width: ${theme.gridUnit * 130}px !important;
+            width: ${theme.sizeUnit * 130}px !important;
           }
 
           .ace_tooltip {

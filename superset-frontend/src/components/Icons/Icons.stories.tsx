@@ -41,18 +41,18 @@ const IconSet = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, 180px);
   grid-auto-rows: 90px;
-  margin-top: ${({ theme }) => theme.gridUnit * 2}px;
+  margin-top: ${({ theme }) => theme.sizeUnit * 2}px;
 `;
 
 const IconBlock = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: ${({ theme }) => theme.gridUnit * 2}px;
+  padding: ${({ theme }) => theme.sizeUnit * 2}px;
 
   span {
     margin-top: ${({ theme }) =>
-      2 * theme.gridUnit}px; // Add spacing between icon and name
+      2 * theme.sizeUnit}px; // Add spacing between icon and name
     font-size: ${({ theme }) =>
       theme.fontSizeSM}; // Optional: adjust font size for elegance
     color: ${({ theme }) =>
@@ -61,7 +61,7 @@ const IconBlock = styled.div`
 `;
 
 const SearchBox = styled(Input.Search)`
-  margin-bottom: ${({ theme }) => theme.gridUnit * 4}px;
+  margin-bottom: ${({ theme }) => theme.sizeUnit * 4}px;
   width: 100%;
   max-width: 400px;
 `;

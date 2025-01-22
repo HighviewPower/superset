@@ -117,7 +117,7 @@ const ContentStyleWrapper = styled.div`
 
 const IconWrapper = styled.span`
   span {
-    margin-right: ${({ theme }) => 2 * theme.gridUnit}px;
+    margin-right: ${({ theme }) => 2 * theme.sizeUnit}px;
     vertical-align: middle;
   }
   .text {
@@ -139,7 +139,7 @@ const getTooltipTitle = (
       {range && (
         <div
           css={(theme: SupersetTheme) => css`
-            margin-top: ${theme.gridUnit}px;
+            margin-top: ${theme.sizeUnit}px;
           `}
         >
           {range}

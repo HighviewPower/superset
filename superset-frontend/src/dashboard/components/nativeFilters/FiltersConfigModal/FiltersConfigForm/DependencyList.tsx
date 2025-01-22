@@ -56,7 +56,7 @@ const AddFilter = styled.div`
 const DeleteFilter = styled(Icons.Trash)`
   ${({ theme }) => `
     cursor: pointer;
-    margin-left: ${theme.gridUnit * 2}px;
+    margin-left: ${theme.sizeUnit * 2}px;
     color: ${theme.colors.grayscale.base};
     &:hover {
       color: ${theme.colors.grayscale.dark1};
@@ -69,7 +69,7 @@ const RowPanel = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: ${theme.gridUnit}px;
+    margin-bottom: ${theme.sizeUnit}px;
 
     & > div {
       width: ${INPUT_WIDTH}px;
@@ -80,7 +80,7 @@ const RowPanel = styled.div`
 const Label = styled.div`
   font-size: ${({ theme }) => theme.fontSizeSM}px;
   color: ${({ theme }) => theme.colors.grayscale.base};
-  margin-bottom: ${({ theme }) => theme.gridUnit}px;
+  margin-bottom: ${({ theme }) => theme.sizeUnit}px;
 `;
 
 const Row = ({

@@ -25,7 +25,7 @@ export const Pill = styled.div`
     background: ${theme.colors.grayscale.base};
     border-radius: 1em;
     vertical-align: text-top;
-    padding: ${theme.gridUnit}px ${theme.gridUnit * 2}px;
+    padding: ${theme.sizeUnit}px ${theme.sizeUnit * 2}px;
     font-size: ${theme.fontSize}px;
     font-weight: ${theme.fontWeightStrong};
     min-width: 1em;
@@ -64,10 +64,10 @@ export const SectionName = styled.span`
 `;
 export const FilterName = styled.span`
   ${({ theme }) => css`
-    padding-right: ${theme.gridUnit}px;
+    padding-right: ${theme.sizeUnit}px;
     font-style: italic;
     & > * {
-      margin-right: ${theme.gridUnit}px;
+      margin-right: ${theme.sizeUnit}px;
     }
   `}
 `;
@@ -89,7 +89,7 @@ export const FilterItem = styled.button`
 
     & i svg {
       opacity: ${theme.opacity.mediumLight};
-      margin-right: ${theme.gridUnit}px;
+      margin-right: ${theme.sizeUnit}px;
       transition: opacity ease-in-out ${theme.motionDurationMid};
     }
 
@@ -102,9 +102,9 @@ export const FilterItem = styled.button`
 
 export const FiltersContainer = styled.div`
   ${({ theme }) => css`
-    margin-top: ${theme.gridUnit}px;
+    margin-top: ${theme.sizeUnit}px;
     &:not(:last-child) {
-      padding-bottom: ${theme.gridUnit * 3}px;
+      padding-bottom: ${theme.sizeUnit * 3}px;
     }
   `}
 `;
@@ -130,6 +130,6 @@ export const Separator = styled.div`
     width: 100%;
     height: 1px;
     background-color: ${theme.colors.grayscale.light1};
-    margin: ${theme.gridUnit * 4}px 0;
+    margin: ${theme.sizeUnit * 4}px 0;
   `}
 `;

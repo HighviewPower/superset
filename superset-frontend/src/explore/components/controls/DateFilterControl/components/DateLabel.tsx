@@ -40,13 +40,13 @@ const LabelContainer = styled.div<{
 }>`
   ${({ theme, isActive, isPlaceholder }) => css`
     width: 100%;
-    height: ${theme.gridUnit * 8}px;
+    height: ${theme.sizeUnit * 8}px;
 
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
 
-    padding: 0 ${theme.gridUnit * 3}px;
+    padding: 0 ${theme.sizeUnit * 3}px;
 
     background-color: ${theme.colors.grayscale.light5};
 
@@ -75,7 +75,7 @@ const LabelContainer = styled.div<{
 
     span[role='img'] {
       margin-left: auto;
-      padding-left: ${theme.gridUnit}px;
+      padding-left: ${theme.sizeUnit}px;
 
       & > span[role='img'] {
         line-height: 0;

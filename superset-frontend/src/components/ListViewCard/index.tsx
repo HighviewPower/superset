@@ -55,7 +55,7 @@ const Cover = styled.div`
   overflow: hidden;
 
   .cover-footer {
-    transform: translateY(${({ theme }) => theme.gridUnit * 9}px);
+    transform: translateY(${({ theme }) => theme.sizeUnit * 9}px);
     transition: ${({ theme }) => theme.motionDurationMid} ease-out;
   }
 `;
@@ -68,7 +68,7 @@ const TitleContainer = styled.div`
   .card-actions {
     margin-left: auto;
     align-self: flex-end;
-    padding-left: ${({ theme }) => theme.gridUnit}px;
+    padding-left: ${({ theme }) => theme.sizeUnit}px;
     span[role='img'] {
       display: flex;
       align-items: center;
@@ -93,14 +93,14 @@ const TitleLink = styled.span`
 const TitleRight = styled.span`
   position: absolute;
   right: -1px;
-  bottom: ${({ theme }) => theme.gridUnit}px;
+  bottom: ${({ theme }) => theme.sizeUnit}px;
 `;
 
 const CoverFooter = styled.div`
   display: flex;
   flex-wrap: nowrap;
   position: relative;
-  top: -${({ theme }) => theme.gridUnit * 9}px;
+  top: -${({ theme }) => theme.sizeUnit * 9}px;
   padding: 0 8px;
 `;
 
@@ -119,7 +119,7 @@ const CoverFooterRight = styled.div`
 
 const ThinSkeleton = styled(Skeleton)`
   h3 {
-    margin: ${({ theme }) => theme.gridUnit}px 0;
+    margin: ${({ theme }) => theme.sizeUnit}px 0;
   }
 
   ul {
@@ -217,7 +217,7 @@ function ListViewCard({
                   active
                   size="small"
                   css={{
-                    width: Math.trunc(theme.gridUnit * 62.5),
+                    width: Math.trunc(theme.sizeUnit * 62.5),
                   }}
                 />
                 <div className="card-actions">
@@ -225,7 +225,7 @@ function ListViewCard({
                   <Skeleton.Button
                     active
                     css={{
-                      width: theme.gridUnit * 10,
+                      width: theme.sizeUnit * 10,
                     }}
                   />
                 </div>

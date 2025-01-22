@@ -74,23 +74,23 @@ const StyledContainer = styled.div`
     width: 100%;
     max-width: ${MAX_ADVISABLE_VIZ_GALLERY_WIDTH}px;
     max-height: calc(100vh - ${ESTIMATED_NAV_HEIGHT}px);
-    border-radius: ${theme.gridUnit}px;
+    border-radius: ${theme.sizeUnit}px;
     background-color: ${theme.colors.grayscale.bg};
     margin-left: auto;
     margin-right: auto;
-    padding-left: ${theme.gridUnit * 4}px;
-    padding-right: ${theme.gridUnit * 4}px;
-    padding-bottom: ${theme.gridUnit * 4}px;
+    padding-left: ${theme.sizeUnit * 4}px;
+    padding-right: ${theme.sizeUnit * 4}px;
+    padding-bottom: ${theme.sizeUnit * 4}px;
 
     h3 {
-      padding-bottom: ${theme.gridUnit * 3}px;
+      padding-bottom: ${theme.sizeUnit * 3}px;
     }
 
     & .dataset {
       display: flex;
       flex-direction: row;
       align-items: center;
-      margin-bottom: ${theme.gridUnit * 5}px;
+      margin-bottom: ${theme.sizeUnit * 5}px;
 
       & > div {
         min-width: 200px;
@@ -99,14 +99,14 @@ const StyledContainer = styled.div`
 
       & > span {
         color: ${theme.colors.grayscale.text};
-        margin-left: ${theme.gridUnit * 4}px;
+        margin-left: ${theme.sizeUnit * 4}px;
       }
     }
 
     & .viz-gallery {
       border: 1px solid ${theme.colors.grayscale.border};
-      border-radius: ${theme.gridUnit}px;
-      margin: ${theme.gridUnit}px 0px;
+      border-radius: ${theme.sizeUnit}px;
+      margin: ${theme.sizeUnit}px 0px;
       max-height: calc(100vh - ${ELEMENTS_EXCEPT_VIZ_GALLERY}px);
       flex: 1;
     }
@@ -120,7 +120,7 @@ const StyledContainer = styled.div`
 
       & > span {
         color: ${theme.colors.grayscale.text};
-        margin-right: ${theme.gridUnit * 4}px;
+        margin-right: ${theme.sizeUnit * 4}px;
       }
     }
 
@@ -131,22 +131,22 @@ const StyledContainer = styled.div`
     }
 
     &&&& .antd5-steps-item-icon {
-      margin-right: ${theme.gridUnit * 2}px;
-      width: ${theme.gridUnit * 5}px;
-      height: ${theme.gridUnit * 5}px;
-      line-height: ${theme.gridUnit * 5}px;
+      margin-right: ${theme.sizeUnit * 2}px;
+      width: ${theme.sizeUnit * 5}px;
+      height: ${theme.sizeUnit * 5}px;
+      line-height: ${theme.sizeUnit * 5}px;
     }
 
     &&&& .antd5-steps-item-title {
-      line-height: ${theme.gridUnit * 5}px;
+      line-height: ${theme.sizeUnit * 5}px;
     }
 
     &&&& .antd5-steps-item-content {
       overflow: unset;
 
       .antd5-steps-item-description {
-        margin-top: ${theme.gridUnit}px;
-        padding-bottom: ${theme.gridUnit}px;
+        margin-top: ${theme.sizeUnit}px;
+        padding-bottom: ${theme.sizeUnit}px;
       }
     }
 
@@ -159,11 +159,11 @@ const StyledContainer = styled.div`
     }
 
     &&&& .ant-select-selection-placeholder {
-      padding-left: ${theme.gridUnit * 3}px;
+      padding-left: ${theme.sizeUnit * 3}px;
     }
 
     &&&& .ant-select-selection-item {
-      padding-left: ${theme.gridUnit * 3}px;
+      padding-left: ${theme.sizeUnit * 3}px;
     }
   `}
 `;
@@ -176,9 +176,9 @@ const StyledStepTitle = styled.span`
 `;
 
 const StyledStepDescription = styled.div`
-  ${({ theme: { gridUnit } }) => `
-    margin-top: ${gridUnit * 4}px;
-    margin-bottom: ${gridUnit * 3}px;
+  ${({ theme: { sizeUnit } }) => `
+    margin-top: ${sizeUnit * 4}px;
+    margin-bottom: ${sizeUnit * 3}px;
   `}
 `;
 

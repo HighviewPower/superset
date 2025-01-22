@@ -65,10 +65,10 @@ const SouthPane = styled.div`
       .table-condensed {
         height: 100%;
         overflow: auto;
-        margin-bottom: ${theme.gridUnit * 4}px;
+        margin-bottom: ${theme.sizeUnit * 4}px;
 
         .table {
-          margin-bottom: ${theme.gridUnit * 2}px;
+          margin-bottom: ${theme.sizeUnit * 2}px;
         }
       }
 

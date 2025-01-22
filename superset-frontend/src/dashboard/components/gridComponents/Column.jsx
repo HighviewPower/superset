@@ -70,7 +70,7 @@ const ColumnStyles = styled.div`
       position: relative;
 
       & > :not(.hover-menu):not(:last-child) {
-        ${!editMode && `margin-bottom: ${theme.gridUnit * 4}px;`}
+        ${!editMode && `margin-bottom: ${theme.sizeUnit * 4}px;`}
       }
     }
 
@@ -110,7 +110,7 @@ const ColumnStyles = styled.div`
 `;
 
 const emptyColumnContentStyles = theme => css`
-  min-height: ${theme.gridUnit * 25}px;
+  min-height: ${theme.sizeUnit * 25}px;
   width: 100%;
   height: 100%;
   display: flex;

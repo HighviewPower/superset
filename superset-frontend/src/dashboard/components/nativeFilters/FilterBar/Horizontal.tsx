@@ -39,9 +39,9 @@ import { CrossFilterIndicator } from '../selectors';
 
 const HorizontalBar = styled.div`
   ${({ theme }) => `
-    padding: ${theme.gridUnit * 3}px ${theme.gridUnit * 2}px ${
-      theme.gridUnit * 3
-    }px ${theme.gridUnit * 4}px;
+    padding: ${theme.sizeUnit * 3}px ${theme.sizeUnit * 2}px ${
+      theme.sizeUnit * 3
+    }px ${theme.sizeUnit * 4}px;
     background: ${theme.colors.grayscale.light5};
     box-shadow: inset 0px -2px 2px -1px ${theme.colors.grayscale.light2};
   `}
@@ -57,7 +57,7 @@ const HorizontalBarContent = styled.div`
     line-height: 0;
 
     .loading {
-      margin: ${theme.gridUnit * 2}px auto ${theme.gridUnit * 2}px;
+      margin: ${theme.sizeUnit * 2}px auto ${theme.sizeUnit * 2}px;
       padding: 0;
     }
   `}
@@ -68,7 +68,7 @@ const FilterBarEmptyStateContainer = styled.div`
     font-weight: ${theme.fontWeightStrong};
     color: ${theme.colors.grayscale.base};
     font-size: ${theme.fontSizeSM}px;
-    padding-left: ${theme.gridUnit * 2}px;
+    padding-left: ${theme.sizeUnit * 2}px;
   `}
 `;
 

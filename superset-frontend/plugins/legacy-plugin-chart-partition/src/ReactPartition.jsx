@@ -65,14 +65,14 @@ export default styled(Partition)`
       top: 0;
       left: 0;
       opacity: 0;
-      padding: ${theme.gridUnit}px;
+      padding: ${theme.sizeUnit}px;
       pointer-events: none;
       background-color: ${theme.colors.grayscale.dark2};
-      border-radius: ${theme.gridUnit}px;
+      border-radius: ${theme.sizeUnit}px;
     }
 
     .partition-tooltip td {
-      padding-left: ${theme.gridUnit}px;
+      padding-left: ${theme.sizeUnit}px;
       font-size: ${theme.fontSizeSM}px;
       color: ${theme.colors.grayscale.light5};
     }

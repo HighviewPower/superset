@@ -41,7 +41,7 @@ export default styled.div`
     }
     th svg {
       color: ${theme.colors.grayscale.light2};
-      margin: ${theme.gridUnit / 2}px;
+      margin: ${theme.sizeUnit / 2}px;
     }
     th.is-sorted svg {
       color: ${theme.colors.grayscale.base};

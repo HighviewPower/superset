@@ -41,15 +41,15 @@ const QueryLabel = styled.div`
 `;
 
 const QueryViewToggle = styled.div`
-  margin: 0 0 ${({ theme }) => theme.gridUnit * 6}px 0;
+  margin: 0 0 ${({ theme }) => theme.sizeUnit * 6}px 0;
 `;
 
 const TabButton = styled.div`
   display: inline;
   font-size: ${({ theme }) => theme.fontSizeSM}px;
-  padding: ${({ theme }) => theme.gridUnit * 2}px
-    ${({ theme }) => theme.gridUnit * 4}px;
-  margin-right: ${({ theme }) => theme.gridUnit * 4}px;
+  padding: ${({ theme }) => theme.sizeUnit * 2}px
+    ${({ theme }) => theme.sizeUnit * 4}px;
+  margin-right: ${({ theme }) => theme.sizeUnit * 4}px;
   color: ${({ theme }) => theme.colors.primary.dark1};
 
   &.active,
@@ -58,7 +58,7 @@ const TabButton = styled.div`
     background: ${({ theme }) => theme.colors.primary.light4};
     border-bottom: none;
     border-radius: ${({ theme }) => theme.borderRadius}px;
-    margin-bottom: ${({ theme }) => theme.gridUnit * 2}px;
+    margin-bottom: ${({ theme }) => theme.sizeUnit * 2}px;
   }
 
   &:hover:not(.active) {
@@ -67,7 +67,7 @@ const TabButton = styled.div`
 `;
 const StyledModal = styled(Modal)`
   .antd5-modal-body {
-    padding: ${({ theme }) => theme.gridUnit * 6}px;
+    padding: ${({ theme }) => theme.sizeUnit * 6}px;
   }
 
   pre {

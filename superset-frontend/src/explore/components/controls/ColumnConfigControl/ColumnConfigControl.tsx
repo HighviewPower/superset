@@ -119,7 +119,7 @@ export default function ColumnConfigControl<T extends ColumnConfig>({
       <div
         css={{
           border: `1px solid ${theme.colors.grayscale.light2}`,
-          borderRadius: theme.gridUnit,
+          borderRadius: theme.sizeUnit,
         }}
       >
         {cols.map(col => (
@@ -137,7 +137,7 @@ export default function ColumnConfigControl<T extends ColumnConfig>({
             role="button"
             tabIndex={-1}
             css={{
-              padding: theme.gridUnit * 2,
+              padding: theme.sizeUnit * 2,
               textAlign: 'center',
               cursor: 'pointer',
               fontSize: theme.fontSizeXS,

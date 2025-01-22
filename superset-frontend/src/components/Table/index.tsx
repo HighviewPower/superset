@@ -198,7 +198,7 @@ const StyledVirtualTable = styled(VirtualTable)(
   }
   .virtual-table-cell {
     box-sizing: border-box;
-    padding: ${theme.gridUnit * 4}px;
+    padding: ${theme.sizeUnit * 4}px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

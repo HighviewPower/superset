@@ -59,10 +59,10 @@ const WithPopoverMenuStyles = styled.div`
     }
 
     .dashboard-component-tabs li &.with-popover-menu--focused:after {
-      top: ${theme.gridUnit * -3}px;
-      left: ${theme.gridUnit * -2}px;
-      width: calc(100% + ${theme.gridUnit * 4}px);
-      height: calc(100% + ${theme.gridUnit * 7}px);
+      top: ${theme.sizeUnit * -3}px;
+      left: ${theme.sizeUnit * -2}px;
+      width: calc(100% + ${theme.sizeUnit * 4}px);
+      height: calc(100% + ${theme.sizeUnit * 7}px);
     }
   `}
 `;
@@ -73,8 +73,8 @@ const PopoverMenuStyles = styled.div`
     flex-wrap: nowrap;
     left: 1px;
     top: -42px;
-    height: ${theme.gridUnit * 10}px;
-    padding: 0 ${theme.gridUnit * 4}px;
+    height: ${theme.sizeUnit * 10}px;
+    padding: 0 ${theme.sizeUnit * 4}px;
     background: ${theme.colors.grayscale.light5};
     box-shadow: 0 1px 2px 1px
       ${addAlpha(
@@ -98,7 +98,7 @@ const PopoverMenuStyles = styled.div`
       width: 1px;
       height: 100%;
       background: ${theme.colors.grayscale.light2};
-      margin: 0 ${theme.gridUnit * 4}px;
+      margin: 0 ${theme.sizeUnit * 4}px;
     }
   `}
 `;

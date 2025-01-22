@@ -54,7 +54,7 @@ export const Table = styled.table`
       top: 0;
 
       &:first-of-type {
-        padding-left: ${theme.gridUnit * 4}px;
+        padding-left: ${theme.sizeUnit * 4}px;
       }
 
       &.xs {
@@ -178,7 +178,7 @@ export const Table = styled.table`
       line-height: 1;
       vertical-align: middle;
       &:first-of-type {
-        padding-left: ${theme.gridUnit * 4}px;
+        padding-left: ${theme.sizeUnit * 4}px;
       }
       &__wrap {
         white-space: normal;

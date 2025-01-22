@@ -21,6 +21,6 @@ import { styled } from '@superset-ui/core';
 export const ControlSubSectionHeader = styled.div`
   font-weight: ${({ theme }) => theme.fontWeightStrong};
   font-size: ${({ theme }) => theme.fontSizeSM};
-  margin-bottom: ${({ theme }) => theme.gridUnit}px;
+  margin-bottom: ${({ theme }) => theme.sizeUnit}px;
 `;
 export default ControlSubSectionHeader;

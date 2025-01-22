@@ -23,10 +23,10 @@ export const Styles = styled.div`
   ${({ theme, isDashboardEditMode }) => css`
     table.pvtTable {
       position: ${isDashboardEditMode ? 'inherit' : 'relative'};
-      width: calc(100% - ${theme.gridUnit}px);
+      width: calc(100% - ${theme.sizeUnit}px);
       font-size: ${theme.fontSizeSM}px;
       text-align: left;
-      margin: ${theme.gridUnit}px;
+      margin: ${theme.sizeUnit}px;
       border-collapse: separate;
       font-family: ${theme.fontFamily};
       line-height: 1.4;
@@ -47,7 +47,7 @@ export const Styles = styled.div`
       border-top: 1px solid ${theme.colors.grayscale.light2};
       border-left: 1px solid ${theme.colors.grayscale.light2};
       font-size: ${theme.fontSizeSM}px;
-      padding: ${theme.gridUnit}px;
+      padding: ${theme.sizeUnit}px;
       font-weight: ${theme.fontWeightNormal};
     }
 
@@ -103,7 +103,7 @@ export const Styles = styled.div`
 
     table.pvtTable tbody tr td {
       color: ${theme.colors.primary.dark2};
-      padding: ${theme.gridUnit}px;
+      padding: ${theme.sizeUnit}px;
       background-color: ${theme.colors.grayscale.light5};
       border-top: 1px solid ${theme.colors.grayscale.light2};
       border-left: 1px solid ${theme.colors.grayscale.light2};
@@ -133,7 +133,7 @@ export const Styles = styled.div`
     }
 
     .toggle {
-      padding-right: ${theme.gridUnit}px;
+      padding-right: ${theme.sizeUnit}px;
       cursor: pointer;
     }
 

@@ -29,7 +29,7 @@ const TooltipSectionWrapper = styled.div`
     line-height: 1.2;
 
     &:not(:last-of-type) {
-      margin-bottom: ${theme.gridUnit * 2}px;
+      margin-bottom: ${theme.sizeUnit * 2}px;
     }
     &:last-of-type {
       display: -webkit-box;

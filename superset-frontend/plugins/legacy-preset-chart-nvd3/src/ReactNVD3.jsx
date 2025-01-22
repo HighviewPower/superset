@@ -161,8 +161,8 @@ export default styled(NVD3)`
     border-radius: 2px;
     background-color: ${({ theme }) => theme.colors.grayscale.base};
     fill-opacity: 0.6;
-    margin: ${({ theme }) => theme.gridUnit * 2}px;
-    padding: ${({ theme }) => theme.gridUnit * 2}px;
+    margin: ${({ theme }) => theme.sizeUnit * 2}px;
+    padding: ${({ theme }) => theme.sizeUnit * 2}px;
     color: ${({ theme }) => theme.colors.grayscale.light5};
     &:after {
       content: '\\25BC';

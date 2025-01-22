@@ -162,7 +162,7 @@ export default function Button(props: ButtonProps) {
     renderedChildren = Children.toArray(children);
   }
   const firstChildMargin =
-    showMarginRight && renderedChildren.length > 1 ? theme.gridUnit * 2 : 0;
+    showMarginRight && renderedChildren.length > 1 ? theme.sizeUnit * 2 : 0;
 
   const effectiveButtonStyle: ButtonStyle = buttonStyle ?? 'default';
 
@@ -190,8 +190,8 @@ export default function Button(props: ButtonProps) {
         height,
         padding: `0px ${padding}px`,
         transition: `all ${transitionTiming}s`,
-        minWidth: cta ? theme.gridUnit * 36 : undefined,
-        minHeight: cta ? theme.gridUnit * 8 : undefined,
+        minWidth: cta ? theme.sizeUnit * 36 : undefined,
+        minHeight: cta ? theme.sizeUnit * 8 : undefined,
         boxShadow: 'none',
         borderWidth,
         borderStyle,
@@ -229,7 +229,7 @@ export default function Button(props: ButtonProps) {
         },
         marginLeft: 0,
         '& + .superset-button': {
-          marginLeft: theme.gridUnit * 2,
+          marginLeft: theme.sizeUnit * 2,
         },
         '& > span > :first-of-type': {
           marginRight: firstChildMargin,
@@ -251,7 +251,7 @@ export default function Button(props: ButtonProps) {
             css={{
               cursor: 'not-allowed',
               '& > .superset-button': {
-                marginLeft: theme.gridUnit * 2,
+                marginLeft: theme.sizeUnit * 2,
               },
             }}
           >

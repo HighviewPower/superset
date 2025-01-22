@@ -25,16 +25,16 @@ export const headerStyles = (theme: SupersetTheme) => css`
       line-height: 1.4;
       font-size: ${theme.fontSizeXXL}px;
       letter-spacing: -0.2px;
-      margin-top: ${theme.gridUnit * 3}px;
-      margin-bottom: ${theme.gridUnit * 3}px;
+      margin-top: ${theme.sizeUnit * 3}px;
+      margin-bottom: ${theme.sizeUnit * 3}px;
     }
 
     h2 {
       font-weight: ${theme.fontWeightStrong};
       line-height: 1.4;
       font-size: ${theme.fontSizeXL}px;
-      margin-top: ${theme.gridUnit * 3}px;
-      margin-bottom: ${theme.gridUnit * 2}px;
+      margin-top: ${theme.sizeUnit * 3}px;
+      margin-bottom: ${theme.sizeUnit * 2}px;
     }
 
     h3,
@@ -45,8 +45,8 @@ export const headerStyles = (theme: SupersetTheme) => css`
       line-height: 1.4;
       font-size: ${theme.fontSizeLG}px;
       letter-spacing: 0.2px;
-      margin-top: ${theme.gridUnit * 2}px;
-      margin-bottom: ${theme.gridUnit}px;
+      margin-top: ${theme.sizeUnit * 2}px;
+      margin-bottom: ${theme.sizeUnit}px;
     }
   }
 `;
@@ -54,13 +54,13 @@ export const headerStyles = (theme: SupersetTheme) => css`
 // adds enough margin and padding so that the focus outline styles will fit
 export const chartHeaderStyles = (theme: SupersetTheme) => css`
   .header-title a {
-    margin: ${theme.gridUnit / 2}px;
-    padding: ${theme.gridUnit / 2}px;
+    margin: ${theme.sizeUnit / 2}px;
+    padding: ${theme.sizeUnit / 2}px;
   }
   .header-controls {
     &,
     &:hover {
-      margin-top: ${theme.gridUnit}px;
+      margin-top: ${theme.sizeUnit}px;
     }
   }
 `;
@@ -72,11 +72,11 @@ export const filterCardPopoverStyle = (theme: SupersetTheme) => css`
     border-radius: 4px;
 
     &.ant-popover-placement-bottom {
-      padding-top: ${theme.gridUnit}px;
+      padding-top: ${theme.sizeUnit}px;
     }
 
     &.ant-popover-placement-left {
-      padding-right: ${theme.gridUnit * 3}px;
+      padding-right: ${theme.sizeUnit * 3}px;
     }
 
     .ant-popover-inner {
@@ -84,7 +84,7 @@ export const filterCardPopoverStyle = (theme: SupersetTheme) => css`
     }
 
     .ant-popover-inner-content {
-      padding: ${theme.gridUnit * 4}px;
+      padding: ${theme.sizeUnit * 4}px;
     }
 
     .ant-popover-arrow {
@@ -104,11 +104,11 @@ export const filterCardPopoverStyle = (theme: SupersetTheme) => css`
 
 export const chartContextMenuStyles = (theme: SupersetTheme) => css`
   .ant-dropdown-menu.chart-context-menu {
-    min-width: ${theme.gridUnit * 43}px;
+    min-width: ${theme.sizeUnit * 43}px;
   }
   .ant-dropdown-menu-submenu.chart-context-submenu {
-    max-width: ${theme.gridUnit * 60}px;
-    min-width: ${theme.gridUnit * 40}px;
+    max-width: ${theme.sizeUnit * 60}px;
+    min-width: ${theme.sizeUnit * 40}px;
   }
 `;
 
@@ -121,7 +121,7 @@ export const focusStyle = (theme: SupersetTheme) => css`
   .header-controls span {
     &:focus-visible {
       box-shadow: 0 0 0 2px ${theme.colors.primary.dark1};
-      border-radius: ${theme.gridUnit / 2}px;
+      border-radius: ${theme.sizeUnit / 2}px;
       outline: none;
       text-decoration: none;
     }
@@ -134,7 +134,7 @@ export const focusStyle = (theme: SupersetTheme) => css`
         .header-controls span
       ) {
       &:focus-visible {
-        padding: ${theme.gridUnit / 2}px;
+        padding: ${theme.sizeUnit / 2}px;
       }
     }
   }

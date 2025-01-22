@@ -43,7 +43,7 @@ const StyledIconSearch = styled(Icons.SearchOutlined)`
   ${({ theme }) => `
     & > span.anticon.anticon-search {
       color: ${theme.colors.grayscale.light1};
-      margin-left: ${theme.gridUnit}px;
+      margin-left: ${theme.sizeUnit}px;
       transition: 0.3s;
       vertical-align: middle;
       line-height: 0;
@@ -68,8 +68,8 @@ const CrossFilterChartTitle = (props: {
         <span
           css={css`
             max-width: ${orientation === FilterBarOrientation.Vertical
-              ? `${theme.gridUnit * 45}px`
-              : `${theme.gridUnit * 15}px`};
+              ? `${theme.sizeUnit * 45}px`
+              : `${theme.sizeUnit * 15}px`};
             line-height: 1.4;
             ${ellipsisCss}
           `}

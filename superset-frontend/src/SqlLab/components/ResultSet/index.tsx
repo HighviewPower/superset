@@ -110,17 +110,17 @@ export interface ResultSetProps {
 const ResultContainer = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: ${({ theme }) => theme.gridUnit * 2}px;
+  row-gap: ${({ theme }) => theme.sizeUnit * 2}px;
 `;
 
 const ResultlessStyles = styled.div`
   position: relative;
-  min-height: ${({ theme }) => theme.gridUnit * 25}px;
+  min-height: ${({ theme }) => theme.sizeUnit * 25}px;
   [role='alert'] {
-    margin-top: ${({ theme }) => theme.gridUnit * 2}px;
+    margin-top: ${({ theme }) => theme.sizeUnit * 2}px;
   }
   .sql-result-track-job {
-    margin-top: ${({ theme }) => theme.gridUnit * 2}px;
+    margin-top: ${({ theme }) => theme.sizeUnit * 2}px;
   }
 `;
 
@@ -147,7 +147,7 @@ const ResultSetControls = styled.div`
 const ResultSetButtons = styled.div`
   display: grid;
   grid-auto-flow: column;
-  padding-right: ${({ theme }) => 2 * theme.gridUnit}px;
+  padding-right: ${({ theme }) => 2 * theme.sizeUnit}px;
 `;
 
 const ROWS_CHIP_WIDTH = 100;
@@ -504,7 +504,7 @@ const ResultSet = ({
                   <Icons.ExclamationCircleOutlined
                     css={css`
                       font-size: ${theme.fontSize}px;
-                      margin-right: ${theme.gridUnit}px;
+                      margin-right: ${theme.sizeUnit}px;
                     `}
                   />
                 )}
@@ -611,7 +611,7 @@ const ResultSet = ({
               <ButtonGroup>
                 <Button
                   buttonSize="small"
-                  css={{ marginRight: theme.gridUnit }}
+                  css={{ marginRight: theme.sizeUnit }}
                   onClick={() => popSelectStar(tempSchema, tempTable)}
                 >
                   {t('Query in a new tab')}

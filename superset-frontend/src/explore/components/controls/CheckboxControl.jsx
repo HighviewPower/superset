@@ -39,7 +39,7 @@ const CheckBoxControlWrapper = styled.div`
       color: ${theme.colors.grayscale.dark1};
     }
     span[role='checkbox'] {
-      padding-right: ${theme.gridUnit * 2}px;
+      padding-right: ${theme.sizeUnit * 2}px;
     }
   `}
 `;

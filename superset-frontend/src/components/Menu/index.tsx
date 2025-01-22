@@ -103,8 +103,8 @@ const StyledNav = styled(AntdMenu)`
     align-items: center;
     margin: 0;
     border-bottom: 2px solid transparent;
-    padding: ${({ theme }) => theme.gridUnit * 2}px
-      ${({ theme }) => theme.gridUnit * 4}px;
+    padding: ${({ theme }) => theme.sizeUnit * 2}px
+      ${({ theme }) => theme.sizeUnit * 4}px;
     &:hover {
       background-color: ${({ theme }) => theme.colors.primary.light5};
       border-bottom: 2px solid transparent;

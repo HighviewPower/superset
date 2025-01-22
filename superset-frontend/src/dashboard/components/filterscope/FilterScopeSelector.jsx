@@ -54,7 +54,7 @@ const ScopeContainer = styled.div`
     display: flex;
     flex-direction: column;
     height: 80%;
-    margin-right: ${theme.gridUnit * -6}px;
+    margin-right: ${theme.sizeUnit * -6}px;
     font-size: ${theme.fontSize}px;
 
     & .nav.nav-tabs {
@@ -63,7 +63,7 @@ const ScopeContainer = styled.div`
 
     & .filter-scope-body {
       flex: 1;
-      max-height: calc(100% - ${theme.gridUnit * 32}px);
+      max-height: calc(100% - ${theme.sizeUnit * 32}px);
 
       .filter-field-pane,
       .filter-scope-pane {
@@ -72,7 +72,7 @@ const ScopeContainer = styled.div`
     }
 
     & .warning-message {
-      padding: ${theme.gridUnit * 6}px;
+      padding: ${theme.sizeUnit * 6}px;
     }
   `}
 `;
@@ -81,7 +81,7 @@ const ScopeBody = styled.div`
   ${({ theme }) => css`
     &.filter-scope-body {
       flex: 1;
-      max-height: calc(100% - ${theme.gridUnit * 32}px);
+      max-height: calc(100% - ${theme.sizeUnit * 32}px);
 
       .filter-field-pane,
       .filter-scope-pane {
@@ -93,17 +93,17 @@ const ScopeBody = styled.div`
 
 const ScopeHeader = styled.div`
   ${({ theme }) => css`
-    height: ${theme.gridUnit * 16}px;
+    height: ${theme.sizeUnit * 16}px;
     border-bottom: 1px solid ${theme.colors.grayscale.light2};
-    padding-left: ${theme.gridUnit * 6}px;
-    margin-left: ${theme.gridUnit * -6}px;
+    padding-left: ${theme.sizeUnit * 6}px;
+    margin-left: ${theme.sizeUnit * -6}px;
 
     h4 {
       margin-top: 0;
     }
 
     .selected-fields {
-      margin: ${theme.gridUnit * 3}px 0 ${theme.gridUnit * 4}px;
+      margin: ${theme.sizeUnit * 3}px 0 ${theme.sizeUnit * 4}px;
       visibility: hidden;
 
       &.multi-edit-mode {
@@ -111,7 +111,7 @@ const ScopeHeader = styled.div`
       }
 
       .selected-scopes {
-        padding-left: ${theme.gridUnit}px;
+        padding-left: ${theme.sizeUnit}px;
       }
     }
   `}
@@ -154,29 +154,29 @@ const ScopeSelector = styled.div`
       .filter-field-pane {
         position: relative;
         width: 40%;
-        padding: ${theme.gridUnit * 4}px;
+        padding: ${theme.sizeUnit * 4}px;
         padding-left: 0;
         border-right: 1px solid ${theme.colors.grayscale.border};
 
         .filter-container label {
           font-weight: ${theme.fontWeightNormal};
-          margin: 0 0 0 ${theme.gridUnit * 4}px;
+          margin: 0 0 0 ${theme.sizeUnit * 4}px;
           word-break: break-all;
         }
 
         .filter-field-item {
-          height: ${theme.gridUnit * 9}px;
+          height: ${theme.sizeUnit * 9}px;
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 0 ${theme.gridUnit * 6}px;
-          margin-left: ${theme.gridUnit * -6}px;
+          padding: 0 ${theme.sizeUnit * 6}px;
+          margin-left: ${theme.sizeUnit * -6}px;
 
           &.is-selected {
             border: 1px solid ${theme.colors.grayscale.border};
             border-radius: ${theme.borderRadius}px;
             background-color: ${theme.colors.grayscale.bg};
-            margin-left: ${theme.gridUnit * -6}px;
+            margin-left: ${theme.sizeUnit * -6}px;
           }
         }
 
@@ -186,7 +186,7 @@ const ScopeSelector = styled.div`
           }
 
           .rct-text {
-            height: ${theme.gridUnit * 10}px;
+            height: ${theme.sizeUnit * 10}px;
           }
         }
       }
@@ -194,8 +194,8 @@ const ScopeSelector = styled.div`
       .filter-scope-pane {
         position: relative;
         flex: 1;
-        padding: ${theme.gridUnit * 4}px;
-        padding-right: ${theme.gridUnit * 6}px;
+        padding: ${theme.sizeUnit * 4}px;
+        padding-right: ${theme.sizeUnit * 6}px;
       }
 
       .react-checkbox-tree {
@@ -204,7 +204,7 @@ const ScopeSelector = styled.div`
         font-size: ${theme.fontSize}px;
 
         .filter-scope-type {
-          padding: ${theme.gridUnit * 2}px 0;
+          padding: ${theme.sizeUnit * 2}px 0;
           display: flex;
           align-items: center;
 
@@ -213,7 +213,7 @@ const ScopeSelector = styled.div`
           }
 
           &.selected-filter {
-            padding-left: ${theme.gridUnit * 7}px;
+            padding-left: ${theme.sizeUnit * 7}px;
             position: relative;
             color: ${theme.colors.grayscale.bgTextActive};
 
@@ -222,10 +222,10 @@ const ScopeSelector = styled.div`
               position: absolute;
               left: 0;
               top: 50%;
-              width: ${theme.gridUnit * 4}px;
-              height: ${theme.gridUnit * 4}px;
+              width: ${theme.sizeUnit * 4}px;
+              height: ${theme.sizeUnit * 4}px;
               border-radius: ${theme.borderRadius}px;
-              margin-top: ${theme.gridUnit * -2}px;
+              margin-top: ${theme.sizeUnit * -2}px;
               box-shadow: inset 0 0 0 2px ${theme.colors.grayscale.border};
               background: ${theme.colors.grayscale.light3};
             }
@@ -240,14 +240,14 @@ const ScopeSelector = styled.div`
           svg {
             position: relative;
             top: 3px;
-            width: ${theme.gridUnit * 4.5}px;
+            width: ${theme.sizeUnit * 4.5}px;
           }
         }
 
         .rct-node-leaf {
           .rct-bare-label {
             &::before {
-              padding-left: ${theme.gridUnit}px;
+              padding-left: ${theme.sizeUnit}px;
             }
           }
         }
@@ -255,7 +255,7 @@ const ScopeSelector = styled.div`
         .rct-options {
           text-align: left;
           margin-left: 0;
-          margin-bottom: ${theme.gridUnit * 2}px;
+          margin-bottom: ${theme.sizeUnit * 2}px;
         }
 
         .rct-text {
@@ -278,22 +278,22 @@ const ScopeSelector = styled.div`
 
       .multi-edit-mode {
         .filter-field-item {
-          padding: 0 ${theme.gridUnit * 4}px 0 ${theme.gridUnit * 12}px;
-          margin-left: ${theme.gridUnit * -12}px;
+          padding: 0 ${theme.sizeUnit * 4}px 0 ${theme.sizeUnit * 12}px;
+          margin-left: ${theme.sizeUnit * -12}px;
 
           &.is-selected {
-            margin-left: ${theme.gridUnit * -13}px;
+            margin-left: ${theme.sizeUnit * -13}px;
           }
         }
       }
 
       .scope-search {
         position: absolute;
-        right: ${theme.gridUnit * 4}px;
-        top: ${theme.gridUnit * 4}px;
+        right: ${theme.sizeUnit * 4}px;
+        top: ${theme.sizeUnit * 4}px;
         border-radius: ${theme.borderRadius}px;
         border: 1px solid ${theme.colors.grayscale.light2};
-        padding: ${theme.gridUnit}px ${theme.gridUnit * 2}px;
+        padding: ${theme.sizeUnit}px ${theme.sizeUnit * 2}px;
         font-size: ${theme.fontSize}px;
         outline: none;
 
@@ -307,15 +307,15 @@ const ScopeSelector = styled.div`
 
 const ActionsContainer = styled.div`
   ${({ theme }) => `
-    height: ${theme.gridUnit * 16}px;
+    height: ${theme.sizeUnit * 16}px;
 
-    border-top: ${theme.gridUnit / 4}px solid ${theme.colors.primary.light3};
-    padding: ${theme.gridUnit * 6}px;
-    margin: 0 0 0 ${-theme.gridUnit * 6}px;
+    border-top: ${theme.sizeUnit / 4}px solid ${theme.colors.primary.light3};
+    padding: ${theme.sizeUnit * 6}px;
+    margin: 0 0 0 ${-theme.sizeUnit * 6}px;
     text-align: right;
 
     .btn {
-      margin-right: ${theme.gridUnit * 4}px;
+      margin-right: ${theme.sizeUnit * 4}px;
 
       &:last-child {
         margin-right: 0;

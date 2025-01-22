@@ -92,7 +92,7 @@ interface ScheduleQueryButtonProps {
 }
 
 const StyledRow = styled(Row)`
-  padding-bottom: ${({ theme }) => theme.gridUnit * 2}px;
+  padding-bottom: ${({ theme }) => theme.sizeUnit * 2}px;
 `;
 
 export const StyledButtonComponent = styled(Button)`

@@ -39,8 +39,8 @@ export const Tooltip = ({
       overlayStyle={{
         fontSize: theme.fontSizeSM,
         lineHeight: '1.6',
-        maxWidth: theme.gridUnit * 62,
-        minWidth: theme.gridUnit * 30,
+        maxWidth: theme.sizeUnit * 62,
+        minWidth: theme.sizeUnit * 30,
         ...overlayStyle,
       }}
       // make the tooltip display closer to the label

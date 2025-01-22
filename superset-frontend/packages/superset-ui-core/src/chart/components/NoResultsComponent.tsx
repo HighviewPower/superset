@@ -36,12 +36,12 @@ const Container = styled.div<{
     text-align: center;
     height: ${height}px;
     width: ${width}px;
-    padding: ${theme.gridUnit * 4}px;
+    padding: ${theme.sizeUnit * 4}px;
 
     & .no-results-title {
       font-size: ${theme.fontSizeLG}px;
       font-weight: ${theme.fontWeightStrong};
-      padding-bottom: ${theme.gridUnit * 2};
+      padding-bottom: ${theme.sizeUnit * 2};
     }
 
     & .no-results-body {

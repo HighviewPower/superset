@@ -114,7 +114,7 @@ const actionButtonsContainerStyles = (theme: SupersetTheme) => css`
   bottom: 0;
   flex-direction: column;
   align-items: center;
-  padding: ${theme.gridUnit * 4}px;
+  padding: ${theme.sizeUnit * 4}px;
   z-index: 999;
   background: linear-gradient(
     ${rgba(theme.colors.grayscale.light5, 0)},
@@ -149,8 +149,8 @@ const Styles = styled.div`
     max-width: 100%;
   }
   .type-label {
-    margin-right: ${({ theme }) => theme.gridUnit * 3}px;
-    width: ${({ theme }) => theme.gridUnit * 7}px;
+    margin-right: ${({ theme }) => theme.sizeUnit * 3}px;
+    width: ${({ theme }) => theme.sizeUnit * 7}px;
     display: inline-block;
     text-align: center;
     font-weight: ${({ theme }) => theme.fontWeightStrong};
@@ -171,7 +171,7 @@ const ControlPanelsTabs = styled(Tabs)`
       height: 100%;
     }
     .ant-tabs-content-holder {
-      padding-top: ${theme.gridUnit * 4}px;
+      padding-top: ${theme.sizeUnit * 4}px;
     }
 
     .ant-collapse-ghost > .ant-collapse-item {
@@ -644,12 +644,12 @@ export const ControlPanelsContainer = (props: ControlPanelsContainerProps) => {
               box-shadow: none;
 
               &:last-child {
-                padding-bottom: ${theme.gridUnit * 16}px;
+                padding-bottom: ${theme.sizeUnit * 16}px;
                 border-bottom: 0;
               }
 
               .panel-body {
-                margin-left: ${theme.gridUnit * 4}px;
+                margin-left: ${theme.sizeUnit * 4}px;
                 padding-bottom: 0;
               }
 
@@ -755,7 +755,7 @@ export const ControlPanelsContainer = (props: ControlPanelsContainerProps) => {
         {props.errorMessage && (
           <span
             css={(theme: SupersetTheme) => css`
-              margin-left: ${theme.gridUnit * 2}px;
+              margin-left: ${theme.sizeUnit * 2}px;
             `}
           >
             {' '}

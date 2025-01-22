@@ -55,7 +55,7 @@ export default function RadioButtonControl({
         },
         '.control-label': {
           color: theme.colors.grayscale.base,
-          marginBottom: theme.gridUnit,
+          marginBottom: theme.sizeUnit,
         },
         '.control-label + .btn-group': {
           marginTop: '1px',

@@ -46,8 +46,8 @@ const StyledDiv = styled.div`
     }
 
     .paired-ttest-table .scrollbar-content {
-      padding-left: ${theme.gridUnit}px;
-      padding-right: ${theme.gridUnit}px;
+      padding-left: ${theme.sizeUnit}px;
+      padding-right: ${theme.sizeUnit}px;
       margin-bottom: 0;
     }
 
@@ -56,7 +56,7 @@ const StyledDiv = styled.div`
     }
 
     .paired-ttest-table h1 {
-      margin-left: ${theme.gridUnit}px;
+      margin-left: ${theme.sizeUnit}px;
     }
 
     .reactable-data tr {
@@ -104,13 +104,13 @@ const StyledDiv = styled.div`
     .reactable-header-sort-asc:after {
       content: '\\25bc';
       position: absolute;
-      right: ${theme.gridUnit * 3}px;
+      right: ${theme.sizeUnit * 3}px;
     }
 
     .reactable-header-sort-desc:after {
       content: '\\25b2';
       position: absolute;
-      right: ${theme.gridUnit * 3}px;
+      right: ${theme.sizeUnit * 3}px;
     }
   `}
 `;

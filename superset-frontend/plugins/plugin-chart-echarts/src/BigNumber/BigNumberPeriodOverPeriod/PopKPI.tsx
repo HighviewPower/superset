@@ -59,9 +59,9 @@ const SymbolWrapper = styled.span<PopKPIComparisonSymbolStyleProps>`
   ${({ theme, backgroundColor, textColor }) => `
     background-color: ${backgroundColor};
     color: ${textColor};
-    padding: ${theme.gridUnit}px ${theme.gridUnit * 2}px;
-    border-radius: ${theme.gridUnit * 2}px;
-    margin-right: ${theme.gridUnit}px;
+    padding: ${theme.sizeUnit}px ${theme.sizeUnit * 2}px;
+    border-radius: ${theme.sizeUnit * 2}px;
+    margin-right: ${theme.sizeUnit}px;
   `}
 `;
 
@@ -122,7 +122,7 @@ export default function PopKPI(props: PopKPIProps) {
   }, [currentTimeRangeFilter, shift, startDateOffset, dashboardTimeRange]);
 
   const theme = useTheme();
-  const flexGap = theme.gridUnit * 5;
+  const flexGap = theme.sizeUnit * 5;
   const wrapperDivStyles = css`
     font-family: ${theme.fontFamily};
     display: flex;
@@ -137,7 +137,7 @@ export default function PopKPI(props: PopKPIProps) {
     font-size: ${String(headerFontSize) || 60}px;
     font-weight: ${theme.fontWeightNormal};
     text-align: center;
-    margin-bottom: ${theme.gridUnit * 4}px;
+    margin-bottom: ${theme.sizeUnit * 4}px;
   `;
 
   const getArrowIndicatorColor = () => {
@@ -159,7 +159,7 @@ export default function PopKPI(props: PopKPIProps) {
 
   const arrowIndicatorStyle = css`
     color: ${getArrowIndicatorColor()};
-    margin-left: ${theme.gridUnit}px;
+    margin-left: ${theme.sizeUnit}px;
   `;
 
   const defaultBackgroundColor = theme.colors.grayscale.bg;

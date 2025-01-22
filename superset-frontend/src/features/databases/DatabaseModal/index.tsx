@@ -127,13 +127,13 @@ const TabsStyled = styled(Tabs)`
 
 const ErrorAlertContainer = styled.div`
   ${({ theme }) => `
-    margin: ${theme.gridUnit * 8}px ${theme.gridUnit * 4}px;
+    margin: ${theme.sizeUnit * 8}px ${theme.sizeUnit * 4}px;
   `};
 `;
 
 const SSHTunnelContainer = styled.div`
   ${({ theme }) => `
-    padding: 0px ${theme.gridUnit * 4}px;
+    padding: 0px ${theme.sizeUnit * 4}px;
   `};
 `;
 
@@ -238,8 +238,8 @@ export type DBReducerActionType =
     };
 
 const StyledBtns = styled.div`
-  margin-bottom: ${({ theme }) => theme.gridUnit * 3}px;
-  margin-left: ${({ theme }) => theme.gridUnit * 3}px;
+  margin-bottom: ${({ theme }) => theme.sizeUnit * 3}px;
+  margin-left: ${({ theme }) => theme.sizeUnit * 3}px;
 `;
 
 export function dbReducer(

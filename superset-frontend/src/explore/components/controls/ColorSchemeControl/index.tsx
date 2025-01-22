@@ -308,11 +308,11 @@ const ColorSchemeControl = ({
         css={css`
           width: 100%;
           & .ant-select-item.ant-select-item-group {
-            padding-left: ${theme.gridUnit}px;
+            padding-left: ${theme.sizeUnit}px;
             font-size: ${theme.fontSize}px;
           }
           & .ant-select-item-option-grouped {
-            padding-left: ${theme.gridUnit * 3}px;
+            padding-left: ${theme.sizeUnit * 3}px;
           }
         `}
         aria-label={t('Select color scheme')}

@@ -33,13 +33,13 @@ interface CardCollectionProps {
 const CardContainer = styled.div<{ showThumbnails?: boolean }>`
   ${({ theme, showThumbnails }) => `
     display: grid;
-    grid-gap: ${theme.gridUnit * 12}px ${theme.gridUnit * 4}px;
+    grid-gap: ${theme.sizeUnit * 12}px ${theme.sizeUnit * 4}px;
     grid-template-columns: repeat(auto-fit, 300px);
-    margin-top: ${theme.gridUnit * -6}px;
+    margin-top: ${theme.sizeUnit * -6}px;
     padding: ${
       showThumbnails
-        ? `${theme.gridUnit * 8 + 3}px ${theme.gridUnit * 9}px`
-        : `${theme.gridUnit * 8 + 1}px ${theme.gridUnit * 9}px`
+        ? `${theme.sizeUnit * 8 + 3}px ${theme.sizeUnit * 9}px`
+        : `${theme.sizeUnit * 8 + 1}px ${theme.sizeUnit * 9}px`
     };
   `}
 `;

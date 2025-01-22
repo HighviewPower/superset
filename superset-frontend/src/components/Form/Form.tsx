@@ -24,7 +24,7 @@ const StyledForm = styled(AntdForm)`
     font-size: ${({ theme }) => theme.fontSizeSM}px;
   }
   .ant-form-item {
-    margin-bottom: ${({ theme }) => theme.gridUnit * 4}px;
+    margin-bottom: ${({ theme }) => theme.sizeUnit * 4}px;
   }
 `;
 

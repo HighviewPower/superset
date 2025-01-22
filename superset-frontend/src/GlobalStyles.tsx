@@ -59,12 +59,12 @@ export const GlobalStyles = () => (
           padding: 5px 10px 6px;
         }
         && .ant-tabs {
-          margin-top: ${theme.gridUnit * -3}px;
+          margin-top: ${theme.sizeUnit * -3}px;
         }
         & .ant-tabs-nav {
-          margin-left: ${theme.gridUnit * -4}px;
-          margin-right: ${theme.gridUnit * -4}px;
-          margin-bottom: ${theme.gridUnit * 2}px;
+          margin-left: ${theme.sizeUnit * -4}px;
+          margin-right: ${theme.sizeUnit * -4}px;
+          margin-bottom: ${theme.sizeUnit * 2}px;
         }
         && .ant-tabs-tab {
           flex: 1;

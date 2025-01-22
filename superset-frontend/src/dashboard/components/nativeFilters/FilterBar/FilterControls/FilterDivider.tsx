@@ -45,9 +45,9 @@ const HorizontalDivider = ({ title, description }: FilterDividerProps) => {
       css={css`
         display: flex;
         align-items: center;
-        height: ${6 * theme.gridUnit}px;
+        height: ${6 * theme.sizeUnit}px;
         border-left: 1px solid ${theme.colors.grayscale.light2};
-        padding-left: ${4 * theme.gridUnit}px;
+        padding-left: ${4 * theme.sizeUnit}px;
 
         .filter-item-wrapper:first-child & {
           border-left: none;
@@ -60,7 +60,7 @@ const HorizontalDivider = ({ title, description }: FilterDividerProps) => {
           ref={titleRef}
           css={css`
             ${truncationCSS};
-            max-width: ${theme.gridUnit * 32.5}px;
+            max-width: ${theme.sizeUnit * 32.5}px;
             font-size: ${theme.fontSize}px;
             font-weight: ${theme.fontWeightNormal};
             margin: 0;
@@ -77,7 +77,7 @@ const HorizontalDivider = ({ title, description }: FilterDividerProps) => {
             iconSize="l"
             iconColor={theme.colors.grayscale.base}
             css={css`
-              margin: 0 ${theme.gridUnit * 1.5}px;
+              margin: 0 ${theme.sizeUnit * 1.5}px;
               vertical-align: unset;
               line-height: unset;
             `}
@@ -103,8 +103,8 @@ const HorizontalOverflowDivider = ({
     <div
       css={css`
         border-top: 1px solid ${theme.colors.grayscale.light2};
-        padding-top: ${theme.gridUnit * 4}px;
-        margin-bottom: ${theme.gridUnit * 4}px;
+        padding-top: ${theme.sizeUnit * 4}px;
+        margin-bottom: ${theme.sizeUnit * 4}px;
       `}
     >
       <Tooltip overlay={titleIsTruncated ? <strong>{title}</strong> : null}>
@@ -116,7 +116,7 @@ const HorizontalOverflowDivider = ({
             color: ${theme.colors.grayscale.dark1};
             font-weight: ${theme.fontWeightNormal};
             font-size: ${theme.fontSize}px;
-            margin: 0 0 ${theme.gridUnit}px 0;
+            margin: 0 0 ${theme.sizeUnit}px 0;
           `}
         >
           {title}
@@ -132,7 +132,7 @@ const HorizontalOverflowDivider = ({
               display: block;
               font-size: ${theme.fontSizeSM}px;
               color: ${theme.colors.grayscale.base};
-              margin: ${theme.gridUnit}px 0 0 0;
+              margin: ${theme.sizeUnit}px 0 0 0;
             `}
           >
             {description}

@@ -91,7 +91,6 @@ interface LegacySupersetTheme {
     max: number;
   };
   transitionTiming: number;
-  gridUnit: number;
   brandIconMaxWidth: number;
   // Extra things
   fontSizeXS: string;
@@ -328,15 +327,13 @@ const allowedAntdTokens = [
   'zIndexPopupBase',
 ] as const;
 
-// Create a type from the array
-type AllowedAntdTokenKeys = (typeof allowedAntdTokens)[number];
-
-// Generate a runtime object with literal keys
-const allowedAntdTokensObject = Object.fromEntries(
-  allowedAntdTokens.map(key => [key, '']),
-) as Record<AllowedAntdTokenKeys, string>;
-
-// Derive the type dynamically
+// Playing some tricks to preserve token types from antd while creating a subset
+// 1. create a type from the array
+type AllowedAntdTokenKeys = Extract<
+  (typeof allowedAntdTokens)[number],
+  keyof AntdTokens
+>;
+// 2. derive the type dynamically
 export type SharedAntdTokens = Pick<AntdTokens, AllowedAntdTokenKeys>;
 
 export type SupersetTheme = LegacySupersetTheme & SharedAntdTokens;
@@ -353,6 +350,29 @@ const DEFAULT_SYSTEM_COLORS = {
 export class Theme {
   theme: SupersetTheme;
 
+  private static readonly defaultTokens = {
+    opacity: {
+      light: '10%',
+      mediumLight: '35%',
+      mediumHeavy: '60%',
+      heavy: '80%',
+    },
+    zIndex: {
+      aboveDashboardCharts: 10,
+      dropdown: 11,
+      max: 3000,
+    },
+    transitionTiming: 0.3,
+    brandIconMaxWidth: 37,
+
+    // Extra things
+    fontSizeXS: '8',
+    fontSizeXXL: '28',
+    fontWeightNormal: '400',
+    fontWeightLight: '300',
+    fontWeightMedium: '500',
+  };
+
   private antdConfig: AntdThemeConfig;
 
   private constructor() {
@@ -360,20 +380,15 @@ export class Theme {
     this.SupersetThemeProvider = this.SupersetThemeProvider.bind(this);
   }
 
-  static fromSystemColors(
-    systemColors?: Partial<SystemColors>,
-    isDark = false,
-  ): Theme {
+  static fromSeed(seed?: Partial<SupersetTheme>, isDark = false): Theme {
     const theme = new Theme();
-    theme.setThemeWithSystemColors(
-      Theme.allSystemColors(systemColors || {}),
-      isDark,
-    );
+    theme.setThemeFromSeed(seed || {}, isDark);
     return theme;
   }
 
-  static fromAntdConfig(themeConfig: AntdThemeConfig): Theme {
+  static fromAntdConfig(antdConfig: AntdThemeConfig): Theme {
     const theme = new Theme();
+    theme.setThemeFromAntdConfig(antdConfig);
     return theme;
   }
 
@@ -441,65 +456,58 @@ export class Theme {
     };
   }
 
-  private static allSystemColors(
-    systemColors: Partial<SystemColors>,
-  ): SystemColors {
-    const allSystemColors: SystemColors = {
+  private static augmentSeedWithDefaults(
+    seed: Partial<SupersetTheme>,
+  ): Partial<SupersetTheme> {
+    return {
+      fontFamily: `'Inter', Helvetica, Arial`,
+      fontFamilyCode: `'Fira Code', 'Courier New', monospace`,
       ...DEFAULT_SYSTEM_COLORS,
-      ...systemColors,
+      ...seed,
     };
-    return allSystemColors;
+  }
+
+  private static getSystemColors(antdTokens: SharedAntdTokens): SystemColors {
+    return {
+      ...DEFAULT_SYSTEM_COLORS,
+      primary: antdTokens.colorPrimary,
+      error: antdTokens.colorError,
+      warning: antdTokens.colorWarning,
+      success: antdTokens.colorSuccess,
+      info: antdTokens.colorInfo,
+      grayscale: '#666666',
+    };
   }
 
   private static getSupersetTheme(
-    systemColors: SystemColors,
+    seed: Partial<SupersetTheme>,
     isDark = false,
   ): SupersetTheme {
-    const antdConfig = Theme.getAntdConfig(systemColors, isDark);
+    const antdConfig = Theme.getAntdConfig(seed, isDark);
+    const antdTokens = Theme.getFilteredAntdTheme(antdConfig);
+    const systemColors = Theme.getSystemColors(antdTokens);
+
     const theme: SupersetTheme = {
       colors: Theme.getColors(systemColors, isDark),
-      opacity: {
-        light: '10%',
-        mediumLight: '35%',
-        mediumHeavy: '60%',
-        heavy: '80%',
-      },
-      zIndex: {
-        aboveDashboardCharts: 10,
-        dropdown: 11,
-        max: 3000,
-      },
-      transitionTiming: 0.3,
-      gridUnit: 4,
-      brandIconMaxWidth: 37,
-
-      // Extra things
-      fontSizeXS: '8',
-      fontSizeXXL: '28',
-      fontWeightNormal: '400',
-      fontWeightLight: '300',
-      fontWeightMedium: '500',
-      fontFamily: `'Inter', Helvetica, Arial`,
-      fontFamilyCode: `'Fira Code', 'Courier New', monospace`,
-
+      ...Theme.defaultTokens,
       // Bring allowed tokens from antd
-      ...Theme.getFilteredAntdTheme(antdConfig),
+      ...antdTokens,
     };
     return theme;
   }
 
   private static getFilteredAntdTheme(
     antdConfig: AntdThemeConfig,
-  ): Record<string, any> {
+  ): SharedAntdTokens {
     const theme = Theme.getAntdTokens(antdConfig);
 
     return Object.fromEntries(
       allowedAntdTokens.map(key => [key, theme[key]]), // Map keys to their values from the theme
-    );
+    ) as SharedAntdTokens;
   }
 
   private static getAntdConfig(
-    seed: Record<string, any>,
+    seed: Partial<SupersetTheme>,
     isDark: boolean,
   ): AntdThemeConfig {
     const algorithm = isDark
@@ -541,64 +549,27 @@ export class Theme {
     return this.theme[sizeMap[size || 'm']] || this.theme.fontSize;
   }
 
-  setThemeWithSystemColors(
-    systemColors: Partial<SystemColors>,
-    isDark: boolean,
-  ): void {
-    const theme = Theme.getSupersetTheme(
-      Theme.allSystemColors(systemColors),
-      isDark,
-    );
-    const antdConfig = Theme.getAntdConfig(systemColors, isDark);
+  setThemeFromSeed(seed: Partial<SupersetTheme>, isDark: boolean): void {
+    const augmentedSeed = Theme.augmentSeedWithDefaults(seed);
+    const theme = Theme.getSupersetTheme(augmentedSeed, isDark);
+    const antdConfig = Theme.getAntdConfig(augmentedSeed, isDark);
     this.updateTheme(theme, antdConfig);
   }
 
-  private static getAntdTokens(
-    antdConfig: AntdThemeConfig,
-  ): Record<string, any> {
+  private static getAntdTokens(antdConfig: AntdThemeConfig): AntdTokens {
     return antdThemeImport.getDesignToken(antdConfig);
   }
 
-  getThemeFromAntdConfig(themeConfig: AntdThemeConfig): void {
-    this.antdConfig = themeConfig;
-    const tokens = Theme.getAntdTokens(themeConfig);
+  setThemeFromAntdConfig(antdConfig: AntdThemeConfig): void {
+    this.antdConfig = antdConfig;
+    const tokens = Theme.getFilteredAntdTheme(antdConfig);
+    const systemColors = Theme.getSystemColors(tokens);
     const isDark = tinycolor(tokens.colorBgBase).isDark();
-    const systemColors: SystemColors = {
-      primary: tokens.colorPrimary,
-      error: tokens.colorError,
-      warning: tokens.colorWarning,
-      success: tokens.colorSuccess,
-      info: tokens.colorInfo,
-      grayscale: '#666666',
-    };
 
     this.theme = {
       colors: Theme.getColors(systemColors, isDark),
-      opacity: {
-        light: '10%',
-        mediumLight: '35%',
-        mediumHeavy: '60%',
-        heavy: '80%',
-      },
-      typography: {
-        weights: {
-          light: 200,
-          normal: 400,
-          medium: 500,
-          bold: 600,
-        },
-      },
-      zIndex: {
-        aboveDashboardCharts: 10,
-        dropdown: 11,
-        max: 3000,
-      },
-      transitionTiming: 0.3,
-      gridUnit: 4,
-      brandIconMaxWidth: 37,
-      // Extra things
-      fontSizeXS: '8',
-      fontSizeXXL: '28',
+      ...Theme.defaultTokens,
+      ...tokens,
     };
     this.updateProviders(
       this.theme,

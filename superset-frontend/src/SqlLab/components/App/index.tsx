@@ -45,7 +45,7 @@ const SqlLabStyles = styled.div`
       right: 0;
       bottom: 0;
       left: 0;
-      padding: 0 ${theme.gridUnit * 2}px;
+      padding: 0 ${theme.sizeUnit * 2}px;
 
       pre {
         padding: 0 !important;
@@ -90,7 +90,7 @@ const SqlLabStyles = styled.div`
       }
 
       .ResultsModal .antd5-modal-body {
-        min-height: ${theme.gridUnit * 140}px;
+        min-height: ${theme.sizeUnit * 140}px;
       }
 
       .antd5-modal-body {

@@ -81,10 +81,10 @@ const Wrapper = styled.div<{
     }
     & .ant-slider {
       margin-top: ${
-        orientation === FilterBarOrientation.Horizontal ? 0 : theme.gridUnit
+        orientation === FilterBarOrientation.Horizontal ? 0 : theme.sizeUnit
       }px;
       margin-bottom: ${
-        orientation === FilterBarOrientation.Horizontal ? 0 : theme.gridUnit * 5
+        orientation === FilterBarOrientation.Horizontal ? 0 : theme.sizeUnit * 5
       }px;
 
       ${

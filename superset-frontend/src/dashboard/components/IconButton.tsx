@@ -35,7 +35,7 @@ const StyledDiv = styled.div`
 `;
 
 const StyledSpan = styled.span`
-  margin-left: ${({ theme }) => theme.gridUnit * 2}px;
+  margin-left: ${({ theme }) => theme.sizeUnit * 2}px;
 `;
 
 const IconButton = ({ icon, label, onClick }: IconButtonProps) => (

@@ -62,7 +62,7 @@ const StyledScrollbarContainer = styled.div`
 
 const collapseStyles = (theme: SupersetTheme) => css`
   .ant-collapse-item {
-    margin-bottom: ${theme.gridUnit * 3}px;
+    margin-bottom: ${theme.sizeUnit * 3}px;
   }
   .ant-collapse-header {
     padding: 0px !important;
@@ -70,12 +70,12 @@ const collapseStyles = (theme: SupersetTheme) => css`
     align-items: center;
   }
   .ant-collapse-content-box {
-    padding: 0px ${theme.gridUnit * 4}px 0px 0px !important;
+    padding: 0px ${theme.sizeUnit * 4}px 0px 0px !important;
   }
   .ant-collapse-arrow {
     padding: 0 !important;
-    bottom: ${theme.gridUnit}px !important;
-    right: ${theme.gridUnit * 4}px !important;
+    bottom: ${theme.sizeUnit}px !important;
+    right: ${theme.sizeUnit * 4}px !important;
     color: ${theme.colorPrimaryText} !important;
     &:hover {
       color: ${theme.colorPrimaryTextHover} !important;
@@ -91,7 +91,7 @@ const LeftBarStyles = styled.div`
 
     .divider {
       border-bottom: 1px solid ${theme.colors.grayscale.border};
-      margin: ${theme.gridUnit * 4}px 0;
+      margin: ${theme.sizeUnit * 4}px 0;
     }
   `}
 `;

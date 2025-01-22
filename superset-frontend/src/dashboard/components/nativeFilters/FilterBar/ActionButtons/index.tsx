@@ -69,8 +69,8 @@ const verticalStyle = (theme: SupersetTheme, width: number) => css`
   width: ${width - 1}px;
   bottom: 0;
 
-  padding: ${theme.gridUnit * 4}px;
-  padding-top: ${theme.gridUnit * 6}px;
+  padding: ${theme.sizeUnit * 4}px;
+  padding-top: ${theme.sizeUnit * 6}px;
 
   background: linear-gradient(
     ${rgba(theme.colors.grayscale.light5, 0)},
@@ -82,7 +82,7 @@ const verticalStyle = (theme: SupersetTheme, width: number) => css`
   }
 
   & > .filter-apply-button {
-    margin-bottom: ${theme.gridUnit * 3}px;
+    margin-bottom: ${theme.sizeUnit * 3}px;
   }
 `;
 

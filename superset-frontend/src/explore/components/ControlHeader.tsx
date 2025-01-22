@@ -64,7 +64,7 @@ const ControlHeader: FC<ControlHeaderProps> = ({
   warning,
   danger,
 }) => {
-  const { gridUnit, colors } = useTheme();
+  const { sizeUnit, colors } = useTheme();
   const hasHadNoErrors = useRef(false);
   const labelColor = useMemo(() => {
     if (!validationErrors.length) {
@@ -97,7 +97,7 @@ const ControlHeader: FC<ControlHeaderProps> = ({
           position: absolute;
           top: 50%;
           right: 0;
-          padding-left: ${gridUnit}px;
+          padding-left: ${sizeUnit}px;
           transform: translate(100%, -50%);
           white-space: nowrap;
         `}
@@ -135,7 +135,7 @@ const ControlHeader: FC<ControlHeaderProps> = ({
       <div className="pull-left">
         <FormLabel
           css={(theme: SupersetTheme) => css`
-            margin-bottom: ${theme.gridUnit * 0.5}px;
+            margin-bottom: ${theme.sizeUnit * 0.5}px;
             position: relative;
           `}
         >

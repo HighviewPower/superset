@@ -82,7 +82,7 @@ const StyledDropdownItemWithIcon = styled.div`
   justify-content: space-between;
   align-items: center;
   > *:first-child {
-    margin-right: ${({ theme }) => theme.gridUnit}px;
+    margin-right: ${({ theme }) => theme.sizeUnit}px;
   }
 `;
 
@@ -262,7 +262,7 @@ export default function HeaderReportDropDown({
           checked={isReportActive}
           onClick={(checked: boolean) => toggleActiveKey(report, checked)}
           size="small"
-          css={{ marginLeft: theme.gridUnit * 2 }}
+          css={{ marginLeft: theme.sizeUnit * 2 }}
         />
       </Menu.Item>
       <Menu.Item onClick={() => setShowModal(true)}>

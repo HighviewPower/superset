@@ -288,7 +288,7 @@ const ChangeDatasourceModal: FunctionComponent<ChangeDatasourceModalProps> = ({
             <Alert
               roomBelow
               type="warning"
-              css={theme => ({ marginBottom: theme.gridUnit * 4 })}
+              css={theme => ({ marginBottom: theme.sizeUnit * 4 })}
               message={
                 <>
                   <strong>{t('Warning!')}</strong> {CHANGE_WARNING_MSG}

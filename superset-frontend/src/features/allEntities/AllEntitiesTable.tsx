@@ -31,7 +31,7 @@ const PAGE_SIZE = 10;
 
 const AllEntitiesTableContainer = styled.div`
   text-align: left;
-  border-radius: ${({ theme }) => theme.gridUnit * 1}px 0;
+  border-radius: ${({ theme }) => theme.sizeUnit * 1}px 0;
   .table {
     table-layout: fixed;
   }
@@ -45,7 +45,7 @@ const AllEntitiesTableContainer = styled.div`
     line-height: 17px;
     letter-spacing: 0px;
     text-align: left;
-    margin: ${({ theme }) => theme.gridUnit * 4}px 0;
+    margin: ${({ theme }) => theme.sizeUnit * 4}px 0;
   }
 `;
 

@@ -40,7 +40,7 @@ export default function PopoverSection({
   return (
     <div
       css={{
-        paddingBottom: theme.gridUnit * 2,
+        paddingBottom: theme.sizeUnit * 2,
         opacity: isSelected ? 1 : theme.opacity.mediumHeavy,
       }}
     >
@@ -56,7 +56,7 @@ export default function PopoverSection({
       >
         <strong data-test="popover-title">{title}</strong>
         {info && (
-          <Tooltip title={info} css={{ marginLeft: theme.gridUnit }}>
+          <Tooltip title={info} css={{ marginLeft: theme.sizeUnit }}>
             <Icons.InfoSolidSmall
               role="img"
               width={14}
@@ -74,8 +74,8 @@ export default function PopoverSection({
       </div>
       <div
         css={{
-          marginLeft: theme.gridUnit,
-          marginTop: theme.gridUnit,
+          marginLeft: theme.sizeUnit,
+          marginTop: theme.sizeUnit,
         }}
       >
         {children}

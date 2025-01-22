@@ -41,7 +41,7 @@ const MenuItemContent = styled.div`
 
   span[role='img'] {
     font-size: ${({ theme }) => theme.fontSizeLG}px;
-    margin-left: ${({ theme }) => theme.gridUnit * 4}px;
+    margin-left: ${({ theme }) => theme.sizeUnit * 4}px;
   }
 `;
 

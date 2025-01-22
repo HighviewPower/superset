@@ -18,7 +18,6 @@
  */
 import {
   QueryFormData,
-  supersetTheme,
   TimeseriesDataRecord,
   Metric,
   SimpleAdhocFilter,

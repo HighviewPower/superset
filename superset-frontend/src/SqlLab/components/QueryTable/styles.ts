@@ -31,7 +31,7 @@ export const verticalAlign = css`
 `;
 
 export const StyledTooltip = styled(IconTooltip)`
-  padding-right: ${({ theme }) => theme.gridUnit * 2}px;
+  padding-right: ${({ theme }) => theme.sizeUnit * 2}px;
   span {
     color: ${({ theme }) => theme.colors.grayscale.base};
     &: hover {

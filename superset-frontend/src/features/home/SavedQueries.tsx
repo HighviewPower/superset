@@ -95,22 +95,22 @@ export const CardStyles = styled.div`
 
 const QueryData = styled.div`
   svg {
-    margin-left: ${({ theme }) => theme.gridUnit * 10}px;
+    margin-left: ${({ theme }) => theme.sizeUnit * 10}px;
   }
   .query-title {
-    padding: ${({ theme }) => theme.gridUnit * 2 + 2}px;
+    padding: ${({ theme }) => theme.sizeUnit * 2 + 2}px;
     font-size: ${({ theme }) => theme.fontSizeLG}px;
   }
 `;
 
 const QueryContainer = styled.div`
   pre {
-    height: ${({ theme }) => theme.gridUnit * 40}px;
+    height: ${({ theme }) => theme.sizeUnit * 40}px;
     border: none !important;
     background-color: ${({ theme }) =>
       theme.colors.grayscale.light5} !important;
     overflow: hidden;
-    padding: ${({ theme }) => theme.gridUnit * 4}px !important;
+    padding: ${({ theme }) => theme.sizeUnit * 4}px !important;
   }
 `;
 

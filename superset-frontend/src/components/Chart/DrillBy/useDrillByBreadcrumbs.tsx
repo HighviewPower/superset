@@ -78,7 +78,7 @@ export const useDrillByBreadcrumbs = (
     return (
       <AntdBreadcrumb
         css={(theme: SupersetTheme) => css`
-          margin: ${theme.gridUnit * 2}px 0 ${theme.gridUnit * 4}px;
+          margin: ${theme.sizeUnit * 2}px 0 ${theme.sizeUnit * 4}px;
         `}
       >
         {breadcrumbsData

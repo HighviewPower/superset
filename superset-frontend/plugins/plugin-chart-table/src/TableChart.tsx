@@ -555,7 +555,7 @@ export default function TableChart<D extends DataRecord = DataRecord>(
             <div
               css={css`
                 max-width: 242px;
-                padding: 0 ${theme.gridUnit * 2}px;
+                padding: 0 ${theme.sizeUnit * 2}px;
                 color: ${theme.colors.grayscale.base};
                 font-size: ${theme.fontSizeSM}px;
               `}
@@ -825,7 +825,7 @@ export default function TableChart<D extends DataRecord = DataRecord>(
               ColorSchemeEnum.Green
               ? theme.colors.success.base
               : theme.colors.error.base};
-            margin-right: ${theme.gridUnit}px;
+            margin-right: ${theme.sizeUnit}px;
           `;
 
           if (
@@ -837,7 +837,7 @@ export default function TableChart<D extends DataRecord = DataRecord>(
                 ?.arrowColor === ColorSchemeEnum.Green
                 ? theme.colors.success.base
                 : theme.colors.error.base};
-              margin-right: ${theme.gridUnit}px;
+              margin-right: ${theme.sizeUnit}px;
             `;
           }
 
@@ -981,7 +981,7 @@ export default function TableChart<D extends DataRecord = DataRecord>(
                   display: flex;
                   align-items: center;
                   & svg {
-                    margin-left: ${theme.gridUnit}px;
+                    margin-left: ${theme.sizeUnit}px;
                     color: ${theme.colors.grayscale.dark1} !important;
                   }
                 `}

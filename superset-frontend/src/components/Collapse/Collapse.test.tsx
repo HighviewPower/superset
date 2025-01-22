@@ -100,7 +100,7 @@ test('renders with custom properties', () => {
   expect(headerStyle.fontWeight).toBe(
     supersetTheme.fontWeightStrong.toString(),
   );
-  expect(headerStyle.fontSize).toBe(`${supersetTheme.gridUnit * 4}px`);
+  expect(headerStyle.fontSize).toBe(`${supersetTheme.sizeUnit * 4}px`);
   expect(headerStyle.color).toBe(
     hexToRgb(supersetTheme.colors.grayscale.light4),
   );

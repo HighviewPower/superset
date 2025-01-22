@@ -37,7 +37,7 @@ const Collapse = Object.assign(
         font-weight: ${({ bold, theme }) =>
           bold ? theme.fontWeightStrong : theme.fontWeightNormal};
         font-size: ${({ bigger, theme }) =>
-          bigger ? `${theme.gridUnit * 4}px` : 'inherit'};
+          bigger ? `${theme.sizeUnit * 4}px` : 'inherit'};
 
         .ant-collapse-arrow svg {
           transition: ${({ animateArrows }) =>
@@ -72,7 +72,7 @@ const Collapse = Object.assign(
       .ant-collapse-content {
         .ant-collapse-content-box {
           .loading.inline {
-            margin: ${({ theme }) => theme.gridUnit * 12}px auto;
+            margin: ${({ theme }) => theme.sizeUnit * 12}px auto;
             display: block;
           }
         }

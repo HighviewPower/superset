@@ -29,8 +29,8 @@ import Icons from '../Icons';
 import Button from '../Button';
 
 export const menuTriggerStyles = (theme: SupersetTheme) => css`
-  width: ${theme.gridUnit * 8}px;
-  height: ${theme.gridUnit * 8}px;
+  width: ${theme.sizeUnit * 8}px;
+  height: ${theme.sizeUnit * 8}px;
   padding: 0;
   border: 1px solid ${theme.colors.primary.dark2};
 
@@ -54,8 +54,8 @@ const headerStyles = (theme: SupersetTheme) => css`
   flex-wrap: nowrap;
   justify-content: space-between;
   background-color: ${theme.colorBgBase};
-  height: ${theme.gridUnit * 16}px;
-  padding: 0 ${theme.gridUnit * 4}px;
+  height: ${theme.sizeUnit * 16}px;
+  padding: 0 ${theme.sizeUnit * 4}px;
 
   .editable-title {
     overflow: hidden;
@@ -78,7 +78,7 @@ const headerStyles = (theme: SupersetTheme) => css`
     display: flex;
     align-items: center;
     min-width: 0;
-    margin-right: ${theme.gridUnit * 12}px;
+    margin-right: ${theme.sizeUnit * 12}px;
   }
 
   .right-button-panel {
@@ -90,10 +90,10 @@ const headerStyles = (theme: SupersetTheme) => css`
 const buttonsStyles = (theme: SupersetTheme) => css`
   display: flex;
   align-items: center;
-  padding-left: ${theme.gridUnit * 2}px;
+  padding-left: ${theme.sizeUnit * 2}px;
 
   & .fave-unfave-icon {
-    padding: 0 ${theme.gridUnit}px;
+    padding: 0 ${theme.sizeUnit}px;
 
     &:first-of-type {
       padding-left: 0;
@@ -102,7 +102,7 @@ const buttonsStyles = (theme: SupersetTheme) => css`
 `;
 
 const additionalActionsContainerStyles = (theme: SupersetTheme) => css`
-  margin-left: ${theme.gridUnit * 2}px;
+  margin-left: ${theme.sizeUnit * 2}px;
 `;
 
 export type PageHeaderWithActionsProps = {

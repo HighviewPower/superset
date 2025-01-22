@@ -29,8 +29,8 @@ const IconContainer = styled.span`
 const Circle = styled.div`
   ${({ theme }) => css`
     border-radius: 50%;
-    width: ${theme.gridUnit * 3}px;
-    height: ${theme.gridUnit * 3}px;
+    width: ${theme.sizeUnit * 3}px;
+    height: ${theme.sizeUnit * 3}px;
 
     display: inline-block;
     background-color: ${theme.colors.grayscale.light2};

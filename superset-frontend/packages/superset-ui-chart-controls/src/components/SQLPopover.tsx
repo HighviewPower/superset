@@ -28,8 +28,8 @@ const StyledCalculatorIcon = styled(CalculatorOutlined)`
     color: ${theme.colors.grayscale.base};
     font-size: ${theme.fontSizeSM}px;
     & svg {
-      margin-left: ${theme.gridUnit}px;
-      margin-right: ${theme.gridUnit}px;
+      margin-left: ${theme.sizeUnit}px;
+      margin-right: ${theme.sizeUnit}px;
     }
   `}
 `;
@@ -67,7 +67,7 @@ export const SQLPopover = (props: PopoverProps & { sqlExpression: string }) => {
           style={{
             border: `1px solid ${theme.colors.grayscale.light2}`,
             background: theme.colors.primary.bg,
-            maxWidth: theme.gridUnit * 100,
+            maxWidth: theme.sizeUnit * 100,
           }}
         />
       }

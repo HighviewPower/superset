@@ -22,7 +22,7 @@ import { styled } from '@superset-ui/core';
 const StyledItem = styled(Form.Item)`
   ${({ theme }) => `
     .ant-form-item-label {
-      padding-bottom: ${theme.gridUnit}px;
+      padding-bottom: ${theme.sizeUnit}px;
       & > label {
         font-size: ${theme.fontSizeSM}px;
         color: ${theme.colors.grayscale.base};

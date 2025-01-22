@@ -28,7 +28,7 @@ const Rose = ({ className, ...otherProps }) => (
       styles={theme => css`
         .tooltip {
           line-height: 1;
-          padding: ${theme.gridUnit * 3}px;
+          padding: ${theme.sizeUnit * 3}px;
           background: ${theme.colors.grayscale.dark2};
           color: ${theme.colors.grayscale.light5};
           border-radius: 4px;

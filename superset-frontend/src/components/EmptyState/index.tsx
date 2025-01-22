@@ -77,7 +77,7 @@ const EmptyStateContainer = styled.div`
     color: ${theme.colors.grayscale.light3};
     align-items: center;
     justify-content: center;
-    padding: ${theme.gridUnit * 4}px;
+    padding: ${theme.sizeUnit * 4}px;
     text-align: center;
 
     & .antd5-empty-image svg {
@@ -99,7 +99,7 @@ const Title = styled.p<{ size: EmptyStateSize }>`
   ${({ theme, size }) => css`
     font-size: ${size === 'large' ? theme.fontSizeLG : theme.fontSize}px;
     color: ${theme.colors.grayscale.light1};
-    margin-top: ${size === 'large' ? theme.gridUnit * 4 : theme.gridUnit * 2}px;
+    margin-top: ${size === 'large' ? theme.sizeUnit * 4 : theme.sizeUnit * 2}px;
     font-weight: ${theme.fontWeightStrong};
   `}
 `;
@@ -108,13 +108,13 @@ const Description = styled.p<{ size: EmptyStateSize }>`
   ${({ theme, size }) => css`
     font-size: ${size === 'large' ? theme.fontSize : theme.fontSizeSM}px;
     color: ${theme.colors.grayscale.light1};
-    margin-top: ${theme.gridUnit * 2}px;
+    margin-top: ${theme.sizeUnit * 2}px;
   `}
 `;
 
 const ActionButton = styled(Button)`
   ${({ theme }) => css`
-    margin-top: ${theme.gridUnit * 4}px;
+    margin-top: ${theme.sizeUnit * 4}px;
     z-index: 1;
   `}
 `;
@@ -171,8 +171,8 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
     <div
       css={(theme: SupersetTheme) => css`
         max-width: ${size === 'large'
-          ? theme.gridUnit * 150
-          : theme.gridUnit * 100}px;
+          ? theme.sizeUnit * 150
+          : theme.sizeUnit * 100}px;
       `}
     >
       {title && <Title size={size}>{title}</Title>}

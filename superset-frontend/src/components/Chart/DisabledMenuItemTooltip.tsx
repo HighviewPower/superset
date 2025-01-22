@@ -34,7 +34,7 @@ export const MenuItemTooltip = ({
       data-test="tooltip-trigger"
       css={(theme: SupersetTheme) => css`
         color: ${color || theme.colorTextLabel};
-        margin-left: ${theme.gridUnit * 2}px;
+        margin-left: ${theme.sizeUnit * 2}px;
         &.anticon {
           font-size: unset;
           .anticon {

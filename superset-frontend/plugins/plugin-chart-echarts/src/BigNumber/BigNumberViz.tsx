@@ -344,8 +344,8 @@ export default styled(BigNumberVis)`
         font-size: ${theme.fontSizeSM};
         margin: -0.5em 0 0.4em;
         line-height: 1;
-        padding: ${theme.gridUnit}px;
-        border-radius: ${theme.gridUnit}px;
+        padding: ${theme.sizeUnit}px;
+        border-radius: ${theme.sizeUnit}px;
       }
     }
 
@@ -358,7 +358,7 @@ export default styled(BigNumberVis)`
       position: relative;
       line-height: 1em;
       white-space: nowrap;
-      margin-bottom:${theme.gridUnit * 2}px;
+      margin-bottom:${theme.sizeUnit * 2}px;
       span {
         position: absolute;
         bottom: 0;

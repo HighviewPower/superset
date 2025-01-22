@@ -244,7 +244,7 @@ class AnnotationLayerControl extends PureComponent<Props, PopoverState> {
 
     return (
       <div>
-        <List bordered css={theme => ({ borderRadius: theme.gridUnit })}>
+        <List bordered css={theme => ({ borderRadius: theme.sizeUnit })}>
           {annotations}
           <ControlPopover
             trigger="click"

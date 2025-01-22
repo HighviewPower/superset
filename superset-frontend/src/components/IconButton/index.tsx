@@ -35,9 +35,9 @@ const StyledButton = styled(Button)`
 `;
 
 const StyledImage = styled.div`
-  padding: ${({ theme }) => theme.gridUnit * 4}px;
-  height: ${({ theme }) => theme.gridUnit * 18}px;
-  margin: ${({ theme }) => theme.gridUnit * 3}px 0;
+  padding: ${({ theme }) => theme.sizeUnit * 4}px;
+  height: ${({ theme }) => theme.sizeUnit * 18}px;
+  margin: ${({ theme }) => theme.sizeUnit * 3}px 0;
 
   .default-db-icon {
     font-size: 36px;
@@ -53,8 +53,8 @@ const StyledImage = styled.div`
   }
 
   img {
-    width: ${({ theme }) => theme.gridUnit * 10}px;
-    height: ${({ theme }) => theme.gridUnit * 10}px;
+    width: ${({ theme }) => theme.sizeUnit * 10}px;
+    height: ${({ theme }) => theme.sizeUnit * 10}px;
     margin: 0;
     &:first-of-type {
       margin-right: 0;
@@ -83,7 +83,7 @@ const StyledInner = styled.div`
 `;
 
 const StyledBottom = styled.div`
-  padding: ${({ theme }) => theme.gridUnit * 4}px 0;
+  padding: ${({ theme }) => theme.sizeUnit * 4}px 0;
   border-radius: 0 0 ${({ theme }) => theme.borderRadius}px
     ${({ theme }) => theme.borderRadius}px;
   background-color: ${({ theme }) => theme.colors.grayscale.light4};

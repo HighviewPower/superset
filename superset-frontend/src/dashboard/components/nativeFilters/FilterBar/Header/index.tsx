@@ -31,7 +31,7 @@ const TitleArea = styled.div`
     flex-direction: row;
     justify-content: space-between;
     margin: 0;
-    padding: 0 ${theme.gridUnit * 2}px ${theme.gridUnit * 2}px;
+    padding: 0 ${theme.sizeUnit * 2}px ${theme.sizeUnit * 2}px;
 
     & > span {
       font-size: ${theme.fontSizeLG}px;
@@ -55,11 +55,11 @@ const HeaderButton = styled(Button)`
 
 const Wrapper = styled.div`
   ${({ theme }) => `
-    padding: ${theme.gridUnit * 3}px ${theme.gridUnit * 2}px ${
-      theme.gridUnit
+    padding: ${theme.sizeUnit * 3}px ${theme.sizeUnit * 2}px ${
+      theme.sizeUnit
     }px;
     .ant-dropdown-trigger span {
-      padding-right: ${theme.gridUnit * 2}px;
+      padding-right: ${theme.sizeUnit * 2}px;
     }
   `}
 `;

@@ -30,21 +30,21 @@ import Icons from 'src/components/Icons';
 import { MenuObjectProps } from 'src/types/bootstrapTypes';
 
 const StyledHeader = styled.div`
-  margin-bottom: ${({ theme }) => theme.gridUnit * 4}px;
+  margin-bottom: ${({ theme }) => theme.sizeUnit * 4}px;
   .header {
     font-weight: ${({ theme }) => theme.fontWeightStrong};
-    margin-right: ${({ theme }) => theme.gridUnit * 3}px;
+    margin-right: ${({ theme }) => theme.sizeUnit * 3}px;
     text-align: left;
     font-size: 18px;
-    padding: ${({ theme }) => theme.gridUnit * 3}px;
+    padding: ${({ theme }) => theme.sizeUnit * 3}px;
     display: inline-block;
-    line-height: ${({ theme }) => theme.gridUnit * 9}px;
+    line-height: ${({ theme }) => theme.sizeUnit * 9}px;
   }
   .nav-right {
     display: flex;
     align-items: center;
-    padding: ${({ theme }) => theme.gridUnit * 3.5}px 0;
-    margin-right: ${({ theme }) => theme.gridUnit * 3}px;
+    padding: ${({ theme }) => theme.sizeUnit * 3.5}px 0;
+    margin-right: ${({ theme }) => theme.sizeUnit * 3}px;
     float: right;
     position: absolute;
     right: 0;
@@ -80,12 +80,12 @@ const StyledHeader = styled.div`
       }
     }
     .ant-menu {
-      padding: ${({ theme }) => theme.gridUnit * 4}px 0px;
+      padding: ${({ theme }) => theme.sizeUnit * 4}px 0px;
     }
   }
 
   .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item {
-    margin: 0 ${({ theme }) => theme.gridUnit + 1}px;
+    margin: 0 ${({ theme }) => theme.sizeUnit + 1}px;
   }
 
   .menu .ant-menu-item {
@@ -97,9 +97,9 @@ const StyledHeader = styled.div`
 
         a {
           margin: 0;
-          padding: ${({ theme }) => theme.gridUnit * 2}px
-            ${({ theme }) => theme.gridUnit * 4}px;
-          line-height: ${({ theme }) => theme.gridUnit * 5}px;
+          padding: ${({ theme }) => theme.sizeUnit * 2}px
+            ${({ theme }) => theme.sizeUnit * 4}px;
+          line-height: ${({ theme }) => theme.sizeUnit * 5}px;
 
           &:hover {
             text-decoration: none;
@@ -108,8 +108,8 @@ const StyledHeader = styled.div`
       }
 
       &.no-router a {
-        padding: ${({ theme }) => theme.gridUnit * 2}px
-          ${({ theme }) => theme.gridUnit * 4}px;
+        padding: ${({ theme }) => theme.sizeUnit * 2}px
+          ${({ theme }) => theme.sizeUnit * 4}px;
       }
 
       &.active a {
@@ -128,7 +128,7 @@ const StyledHeader = styled.div`
     div > a:hover {
       border-bottom: none;
       border-radius: ${({ theme }) => theme.borderRadius}px;
-      margin-bottom: ${({ theme }) => theme.gridUnit * 2}px;
+      margin-bottom: ${({ theme }) => theme.sizeUnit * 2}px;
       text-decoration: none;
     }
   }
@@ -143,14 +143,14 @@ const StyledHeader = styled.div`
     .header,
     .nav-right {
       position: relative;
-      margin-left: ${({ theme }) => theme.gridUnit * 2}px;
+      margin-left: ${({ theme }) => theme.sizeUnit * 2}px;
     }
   }
   .ant-menu-submenu {
     span[role='img'] {
       position: absolute;
-      right: ${({ theme }) => -theme.gridUnit + -2}px;
-      top: ${({ theme }) => theme.gridUnit + 1}px !important;
+      right: ${({ theme }) => -theme.sizeUnit + -2}px;
+      top: ${({ theme }) => theme.sizeUnit + 1}px !important;
     }
   }
   .dropdown-menu-links > div.ant-menu-submenu-title,
