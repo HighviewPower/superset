@@ -18,9 +18,12 @@
  */
 // eslint-disable-next-line no-restricted-syntax
 import React from 'react';
-import { theme as antdThemeImport, ThemeConfig, ConfigProvider } from 'antd-v5';
+import {
+  theme as antdThemeImport,
+  ThemeConfig as AntdThemeConfig,
+  ConfigProvider,
+} from 'antd-v5';
 import tinycolor from 'tinycolor2';
-import { merge } from 'lodash';
 
 import {
   ThemeProvider as EmotionThemeProvider,
@@ -39,7 +42,7 @@ interface SystemColors {
   grayscale: string;
 }
 
-interface DeprecatedColorVariations {
+interface ColorVariations {
   base: string;
   light1: string;
   light2: string;
@@ -51,10 +54,7 @@ interface DeprecatedColorVariations {
   dark3: string;
   dark4: string;
   dark5: string;
-}
-
-interface NewColorVariations {
-  base: string;
+  // new stuff
   bg: string;
   bgHover: string;
   border: string;
@@ -64,34 +64,6 @@ interface NewColorVariations {
   textHover: string;
   text: string;
   textActive: string;
-}
-interface ColorVariations
-  extends DeprecatedColorVariations,
-    NewColorVariations {}
-
-interface GrayscaleVariations extends ColorVariations {
-  bgBase: string;
-  bgBlur: string;
-  bgContainer: string;
-  bgContainerDisabled: string;
-  bgElevated: string;
-  bgMask: string;
-  bgSpotlight: string;
-  bgTextActive: string;
-  bgTextHover: string;
-  border: string;
-  borderSecondary: string;
-  highlight: string;
-  text: string;
-  textDescription: string;
-  textDisabled: string;
-  textHeading: string;
-  textLabel: string;
-  textLightSolid: string;
-  textPlaceholder: string;
-  textQuaternary: string;
-  textSecondary: string;
-  textTertiary: string;
 }
 
 interface ThemeColors {
@@ -108,21 +80,21 @@ interface ThemeColors {
 }
 
 interface LegacyThemeColors {
-  primary: DeprecatedColorVariations;
-  error: DeprecatedColorVariations;
-  warning: DeprecatedColorVariations;
-  success: DeprecatedColorVariations;
-  info: DeprecatedColorVariations;
-  grayscale: DeprecatedColorVariations;
+  primary: ColorVariations;
+  error: ColorVariations;
+  warning: ColorVariations;
+  success: ColorVariations;
+  info: ColorVariations;
+  grayscale: ColorVariations;
 }
 
 interface LegacySupersetTheme {
+  colors: LegacyThemeColors;
   borderRadius: number;
   body: {
     backgroundColor: string;
     color: string;
   };
-  colors: LegacyThemeColors;
   opacity: {
     light: string;
     mediumLight: string;
@@ -160,9 +132,242 @@ interface LegacySupersetTheme {
   brandIconMaxWidth: number;
 }
 
-export interface SupersetTheme extends LegacySupersetTheme {
-  colors: ThemeColors;
-}
+const sharedAntdTokens = [
+  'borderRadius',
+  'borderRadiusLG',
+  'borderRadiusOuter',
+  'borderRadiusSM',
+  'borderRadiusXS',
+  'boxShadow',
+  'boxShadowCard',
+  'boxShadowDrawerDown',
+  'boxShadowDrawerLeft',
+  'boxShadowDrawerRight',
+  'boxShadowDrawerUp',
+  'boxShadowPopoverArrow',
+  'boxShadowSecondary',
+  'boxShadowTabsOverflowBottom',
+  'boxShadowTabsOverflowLeft',
+  'boxShadowTabsOverflowRight',
+  'boxShadowTabsOverflowTop',
+  'boxShadowTertiary',
+  'colorError',
+  'colorErrorActive',
+  'colorErrorBg',
+  'colorErrorBgActive',
+  'colorErrorBgHover',
+  'colorErrorBorder',
+  'colorErrorBorderHover',
+  'colorErrorHover',
+  'colorErrorOutline',
+  'colorErrorText',
+  'colorErrorTextActive',
+  'colorErrorTextHover',
+  'colorPrimary',
+  'colorPrimaryActive',
+  'colorPrimaryBg',
+  'colorPrimaryBgHover',
+  'colorPrimaryBorder',
+  'colorPrimaryBorderHover',
+  'colorPrimaryHover',
+  'colorPrimaryText',
+  'colorPrimaryTextActive',
+  'colorPrimaryTextHover',
+  'colorSuccess',
+  'colorSuccessActive',
+  'colorSuccessBg',
+  'colorSuccessBgHover',
+  'colorSuccessBorder',
+  'colorSuccessBorderHover',
+  'colorSuccessHover',
+  'colorSuccessText',
+  'colorSuccessTextActive',
+  'colorSuccessTextHover',
+  'colorBgBase',
+  'colorBgBlur',
+  'colorBgContainer',
+  'colorBgContainerDisabled',
+  'colorBgElevated',
+  'colorBgLayout',
+  'colorBgMask',
+  'colorBgSpotlight',
+  'colorBgTextActive',
+  'colorBgTextHover',
+  'colorBorder',
+  'colorBorderBg',
+  'colorBorderSecondary',
+  'colorFill',
+  'colorFillAlter',
+  'colorFillContent',
+  'colorFillContentHover',
+  'colorFillQuaternary',
+  'colorFillSecondary',
+  'colorFillTertiary',
+  'colorHighlight',
+  'colorIcon',
+  'colorIconHover',
+  'colorInfo',
+  'colorInfoActive',
+  'colorInfoBg',
+  'colorInfoBgHover',
+  'colorInfoBorder',
+  'colorInfoBorderHover',
+  'colorInfoHover',
+  'colorInfoText',
+  'colorInfoTextActive',
+  'colorInfoTextHover',
+  'colorLink',
+  'colorLinkActive',
+  'colorLinkHover',
+  'colorSplit',
+  'colorText',
+  'colorTextBase',
+  'colorTextDescription',
+  'colorTextDisabled',
+  'colorTextHeading',
+  'colorTextLabel',
+  'colorTextLightSolid',
+  'colorTextPlaceholder',
+  'colorTextQuaternary',
+  'colorTextSecondary',
+  'colorTextTertiary',
+  'colorWarning',
+  'colorWarningActive',
+  'colorWarningBg',
+  'colorWarningBgHover',
+  'colorWarningBorder',
+  'colorWarningBorderHover',
+  'colorWarningHover',
+  'colorWarningOutline',
+  'colorWarningText',
+  'colorWarningTextActive',
+  'colorWarningTextHover',
+  'colorWhite',
+  'controlHeight',
+  'controlHeightLG',
+  'controlHeightSM',
+  'controlHeightXS',
+  'controlInteractiveSize',
+  'controlItemBgActive',
+  'controlItemBgActiveDisabled',
+  'controlItemBgActiveHover',
+  'controlItemBgHover',
+  'controlOutline',
+  'controlOutlineWidth',
+  'controlPaddingHorizontal',
+  'controlPaddingHorizontalSM',
+  'controlTmpOutline',
+  'fontFamily',
+  'fontFamilyCode',
+  'fontHeight',
+  'fontHeightLG',
+  'fontHeightSM',
+  'fontSize',
+  'fontSizeHeading1',
+  'fontSizeHeading2',
+  'fontSizeHeading3',
+  'fontSizeHeading4',
+  'fontSizeHeading5',
+  'fontSizeIcon',
+  'fontSizeLG',
+  'fontSizeSM',
+  'fontSizeXL',
+  'fontWeightStrong',
+  'lineHeight',
+  'lineHeightHeading1',
+  'lineHeightHeading2',
+  'lineHeightHeading3',
+  'lineHeightHeading4',
+  'lineHeightHeading5',
+  'lineHeightLG',
+  'lineHeightSM',
+  'lineType',
+  'lineWidth',
+  'lineWidthBold',
+  'lineWidthFocus',
+  'linkDecoration',
+  'linkFocusDecoration',
+  'linkHoverDecoration',
+  'margin',
+  'marginLG',
+  'marginMD',
+  'marginSM',
+  'marginXL',
+  'marginXS',
+  'marginXXL',
+  'marginXXS',
+  'motion',
+  'motionBase',
+  'motionDurationFast',
+  'motionDurationMid',
+  'motionDurationSlow',
+  'motionEaseInBack',
+  'motionEaseInOut',
+  'motionEaseInOutCirc',
+  'motionEaseInQuint',
+  'motionEaseOut',
+  'motionEaseOutBack',
+  'motionEaseOutCirc',
+  'motionEaseOutQuint',
+  'motionUnit',
+  'opacityImage',
+  'opacityLoading',
+  'padding',
+  'paddingContentHorizontal',
+  'paddingContentHorizontalLG',
+  'paddingContentHorizontalSM',
+  'paddingContentVertical',
+  'paddingContentVerticalLG',
+  'paddingContentVerticalSM',
+  'paddingLG',
+  'paddingMD',
+  'paddingSM',
+  'paddingXL',
+  'paddingXS',
+  'paddingXXS',
+  'screenLG',
+  'screenLGMax',
+  'screenLGMin',
+  'screenMD',
+  'screenMDMax',
+  'screenMDMin',
+  'screenSM',
+  'screenSMMax',
+  'screenSMMin',
+  'screenXL',
+  'screenXLMax',
+  'screenXLMin',
+  'screenXS',
+  'screenXSMax',
+  'screenXSMin',
+  'screenXXL',
+  'screenXXLMin',
+  'size',
+  'sizeLG',
+  'sizeMD',
+  'sizeMS',
+  'sizePopupArrow',
+  'sizeSM',
+  'sizeStep',
+  'sizeUnit',
+  'sizeXL',
+  'sizeXS',
+  'sizeXXL',
+  'sizeXXS',
+  'wireframe',
+  'zIndexBase',
+  'zIndexPopupBase',
+];
+
+// Generating a type
+const sharedAntdTokensObject = Object.fromEntries(
+  sharedAntdTokens.map(key => [key, '']),
+) as Record<string, string>;
+
+// Derive the type dynamically
+export type SharedAntdTokens = typeof sharedAntdTokensObject;
+
+export type SupersetTheme = LegacySupersetTheme & SharedAntdTokens;
 
 const DEFAULT_SYSTEM_COLORS = {
   primary: '#20a7c9',
@@ -175,6 +380,7 @@ const DEFAULT_SYSTEM_COLORS = {
 
 export class Theme {
   theme: SupersetTheme;
+
   private static namedColors = [
     'primary',
     'error',
@@ -183,27 +389,10 @@ export class Theme {
     'info',
     'grayscale',
   ];
-  private static readonly denyList: RegExp[] = [
-    /purple.*/,
-    /dragon.*/,
-    /geekblue.*/,
-    /magenta.*/,
-    /volcano.*/,
-    /gold.*/,
-    /lime.*/,
-    /cyan.*/,
-    /blue.*/,
-    /green.*/,
-    /red.*/,
-    /yellow.*/,
-    /pink.*/,
-    /orange.*/,
-  ];
 
-  private antdConfig: ThemeConfig;
+  private antdConfig: AntdThemeConfig;
 
   private constructor() {
-    this.getTheme = this.getTheme.bind(this);
     this.updateTheme = this.updateTheme.bind(this);
     this.SupersetThemeProvider = this.SupersetThemeProvider.bind(this);
   }
@@ -212,30 +401,26 @@ export class Theme {
     systemColors?: Partial<SystemColors>,
     isDark = false,
   ): Theme {
-    const theme = this.getSupersetTheme(systemColors || {}, isDark);
-    const antdConfig = this.getAntdConfig(theme, isDark);
-    const newTheme = new Theme();
-    newTheme.updateTheme(theme, antdConfig);
-    return newTheme;
+    const theme = new Theme();
+    theme.setThemeWithSystemColors(systemColors, isDark);
+    return theme;
   }
 
-  static fromAntdConfig(themeConfig: ThemeConfig): Theme {}
-
-  getTheme(): SupersetTheme {
-    const antd = this.getFilteredAntdTheme();
-    return this.theme;
+  static fromAntdConfig(themeConfig: AntdThemeConfig): Theme {
+    const theme = new Theme();
+    return theme;
   }
+
   private static generateColorVariations(
     colorName: string,
     color: string,
     isDark: boolean,
-    fromAntdConfig: boolean,
   ): ColorVariations {
-    const bg = isDark ? '#000' : '#FFF';
-    const fg = isDark ? '#FFF' : '#000';
+    const bg = isDark ? '#FFF' : '#000';
+    const fg = isDark ? '#000' : '#FFF';
     const adjustColor = (color: string, perc: number, target: string): string =>
       tinycolor.mix(color, target, perc).toHexString();
-    const colors: LegacyColorVariations = {
+    return {
       base: color,
       light1: adjustColor(color, 20, fg),
       light2: adjustColor(color, 45, fg),
@@ -247,56 +432,27 @@ export class Theme {
       dark3: adjustColor(color, 40, bg),
       dark4: adjustColor(color, 60, bg),
       dark5: adjustColor(color, 80, bg),
-    };
-    let newColors: NewColorVariations;
-    if (fromAntdConfig) {
-      const antd = this.getAntdTokens();
-      const k = colorName.charAt(0).toUpperCase() + colorName.slice(1);
-      newColors = {
-        bg: antd[`color${k}Bg`],
-        bgBase: antd[`color${k}BgBase`],
-        bgHover: antd[`color${k}BgHover`],
-        border: antd[`color${k}Border`],
-        borderHover: antd[`color${k}BorderHover`],
-        hover: antd[`color${k}Hover`],
-        active: antd[`color${k}Active`],
-        textHover: antd[`color${k}TextHover`],
-        text: antd[`color${k}Text`],
-        textActive: antd[`color${k}TextActive`],
-      };
-    } else {
-      newColors = {
-        base: color,
-        active: adjustColor(color, 80, bg),
-        textActive: adjustColor(color, 70, bg),
-        text: adjustColor(color, 20, bg),
-        textHover: adjustColor(color, 30, fg),
-        hover: adjustColor(color, 40, fg),
-        borderHover: adjustColor(color, 50, fg),
-        border: adjustColor(color, 70, fg),
-        bgHover: adjustColor(color, 80, fg),
-        bg: adjustColor(color, 90, fg),
-      };
-    }
-    return {
-      ...colors,
-      ...newColors,
+      // new stuff
+      active: adjustColor(color, 80, bg),
+      textActive: adjustColor(color, 70, bg),
+      text: adjustColor(color, 20, bg),
+      textHover: adjustColor(color, 30, fg),
+      hover: adjustColor(color, 40, fg),
+      borderHover: adjustColor(color, 50, fg),
+      border: adjustColor(color, 70, fg),
+      bgHover: adjustColor(color, 80, fg),
+      bg: adjustColor(color, 90, fg),
     };
   }
+
   private static getColors(
     systemColors: SystemColors,
     isDark: boolean,
-    fromAntdConfig: boolean,
   ): ThemeColors {
     return Object.fromEntries(
       Theme.namedColors.map(k => [
         k,
-        this.generateColorVariations(
-          k,
-          systemColors[k],
-          isDark,
-          fromAntdConfig,
-        ),
+        Theme.generateColorVariations(k, systemColors[k], isDark),
       ]),
     );
   }
@@ -305,6 +461,7 @@ export class Theme {
     systemColors: Partial<SystemColors>,
     isDark = false,
   ): SupersetTheme {
+    const antdConfig = Theme.getAntdConfig(systemColors, isDark);
     const allSystemColors: SystemColors = {
       ...DEFAULT_SYSTEM_COLORS,
       ...systemColors,
@@ -351,59 +508,27 @@ export class Theme {
       transitionTiming: 0.3,
       gridUnit: 4,
       brandIconMaxWidth: 37,
+      ...Theme.getFilteredAntdTheme(antdConfig),
     };
     return theme;
   }
-  mergeTheme(partialTheme: Partial<LegacySupersetTheme>): void {
-    const mergedTheme = merge({}, this.theme, partialTheme);
-    const isDark = tinycolor(this.antdTheme.colorBgBase).isDark();
-    this.updateTheme(mergedTheme, isDark);
-  }
 
-  private static getAntdSeedFromTheme(
-    theme: LegacySupersetTheme,
+  private static getFilteredAntdTheme(
+    antdConfig: AntdThemeConfig,
   ): Record<string, any> {
-    return {
-      ...antdThemeImport.defaultSeed,
+    const theme = Theme.getAntdTokens(antdConfig);
 
-      borderRadius: theme.borderRadius,
-
-      colorPrimary: theme.colors.primary.base,
-      colorError: theme.colors.error.base,
-      colorInfo: theme.colors.info.base,
-      colorSuccess: theme.colors.success.base,
-      colorWarning: theme.colors.warning.base,
-      colorBgLayout: theme.colors.grayscale.light5,
-
-      colorLink: theme.colors.primary.dark1,
-
-      controlHeight: 32,
-      fontFamily: theme.typography.families.sansSerif,
-      fontFamilyCode: theme.typography.families.monospace,
-      fontSize: theme.typography.sizes.m,
-      lineType: 'solid',
-      lineWidth: 1,
-      sizeStep: theme.gridUnit,
-      sizeUnit: theme.gridUnit,
-      zIndexBase: 0,
-      zIndexPopupBase: theme.zIndex.max,
-    };
+    return Object.fromEntries(
+      sharedAntdTokens
+        .sort((a, b) => a.localeCompare(b)) // Sort keys alphabetically
+        .map(key => [key, theme[key]]), // Map keys to their values from the theme
+    );
   }
 
-  private getFilteredAntdTheme(): Record<string, any> {
-    const theme = this.getAntdTokens();
-    const filteredTheme: Record<string, any> = {};
-
-    Object.entries(theme).forEach(([key, value]) => {
-      if (!Theme.denyList.some(deny => deny.test(key))) {
-        filteredTheme[key] = value;
-      }
-    });
-    return filteredTheme;
-  }
-
-  private static getAntdConfig(theme: SupersetTheme, isDark: boolean): void {
-    const seed = this.getAntdSeedFromTheme(theme);
+  private static getAntdConfig(
+    seed: Record<string, any>,
+    isDark: boolean,
+  ): AntdThemeConfig {
     const algorithm = isDark
       ? antdThemeImport.darkAlgorithm
       : antdThemeImport.defaultAlgorithm;
@@ -414,7 +539,13 @@ export class Theme {
     };
   }
 
-  private updateTheme(theme, antdConfig): void {
+  mergeTheme(partialTheme: Partial<LegacySupersetTheme>): void {
+    const mergedTheme = merge({}, this.theme, partialTheme);
+    const isDark = tinycolor(mergedTheme.colorBgBase).isDark();
+    this.updateTheme(mergedTheme, isDark);
+  }
+
+  private updateTheme(theme: SupersetTheme, antdConfig: AntdThemeConfig): void {
     this.theme = theme;
     this.antdConfig = antdConfig;
     this.updateProviders(
@@ -427,26 +558,26 @@ export class Theme {
   setThemeWithSystemColors(
     systemColors: Partial<SystemColors>,
     isDark: boolean,
-  ): void {}
-
-  public getAntdTokens(): Record<string, any> {
-    return antdThemeImport.getDesignToken(this.antdConfig);
+  ): void {
+    const theme = Theme.getSupersetTheme(systemColors || {}, isDark);
+    const antdConfig = Theme.getAntdConfig(systemColors, isDark);
+    this.updateTheme(theme, antdConfig);
   }
 
-  getThemeFromAntdConfig(themeConfig: ThemeConfig): void {
+  private static getAntdTokens(
+    antdConfig: AntdThemeConfig,
+  ): Record<string, any> {
+    return antdThemeImport.getDesignToken(antdConfig);
+  }
+
+  getThemeFromAntdConfig(themeConfig: AntdThemeConfig): void {
     this.antdConfig = themeConfig;
-    const tokens = this.getAntdTokens();
+    const tokens = Theme.getAntdTokens(themeConfig);
     const isDark = tinycolor(tokens.colorBgBase).isDark();
+    const colors = Theme.getColors(tokens, isDark);
 
     this.theme = {
-      colors: {
-        primary: this.generateColorVariations(tokens.colorPrimary, isDark),
-        error: this.generateColorVariations(tokens.colorError, isDark),
-        warning: this.generateColorVariations(tokens.colorWarning, isDark),
-        success: this.generateColorVariations(tokens.colorSuccess, isDark),
-        info: this.generateColorVariations(tokens.colorInfo, isDark),
-        grayscale: this.generateColorVariations('#888', isDark),
-      },
+      colors,
       borderRadius: tokens.borderRadius,
       body: {
         backgroundColor: tokens.colorBgLayout,
@@ -497,7 +628,7 @@ export class Theme {
 
   private updateProviders(
     theme: SupersetTheme,
-    antdConfig: ThemeConfig,
+    antdConfig: AntdThemeConfig,
     emotionCache: any,
   ): void {}
 
@@ -527,234 +658,3 @@ export class Theme {
     );
   }
 }
-/*
-borderRadius
-borderRadiusLG
-borderRadiusOuter
-borderRadiusSM
-borderRadiusXS
-boxShadow
-boxShadowCard
-boxShadowDrawerDown
-boxShadowDrawerLeft
-boxShadowDrawerRight
-boxShadowDrawerUp
-boxShadowPopoverArrow
-boxShadowSecondary
-boxShadowTabsOverflowBottom
-boxShadowTabsOverflowLeft
-boxShadowTabsOverflowRight
-boxShadowTabsOverflowTop
-boxShadowTertiary
-
-colorError
-colorErrorActive
-colorErrorBg
-colorErrorBgActive
-colorErrorBgHover
-colorErrorBorder
-colorErrorBorderHover
-colorErrorHover
-colorErrorOutline
-colorErrorText
-colorErrorTextActive
-colorErrorTextHover
-
-colorPrimary
-colorPrimaryActive
-colorPrimaryBg
-colorPrimaryBgHover
-colorPrimaryBorder
-colorPrimaryBorderHover
-colorPrimaryHover
-colorPrimaryText
-colorPrimaryTextActive
-colorPrimaryTextHover
-colorSuccess
-colorSuccessActive
-colorSuccessBg
-colorSuccessBgHover
-colorSuccessBorder
-colorSuccessBorderHover
-colorSuccessHover
-colorSuccessText
-colorSuccessTextActive
-colorSuccessTextHover
-
-colorBgBase
-colorBgBlur
-colorBgContainer
-colorBgContainerDisabled
-colorBgElevated
-colorBgLayout
-colorBgMask
-colorBgSpotlight
-colorBgTextActive
-colorBgTextHover
-
-colorBorder
-colorBorderBg
-colorBorderSecondary
-
-colorFill
-colorFillAlter
-colorFillContent
-colorFillContentHover
-colorFillQuaternary
-colorFillSecondary
-colorFillTertiary
-colorHighlight
-colorIcon
-colorIconHover
-colorInfo
-colorInfoActive
-colorInfoBg
-colorInfoBgHover
-colorInfoBorder
-colorInfoBorderHover
-colorInfoHover
-colorInfoText
-colorInfoTextActive
-colorInfoTextHover
-colorLink
-colorLinkActive
-colorLinkHover
-colorSplit
-colorText
-colorTextBase
-colorTextDescription
-colorTextDisabled
-colorTextHeading
-colorTextLabel
-colorTextLightSolid
-colorTextPlaceholder
-colorTextQuaternary
-colorTextSecondary
-colorTextTertiary
-colorWarning
-colorWarningActive
-colorWarningBg
-colorWarningBgHover
-colorWarningBorder
-colorWarningBorderHover
-colorWarningHover
-colorWarningOutline
-colorWarningText
-colorWarningTextActive
-colorWarningTextHover
-colorWhite
-controlHeight
-controlHeightLG
-controlHeightSM
-controlHeightXS
-controlInteractiveSize
-controlItemBgActive
-controlItemBgActiveDisabled
-controlItemBgActiveHover
-controlItemBgHover
-controlOutline
-controlOutlineWidth
-controlPaddingHorizontal
-controlPaddingHorizontalSM
-controlTmpOutline
-fontFamily
-fontFamilyCode
-fontHeight
-fontHeightLG
-fontHeightSM
-fontSize
-fontSizeHeading1
-fontSizeHeading2
-fontSizeHeading3
-fontSizeHeading4
-fontSizeHeading5
-fontSizeIcon
-fontSizeLG
-fontSizeSM
-fontSizeXL
-fontWeightStrong
-lineHeight
-lineHeightHeading1
-lineHeightHeading2
-lineHeightHeading3
-lineHeightHeading4
-lineHeightHeading5
-lineHeightLG
-lineHeightSM
-lineType
-lineWidth
-lineWidthBold
-lineWidthFocus
-linkDecoration
-linkFocusDecoration
-linkHoverDecoration
-margin
-marginLG
-marginMD
-marginSM
-marginXL
-marginXS
-marginXXL
-marginXXS
-motion
-motionBase
-motionDurationFast
-motionDurationMid
-motionDurationSlow
-motionEaseInBack
-motionEaseInOut
-motionEaseInOutCirc
-motionEaseInQuint
-motionEaseOut
-motionEaseOutBack
-motionEaseOutCirc
-motionEaseOutQuint
-motionUnit
-opacityImage
-opacityLoading
-padding
-paddingContentHorizontal
-paddingContentHorizontalLG
-paddingContentHorizontalSM
-paddingContentVertical
-paddingContentVerticalLG
-paddingContentVerticalSM
-paddingLG
-paddingMD
-paddingSM
-paddingXL
-paddingXS
-paddingXXS
-screenLG
-screenLGMax
-screenLGMin
-screenMD
-screenMDMax
-screenMDMin
-screenSM
-screenSMMax
-screenSMMin
-screenXL
-screenXLMax
-screenXLMin
-screenXS
-screenXSMax
-screenXSMin
-screenXXL
-screenXXLMin
-size
-sizeLG
-sizeMD
-sizeMS
-sizePopupArrow
-sizeSM
-sizeStep
-sizeUnit
-sizeXL
-sizeXS
-sizeXXL
-sizeXXS
-wireframe
-zIndexBase
-zIndexPopupBase
- * */

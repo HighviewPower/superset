@@ -478,7 +478,7 @@ const RightMenu = ({
             })}
           </SubMenu>
         )}
-        {isFeatureEnabled(FeatureFlag.DarkThemeSwitch) && (
+        {(isFeatureEnabled(FeatureFlag.DarkThemeSwitch) || true) && (
           <span>
             <Switch
               onChange={(checked: boolean) => {

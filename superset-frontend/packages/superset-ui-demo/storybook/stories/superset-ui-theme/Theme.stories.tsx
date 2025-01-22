@@ -165,12 +165,6 @@ export const ThemeColors = () => {
       <pre>
         <code>{JSON.stringify(supersetTheme, null, 2)}</code>
       </pre>
-      <h2>AntD Computed Tokens</h2>
-      <pre>
-        <code>
-          {JSON.stringify(themeObject.getFilteredAntdTheme(), null, 2)}
-        </code>
-      </pre>
     </div>
   );
 };

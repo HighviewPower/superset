@@ -23,14 +23,14 @@ import '@testing-library/jest-dom';
 describe('Theme Class', () => {
   test('should initialize with default system colors', () => {
     const theme = Theme.fromSystemColors();
-    const themeConfig = theme.getTheme();
+    const themeConfig = theme.theme;
     expect(themeConfig.colors.primary.base).toBe('#20a7c9');
     expect(themeConfig.colors.grayscale.bgBase).toBe('#FFF');
   });
 
   test('should apply custom system colors and dark mode', () => {
     const theme = Theme.fromSystemColors();
-    const themeConfig = theme.getTheme();
+    const themeConfig = theme.theme;
     expect(themeConfig.colors.primary.base).toBe('#20a7c9');
     expect(themeConfig.colors.grayscale.bgBase).toBe('#000');
   });
