@@ -78,10 +78,6 @@ interface ThemeColors {
 
 interface LegacySupersetTheme {
   colors: ThemeColors;
-  body: {
-    backgroundColor: string;
-    color: string;
-  };
   opacity: {
     light: string;
     mediumLight: string;
@@ -458,10 +454,6 @@ export class Theme {
     const antdConfig = Theme.getAntdConfig(systemColors, isDark);
     const theme: SupersetTheme = {
       colors: Theme.getColors(systemColors, isDark),
-      body: {
-        backgroundColor: isDark ? '#000' : '#FFF',
-        color: isDark ? '#FFF' : '#000',
-      },
       opacity: {
         light: '10%',
         mediumLight: '35%',
@@ -476,6 +468,7 @@ export class Theme {
       transitionTiming: 0.3,
       gridUnit: 4,
       brandIconMaxWidth: 37,
+
       // Extra things
       fontSizeXS: '8',
       fontSizeXXL: '28',
@@ -484,6 +477,8 @@ export class Theme {
       fontWeightMedium: '500',
       fontFamily: `'Inter', Helvetica, Arial`,
       fontFamilyCode: `'Fira Code', 'Courier New', monospace`,
+
+      // Bring allowed tokens from antd
       ...Theme.getFilteredAntdTheme(antdConfig),
     };
     return theme;
@@ -577,10 +572,6 @@ export class Theme {
 
     this.theme = {
       colors: Theme.getColors(systemColors, isDark),
-      body: {
-        backgroundColor: tokens.colorBgLayout,
-        color: tokens.colorTextBase,
-      },
       opacity: {
         light: '10%',
         mediumLight: '35%',
