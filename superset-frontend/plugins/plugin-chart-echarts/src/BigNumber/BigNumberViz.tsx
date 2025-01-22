@@ -324,7 +324,7 @@ class BigNumberVis extends PureComponent<BigNumberVizProps> {
 
 export default styled(BigNumberVis)`
   ${({ theme }) => `
-    font-family: ${theme.typography.families.sansSerif};
+    font-family: ${theme.fontFamily};
     position: relative;
     display: flex;
     flex-direction: column;

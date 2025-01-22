@@ -31,7 +31,7 @@ export const GlobalStyles = () => (
       h6,
       strong,
       th {
-        font-weight: ${theme.typography.weights.bold};
+        font-weight: ${theme.fontWeightStrong};
       }
       // CSS hack to resolve the issue caused by the invisible echart tooltip on
       // https://github.com/apache/superset/issues/30058

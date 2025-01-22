@@ -105,7 +105,7 @@ class WordCloud extends PureComponent<FullWordCloudProps, WordCloudState> {
     },
     defaultEncoding: {
       color: { value: this.props.theme.colors.grayscale.dark2 },
-      fontFamily: { value: this.props.theme.typography.families.sansSerif },
+      fontFamily: { value: this.props.theme.fontFamily },
       fontSize: { value: 20 },
       fontWeight: { value: 'bold' },
       text: { value: '' },
@@ -200,10 +200,7 @@ class WordCloud extends PureComponent<FullWordCloudProps, WordCloudState> {
       .rotate(ROTATION[rotation] || ROTATION.flat)
       .text((d: PlainObject) => encoder.channels.text.getValueFromDatum(d))
       .font((d: PlainObject) =>
-        encoder.channels.fontFamily.encodeDatum(
-          d,
-          this.props.theme.typography.families.sansSerif,
-        ),
+        encoder.channels.fontFamily.encodeDatum(d, this.props.theme.fontFamily),
       )
       .fontWeight((d: PlainObject) =>
         encoder.channels.fontWeight.encodeDatum(d, 'normal'),

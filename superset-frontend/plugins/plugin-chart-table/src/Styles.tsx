@@ -62,7 +62,7 @@ export default styled.div`
       text-align: right;
     }
     .dt-totals {
-      font-weight: ${theme.typography.weights.bold};
+      font-weight: ${theme.fontWeightStrong};
     }
     .dt-is-null {
       color: ${theme.colors.grayscale.light1};

@@ -32,7 +32,7 @@ import { MenuObjectProps } from 'src/types/bootstrapTypes';
 const StyledHeader = styled.div`
   margin-bottom: ${({ theme }) => theme.gridUnit * 4}px;
   .header {
-    font-weight: ${({ theme }) => theme.typography.weights.bold};
+    font-weight: ${({ theme }) => theme.fontWeightStrong};
     margin-right: ${({ theme }) => theme.gridUnit * 3}px;
     text-align: left;
     font-size: 18px;

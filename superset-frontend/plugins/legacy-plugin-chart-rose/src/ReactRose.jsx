@@ -53,9 +53,8 @@ export default styled(Rose)`
     }
 
     .superset-legacy-chart-rose text {
-        font-weight: ${theme.typography.weights.normal};
         font-size: ${theme.fontSizeSM}px;
-        font-family: ${theme.typography.families.sansSerif};
+        font-family: ${theme.fontFamily};
         pointer-events: none;
     }
 

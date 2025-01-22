@@ -53,7 +53,7 @@ const StyledTable = styled(AntTable)<{ height?: number }>(
     color: ${theme.colors.grayscale.text};
     background-color: ${theme.colorBgBase};
     th.ant-table-cell {
-      font-weight: ${theme.typography.weights.bold};
+      font-weight: ${theme.fontWeightStrong};
       color: ${theme.colors.grayscale.text};
       user-select: none;
       white-space: nowrap;

@@ -37,7 +37,7 @@ const antdPanelStyles = (theme: SupersetTheme) => css`
 
     .collapse-panel-title {
       font-size: ${theme.gridUnit * 4}px;
-      font-weight: ${theme.typography.weights.bold};
+      font-weight: ${theme.fontWeightStrong};
       line-height: 130%;
     }
 

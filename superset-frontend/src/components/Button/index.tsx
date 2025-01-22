@@ -91,7 +91,13 @@ export default function Button(props: ButtonProps) {
   } = props;
 
   const theme = useTheme();
-  const { colors, transitionTiming, borderRadius, typography } = theme;
+  const {
+    colors,
+    transitionTiming,
+    borderRadius,
+    fontSizeSM,
+    fontWeightStrong,
+  } = theme;
   const { primary, grayscale, success, warning } = colors;
 
   let height = 32;
@@ -179,8 +185,8 @@ export default function Button(props: ButtonProps) {
         alignItems: 'center',
         justifyContent: 'center',
         lineHeight: 1.5715,
-        fontSize: typography.sizes.s,
-        fontWeight: typography.weights.bold,
+        fontSize: fontSizeSM,
+        fontWeight: fontWeightStrong,
         height,
         padding: `0px ${padding}px`,
         transition: `all ${transitionTiming}s`,

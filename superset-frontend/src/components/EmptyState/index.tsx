@@ -100,7 +100,7 @@ const Title = styled.p<{ size: EmptyStateSize }>`
     font-size: ${size === 'large' ? theme.fontSizeLG : theme.fontSize}px;
     color: ${theme.colors.grayscale.light1};
     margin-top: ${size === 'large' ? theme.gridUnit * 4 : theme.gridUnit * 2}px;
-    font-weight: ${theme.typography.weights.bold};
+    font-weight: ${theme.fontWeightStrong};
   `}
 `;
 

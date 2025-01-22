@@ -173,7 +173,7 @@ const MessageSpan = styled.span`
 `;
 
 const MonospaceDiv = styled.div`
-  font-family: ${({ theme }) => theme.typography.families.monospace};
+  font-family: ${({ theme }) => theme.fontFamilyCode};
   word-break: break-word;
   overflow-x: auto;
   white-space: pre-wrap;

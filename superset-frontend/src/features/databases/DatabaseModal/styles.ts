@@ -274,7 +274,7 @@ export const StyledInputContainer = styled.div`
         display: flex;
         margin-left: ${theme.gridUnit * 2}px;
         margin-top: ${theme.gridUnit * 0.75}px;
-        font-family: ${theme.typography.families.sansSerif};
+        font-family: ${theme.fontFamily};
         font-size: ${theme.fontSize}px;
       }
 
@@ -361,20 +361,17 @@ export const StyledAlignment = styled.div`
 `;
 
 export const buttonLinkStyles = (theme: SupersetTheme) => css`
-  font-weight: ${theme.typography.weights.normal};
   text-transform: initial;
   padding-right: ${theme.gridUnit * 2}px;
 `;
 
 export const importDbButtonLinkStyles = (theme: SupersetTheme) => css`
   font-size: ${theme.gridUnit * 3.5}px;
-  font-weight: ${theme.typography.weights.normal};
   text-transform: initial;
   padding-right: ${theme.gridUnit * 2}px;
 `;
 
 export const alchemyButtonLinkStyles = (theme: SupersetTheme) => css`
-  font-weight: ${theme.typography.weights.normal};
   text-transform: initial;
   padding: ${theme.gridUnit * 8}px 0 0;
   margin-left: 0px;
@@ -395,7 +392,7 @@ export const TabHeader = styled.div`
 
 export const CreateHeaderTitle = styled.div`
   color: ${({ theme }) => theme.colors.grayscale.dark2};
-  font-weight: ${({ theme }) => theme.typography.weights.bold};
+  font-weight: ${({ theme }) => theme.fontWeightStrong};
   font-size: ${({ theme }) => theme.fontSize}px;
 `;
 
@@ -412,7 +409,7 @@ export const EditHeaderTitle = styled.div`
 export const EditHeaderSubtitle = styled.div`
   color: ${({ theme }) => theme.colors.grayscale.dark1};
   font-size: ${({ theme }) => theme.fontSizeLG}px;
-  font-weight: ${({ theme }) => theme.typography.weights.bold};
+  font-weight: ${({ theme }) => theme.fontWeightStrong};
 `;
 
 export const CredentialInfoForm = styled.div`
@@ -484,7 +481,7 @@ export const SelectDatabaseStyles = styled.div`
     margin: ${({ theme }) => theme.gridUnit * 4}px;
     .available-label {
       font-size: ${({ theme }) => theme.fontSizeLG}px;
-      font-weight: ${({ theme }) => theme.typography.weights.bold};
+      font-weight: ${({ theme }) => theme.fontWeightStrong};
       margin: ${({ theme }) => theme.gridUnit * 6}px 0;
     }
     .available-select {
@@ -524,7 +521,7 @@ export const StyledCatalogTable = styled.div`
 
   .gsheet-title {
     font-size: ${({ theme }) => theme.fontSizeLG}px;
-    font-weight: ${({ theme }) => theme.typography.weights.bold};
+    font-weight: ${({ theme }) => theme.fontWeightStrong};
     margin: ${({ theme }) => theme.gridUnit * 10}px 0 16px;
   }
 

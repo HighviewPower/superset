@@ -105,7 +105,7 @@ const SectionTitle = styled.h3`
   margin-top: 0;
   margin-bottom: ${({ theme }) => theme.gridUnit * 2}px;
   font-size: ${({ theme }) => theme.fontSizeLG}px;
-  font-weight: ${({ theme }) => theme.typography.weights.bold};
+  font-weight: ${({ theme }) => theme.fontWeightStrong};
   line-height: ${({ theme }) => theme.gridUnit * 6}px;
 `;
 
@@ -299,7 +299,7 @@ const HighlightLabel = styled.div`
     line-height: ${theme.gridUnit * 2.5}px;
     color: ${theme.colors.primary.dark1};
     font-size: ${theme.fontSizeSM}px;
-    font-weight: ${theme.typography.weights.bold};
+    font-weight: ${theme.fontWeightStrong};
     text-align: center;
     padding: ${theme.gridUnit * 0.5}px ${theme.gridUnit}px;
     cursor: pointer;

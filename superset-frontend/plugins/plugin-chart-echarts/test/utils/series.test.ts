@@ -54,7 +54,7 @@ import { NULL_STRING } from '../../src/constants';
 const expectedThemeProps = {
   selector: ['all', 'inverse'],
   selectorLabel: {
-    fontFamily: theme.typography.families.sansSerif,
+    fontFamily: theme.fontFamily,
     fontSize: theme.fontSizeSM,
     color: theme.colors.grayscale.base,
     borderColor: theme.colors.grayscale.base,

@@ -100,7 +100,7 @@ export default function Label(props: LabelProps) {
     },
   };
   if (monospace) {
-    css['font-family'] = theme.typography.families.monospace;
+    css['font-family'] = theme.fontFamilyCode;
   }
   return (
     <Tag

@@ -82,7 +82,7 @@ const ButtonContainer = styled.div`
 `;
 
 const Title = styled.p`
-  font-weight: ${({ theme }) => theme.typography.weights.bold};
+  font-weight: ${({ theme }) => theme.fontWeightStrong};
 `;
 
 const typeChart = {

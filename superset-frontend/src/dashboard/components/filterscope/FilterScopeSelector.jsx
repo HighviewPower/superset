@@ -134,7 +134,7 @@ const ScopeSelector = styled.div`
 
       .react-checkbox-tree .rct-icon.rct-icon-expand-all,
       .react-checkbox-tree .rct-icon.rct-icon-collapse-all {
-        font-family: ${theme.typography.families.sansSerif};
+        font-family: ${theme.fontFamily};
         font-size: ${theme.fontSize}px;
         color: ${theme.colors.primary.base};
 
@@ -182,7 +182,7 @@ const ScopeSelector = styled.div`
 
         .react-checkbox-tree {
           .rct-title .root {
-            font-weight: ${theme.typography.weights.bold};
+            font-weight: ${theme.fontWeightStrong};
           }
 
           .rct-text {
@@ -232,7 +232,7 @@ const ScopeSelector = styled.div`
           }
 
           &.root {
-            font-weight: ${theme.typography.weights.bold};
+            font-weight: ${theme.fontWeightStrong};
           }
         }
 

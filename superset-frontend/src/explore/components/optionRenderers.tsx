@@ -46,7 +46,7 @@ const OptionContainer = styled.div`
     width: ${({ theme }) => theme.gridUnit * 7}px;
     display: inline-block;
     text-align: center;
-    font-weight: ${({ theme }) => theme.typography.weights.bold};
+    font-weight: ${({ theme }) => theme.fontWeightStrong};
   }
 `;
 

@@ -64,7 +64,7 @@ export const StyledLayerTreeItem = styled(LayerTreeItem)`
     & .layer-tree-item-type {
       padding-left: 4px;
       font-size: ${theme.fontSizeXS}px;
-      font-family: ${theme.typography.families.monospace};
+      font-family: ${theme.fontFamilyCode};
     }
 
     & > button {

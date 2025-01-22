@@ -92,7 +92,7 @@ const StyledPopoverItem = styled.div`
 
 const TimerLabel = styled(Label)`
   text-align: left;
-  font-family: ${({ theme }) => theme.typography.families.monospace};
+  font-family: ${({ theme }) => theme.fontFamilyCode};
 `;
 
 function QueryList({ addDangerToast }: QueryListProps) {

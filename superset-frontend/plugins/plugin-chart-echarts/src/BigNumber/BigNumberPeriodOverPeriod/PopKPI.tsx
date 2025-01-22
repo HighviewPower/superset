@@ -124,7 +124,7 @@ export default function PopKPI(props: PopKPIProps) {
   const theme = useTheme();
   const flexGap = theme.gridUnit * 5;
   const wrapperDivStyles = css`
-    font-family: ${theme.typography.families.sansSerif};
+    font-family: ${theme.fontFamily};
     display: flex;
     justify-content: center;
     align-items: center;

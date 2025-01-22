@@ -39,7 +39,7 @@ const StyledContent = styled.div`
 `;
 
 const StyledTitle = styled.span`
-  font-weight: ${({ theme }) => theme.typography.weights.bold};
+  font-weight: ${({ theme }) => theme.fontWeightStrong};
 `;
 
 interface BasicErrorAlertProps {

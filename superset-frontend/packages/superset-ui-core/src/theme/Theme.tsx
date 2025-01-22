@@ -623,6 +623,9 @@ export class Theme {
       transitionTiming: 0.3,
       gridUnit: 4,
       brandIconMaxWidth: 37,
+      // Extra things
+      fontSizeXS: '8',
+      fontSizeXXL: '28',
     };
     this.updateProviders(
       this.theme,

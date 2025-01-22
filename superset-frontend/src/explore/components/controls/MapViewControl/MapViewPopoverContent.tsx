@@ -37,7 +37,7 @@ export const StyledCloseButton = styled(Button)`
     background-color: ${theme.colors.primary.light4};
     color: ${theme.colors.primary.dark1};
     font-size: ${theme.fontSizeSM}px;
-    font-weight: ${theme.typography.weights.bold};
+    font-weight: ${theme.fontWeightStrong};
     text-transform: uppercase;
     min-width: ${theme.gridUnit * 36};
     min-height: ${theme.gridUnit * 8};
@@ -72,7 +72,7 @@ export const StyledSaveButton = styled(Button)`
     background-color: ${theme.colors.primary.base};
     color: ${theme.colors.grayscale.light5};
     font-size: ${theme.fontSizeSM}px;
-    font-weight: ${theme.typography.weights.bold};
+    font-weight: ${theme.fontWeightStrong};
     text-transform: uppercase;
     min-width: ${theme.gridUnit * 36};
     min-height: ${theme.gridUnit * 8};

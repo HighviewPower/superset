@@ -81,7 +81,7 @@ const StyledTitle = styled.div`
   ${({ theme }) => `
   margin-left: ${theme.gridUnit * (MARGIN_MULTIPLIER + 3)}px;
   margin-bottom: ${theme.gridUnit * MARGIN_MULTIPLIER}px;
-  font-weight: ${theme.typography.weights.bold};
+  font-weight: ${theme.fontWeightStrong};
   `}
 `;
 

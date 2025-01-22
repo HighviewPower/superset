@@ -88,10 +88,10 @@ const AllEntitiesNav = styled.div`
   margin-bottom: ${theme.gridUnit * 4}px;
   .navbar-brand {
     margin-left: ${theme.gridUnit * 2}px;
-    font-weight: ${theme.typography.weights.bold};
+    font-weight: ${theme.fontWeightStrong};
   }
   .header {
-    font-weight: ${theme.typography.weights.bold};
+    font-weight: ${theme.fontWeightStrong};
     margin-right:  ${theme.gridUnit * 3}px;
     text-align: left;
     font-size: ${theme.gridUnit * 4.5}px;

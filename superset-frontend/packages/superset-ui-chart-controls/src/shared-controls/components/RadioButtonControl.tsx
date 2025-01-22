@@ -65,7 +65,7 @@ export default function RadioButtonControl({
         },
         '.btn-group .btn.active': {
           background: theme.colors.grayscale.light4,
-          fontWeight: theme.typography.weights.bold,
+          fontWeight: theme.fontWeightStrong,
           boxShadow: 'none',
         },
       }}

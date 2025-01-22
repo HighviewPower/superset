@@ -127,7 +127,7 @@ const ResultlessStyles = styled.div`
 // Making text render line breaks/tabs as is as monospace,
 // but wrapping text too so text doesn't overflow
 const MonospaceDiv = styled.div`
-  font-family: ${({ theme }) => theme.typography.families.monospace};
+  font-family: ${({ theme }) => theme.fontFamilyCode};
   white-space: pre;
   word-break: break-word;
   overflow-x: auto;

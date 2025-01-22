@@ -491,7 +491,7 @@ const ExtraOptions = ({
               <span
                 css={(theme: SupersetTheme) => ({
                   fontSize: theme.fontSizeLG,
-                  fontWeight: theme.typography.weights.bold,
+                  fontWeight: theme.fontWeightStrong,
                 })}
               >
                 {extraExtension?.title}

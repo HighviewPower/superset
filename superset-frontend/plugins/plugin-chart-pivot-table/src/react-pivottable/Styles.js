@@ -28,7 +28,7 @@ export const Styles = styled.div`
       text-align: left;
       margin: ${theme.gridUnit}px;
       border-collapse: separate;
-      font-family: ${theme.typography.families.sansSerif};
+      font-family: ${theme.fontFamily};
       line-height: 1.4;
     }
 
@@ -94,11 +94,11 @@ export const Styles = styled.div`
 
     table.pvtTable .pvtTotalLabel {
       text-align: right;
-      font-weight: ${theme.typography.weights.bold};
+      font-weight: ${theme.fontWeightStrong};
     }
 
     table.pvtTable .pvtSubtotalLabel {
-      font-weight: ${theme.typography.weights.bold};
+      font-weight: ${theme.fontWeightStrong};
     }
 
     table.pvtTable tbody tr td {
@@ -117,7 +117,7 @@ export const Styles = styled.div`
 
     .pvtTotal,
     .pvtGrandTotal {
-      font-weight: ${theme.typography.weights.bold};
+      font-weight: ${theme.fontWeightStrong};
     }
 
     table.pvtTable tbody tr td.pvtRowTotal {

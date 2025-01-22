@@ -43,7 +43,7 @@ const TooltipSectionWrapper = styled.div`
 
 const TooltipSectionLabel = styled.span`
   ${({ theme }) => css`
-    font-weight: ${theme.typography.weights.bold};
+    font-weight: ${theme.fontWeightStrong};
   `}
 `;
 

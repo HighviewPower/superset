@@ -50,7 +50,7 @@ function HeaderWithRadioGroup(props: HeaderWithRadioGroupProps) {
           <div>
             <div
               css={css`
-                font-weight: ${theme.typography.weights.bold};
+                font-weight: ${theme.fontWeightStrong};
                 margin-bottom: ${theme.gridUnit}px;
               `}
             >

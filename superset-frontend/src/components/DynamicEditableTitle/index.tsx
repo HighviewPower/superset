@@ -42,7 +42,7 @@ export type DynamicEditableTitleProps = {
 const titleStyles = (theme: SupersetTheme) => css`
   display: flex;
   font-size: ${theme.fontSizeXL}px;
-  font-weight: ${theme.typography.weights.bold};
+  font-weight: ${theme.fontWeightStrong};
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

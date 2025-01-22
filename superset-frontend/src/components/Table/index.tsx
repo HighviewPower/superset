@@ -167,7 +167,7 @@ const StyledTable = styled(AntTable)<{ height?: number }>(
     }
 
     th.ant-table-cell {
-      font-weight: ${theme.typography.weights.bold};
+      font-weight: ${theme.fontWeightStrong};
       color: ${theme.colors.grayscale.dark1};
       white-space: nowrap;
       overflow: hidden;

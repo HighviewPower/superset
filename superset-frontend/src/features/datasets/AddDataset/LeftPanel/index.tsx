@@ -48,12 +48,12 @@ const LeftPanelStyle = styled.div`
     .section-title {
       margin-top: ${theme.gridUnit * 5.5}px;
       margin-bottom: ${theme.gridUnit * 11}px;
-      font-weight: ${theme.typography.weights.bold};
+      font-weight: ${theme.fontWeightStrong};
     }
     .table-title {
       margin-top: ${theme.gridUnit * 11}px;
       margin-bottom: ${theme.gridUnit * 6}px;
-      font-weight: ${theme.typography.weights.bold};
+      font-weight: ${theme.fontWeightStrong};
     }
     .options-list {
       overflow: auto;
