@@ -44,7 +44,7 @@ const antdPanelStyles = (theme: SupersetTheme) => css`
     .collapse-panel-subtitle {
       color: ${theme.colors.grayscale.base};
       font-size: ${theme.fontSizeSM}px;
-      font-weight: ${theme.typography.weights.normal};
+      font-weight: ${theme.fontWeightNormal};
       line-height: 150%;
       margin-bottom: 0;
       padding-top: ${theme.gridUnit}px;

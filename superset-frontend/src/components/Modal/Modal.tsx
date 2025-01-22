@@ -129,7 +129,7 @@ export const StyledModal = styled(BaseModal)<StyledModalProps>`
       ${({ theme }) => theme.gridUnit * 6}px;
 
     .antd5-modal-title {
-      font-weight: ${({ theme }) => theme.typography.weights.medium};
+      font-weight: ${({ theme }) => theme.fontWeightMedium};
     }
 
     .antd5-modal-title h4 {
@@ -159,7 +159,7 @@ export const StyledModal = styled(BaseModal)<StyledModalProps>`
       margin-bottom: ${({ theme }) => theme.gridUnit}px;
       color: ${({ theme }) => theme.colors.primary.text};
       font-size: 32px;
-      font-weight: ${({ theme }) => theme.typography.weights.light};
+      font-weight: ${({ theme }) => theme.fontWeightLight};
     }
   }
 

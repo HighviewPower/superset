@@ -72,7 +72,7 @@ const StyledModal = styled(Modal)`
 
   pre {
     font-size: ${({ theme }) => theme.fontSizeXS}px;
-    font-weight: ${({ theme }) => theme.typography.weights.normal};
+    font-weight: ${({ theme }) => theme.fontWeightNormal};
     line-height: ${({ theme }) => theme.fontSizeLG}px;
     height: 375px;
     border: none;

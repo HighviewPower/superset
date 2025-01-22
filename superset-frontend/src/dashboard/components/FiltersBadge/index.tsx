@@ -91,7 +91,7 @@ const StyledBadge = styled(Badge)`
       min-width: ${theme.gridUnit * 4}px;
       height: ${theme.gridUnit * 4}px;
       line-height: 1.5;
-      font-weight: ${theme.typography.weights.medium};
+      font-weight: ${theme.fontWeightMedium};
       font-size: ${parseInt(theme.fontSizeSM, 10) - 1}px;
       box-shadow: none;
       padding: 0 ${theme.gridUnit}px;

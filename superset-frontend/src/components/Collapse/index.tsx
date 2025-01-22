@@ -35,7 +35,7 @@ const Collapse = Object.assign(
     .ant-collapse-item {
       .ant-collapse-header {
         font-weight: ${({ bold, theme }) =>
-          bold ? theme.fontWeightStrong : theme.typography.weights.normal};
+          bold ? theme.fontWeightStrong : theme.fontWeightNormal};
         font-size: ${({ bigger, theme }) =>
           bigger ? `${theme.gridUnit * 4}px` : 'inherit'};
 

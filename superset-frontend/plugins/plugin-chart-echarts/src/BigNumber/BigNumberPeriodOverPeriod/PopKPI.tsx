@@ -47,7 +47,7 @@ const NumbersContainer = styled.div`
 
 const ComparisonValue = styled.div<PopKPIComparisonValueStyleProps>`
   ${({ theme, subheaderFontSize }) => `
-    font-weight: ${theme.typography.weights.light};
+    font-weight: ${theme.fontWeightLight};
     display: flex;
     justify-content: center;
     font-size: ${String(subheaderFontSize) || 20}px;
@@ -135,7 +135,7 @@ export default function PopKPI(props: PopKPIProps) {
 
   const bigValueContainerStyles = css`
     font-size: ${String(headerFontSize) || 60}px;
-    font-weight: ${theme.typography.weights.normal};
+    font-weight: ${theme.fontWeightNormal};
     text-align: center;
     margin-bottom: ${theme.gridUnit * 4}px;
   `;

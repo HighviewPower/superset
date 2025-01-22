@@ -94,7 +94,7 @@ export const StyledControlNumberFormItem = styled(ControlFormItem)`
 export const StyledGeoStyler = styled(GeoStylerWrapper)`
   ${({ theme }) => css`
     h2 {
-      font-weight: ${theme.typography.weights.normal};
+      font-weight: ${theme.fontWeightNormal};
       font-size: ${theme.fontSizeXL}px;
     }
     .ant-form-item-control {

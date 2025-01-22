@@ -38,7 +38,7 @@ export const StyledLayerTreeItem = styled(LayerTreeItem)`
     border-radius: ${theme.borderRadius}px;
     background-color: ${theme.colors.grayscale.light3};
     font-size: ${theme.fontSizeSM}px;
-    font-weight: ${theme.typography.weights.normal};
+    font-weight: ${theme.fontWeightNormal};
 
     &:hover {
       background-color: ${theme.colors.grayscale.light3};

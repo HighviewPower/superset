@@ -61,7 +61,7 @@ const StyledHeader = styled.div<StyledHeaderProps>`
     ${theme.gridUnit * MARGIN_MULTIPLIER}px
     ${theme.gridUnit * (MARGIN_MULTIPLIER + 3)}px;
   font-size: ${theme.gridUnit * 6}px;
-  font-weight: ${theme.typography.weights.medium};
+  font-weight: ${theme.fontWeightMedium};
   padding-bottom: ${theme.gridUnit * MARGIN_MULTIPLIER}px;
 
   white-space: nowrap;
@@ -116,7 +116,7 @@ const StyledLoader = styled.div`
     width: 100%;
     margin-top: ${theme.gridUnit * MARGIN_MULTIPLIER}px;
     text-align: center;
-    font-weight: ${theme.typography.weights.normal};
+    font-weight: ${theme.fontWeightNormal};
     font-size: ${theme.fontSizeLG}px;
     color: ${theme.colors.grayscale.light1};
   }
@@ -161,7 +161,7 @@ const StyledAlert = styled(Alert)`
     position: absolute;
     top: ${theme.gridUnit * 4}px;
     right: ${theme.gridUnit * 4}px;
-    font-weight: ${theme.typography.weights.normal};
+    font-weight: ${theme.fontWeightNormal};
 
     &:hover {
       color: ${theme.colors.primary.hover};

@@ -93,12 +93,6 @@ interface LegacySupersetTheme {
       sansSerif: string;
       monospace: string;
     };
-    weights: {
-      light: number;
-      normal: number;
-      medium: number;
-      bold: number;
-    };
   };
   zIndex: {
     aboveDashboardCharts: number;
@@ -111,6 +105,9 @@ interface LegacySupersetTheme {
   // Extra things
   fontSizeXS: string;
   fontSizeXXL: string;
+  fontWeightNormal: string;
+  fontWeightLight: string;
+  fontWeightMedium: string;
 }
 
 const sharedAntdTokens = [
@@ -482,12 +479,6 @@ export class Theme {
           sansSerif: `'Inter', Helvetica, Arial`,
           monospace: `'Fira Code', 'Courier New', monospace`,
         },
-        weights: {
-          light: 200,
-          normal: 400,
-          medium: 500,
-          bold: 600,
-        },
       },
       zIndex: {
         aboveDashboardCharts: 10,
@@ -500,6 +491,9 @@ export class Theme {
       // Extra things
       fontSizeXS: '8',
       fontSizeXXL: '28',
+      fontWeightNormal: '400',
+      fontWeightLight: '300',
+      fontWeightMedium: '500',
       ...Theme.getFilteredAntdTheme(antdConfig),
     };
     return theme;

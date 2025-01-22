@@ -40,7 +40,7 @@ const MenuDots = styled.div`
   border-radius: 50%;
   background-color: ${({ theme }) => theme.colors.grayscale.light1};
 
-  font-weight: ${({ theme }) => theme.typography.weights.normal};
+  font-weight: ${({ theme }) => theme.fontWeightNormal};
   display: inline-flex;
   position: relative;
 

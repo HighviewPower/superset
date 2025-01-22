@@ -135,7 +135,7 @@ export default styled(NVD3)`
     }
     .nv-noData.body {
       font-size: ${({ theme }) => theme.fontSize};
-      font-weight: ${({ theme }) => theme.typography.weights.normal};
+      font-weight: ${({ theme }) => theme.fontWeightNormal};
     }
   }
   .superset-legacy-chart-nvd3-tr-highlight {

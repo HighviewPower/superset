@@ -48,7 +48,7 @@ export const Styles = styled.div`
       border-left: 1px solid ${theme.colors.grayscale.light2};
       font-size: ${theme.fontSizeSM}px;
       padding: ${theme.gridUnit}px;
-      font-weight: ${theme.typography.weights.normal};
+      font-weight: ${theme.fontWeightNormal};
     }
 
     table.pvtTable tbody tr.pvtRowTotals {

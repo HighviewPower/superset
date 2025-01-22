@@ -89,7 +89,7 @@ const StyledPlus = styled.span`
   ${({ theme }) => `
   cursor: pointer;
   color: ${theme.colors.primary.text};
-  font-weight: ${theme.typography.weights.normal};
+  font-weight: ${theme.fontWeightNormal};
   `}
 `;
 

@@ -58,7 +58,7 @@ export default styled(CountryMap)`
     }
 
     .superset-legacy-chart-country-map text.result-text {
-      font-weight: ${theme.typography.weights.light};
+      font-weight: ${theme.fontWeightLight};
       font-size: ${theme.fontSizeXL}px;
     }
 

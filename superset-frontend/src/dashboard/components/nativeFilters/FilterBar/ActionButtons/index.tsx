@@ -91,7 +91,7 @@ const horizontalStyle = (theme: SupersetTheme) => css`
   margin-left: auto;
   && > .filter-clear-all-button {
     text-transform: capitalize;
-    font-weight: ${theme.typography.weights.normal};
+    font-weight: ${theme.fontWeightNormal};
   }
   & > .filter-apply-button {
     &[disabled],

@@ -57,7 +57,7 @@ const StyledHeader = styled.div`
     Link {
       margin-left: ${theme.gridUnit * 4}px;
       font-size: ${theme.fontSizeSM}px;
-      font-weight: ${theme.typography.weights.normal};
+      font-weight: ${theme.fontWeightNormal};
       text-decoration: underline;
     }
   `}

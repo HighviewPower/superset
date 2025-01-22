@@ -159,7 +159,7 @@ const ScopeSelector = styled.div`
         border-right: 1px solid ${theme.colors.grayscale.border};
 
         .filter-container label {
-          font-weight: ${theme.typography.weights.normal};
+          font-weight: ${theme.fontWeightNormal};
           margin: 0 0 0 ${theme.gridUnit * 4}px;
           word-break: break-all;
         }
@@ -209,7 +209,7 @@ const ScopeSelector = styled.div`
           align-items: center;
 
           &.chart {
-            font-weight: ${theme.typography.weights.normal};
+            font-weight: ${theme.fontWeightNormal};
           }
 
           &.selected-filter {

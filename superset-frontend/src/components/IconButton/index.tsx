@@ -126,7 +126,7 @@ const IconButton = styled(
 )`
   text-transform: none;
   background-color: ${({ theme }) => theme.colors.grayscale.bg};
-  font-weight: ${({ theme }) => theme.typography.weights.normal};
+  font-weight: ${({ theme }) => theme.fontWeightNormal};
   color: ${({ theme }) => theme.colors.grayscale.text};
   border: 1px solid ${({ theme }) => theme.colors.grayscale.border};
   margin: 0;

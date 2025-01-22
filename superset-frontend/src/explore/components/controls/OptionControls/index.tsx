@@ -64,7 +64,7 @@ export const Label = styled.div`
     .type-label {
       margin-right: ${theme.gridUnit * 2}px;
       margin-left: ${theme.gridUnit}px;
-      font-weight: ${theme.typography.weights.normal};
+      font-weight: ${theme.fontWeightNormal};
       width: auto;
     }
     .option-label {
