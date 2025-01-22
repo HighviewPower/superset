@@ -30,8 +30,7 @@ import {
   CacheProvider as EmotionCacheProvider,
 } from '@emotion/react';
 import createCache from '@emotion/cache';
-import { merge } from 'lodash';
-import * as yoyo from 'antd-v5';
+// import { merge } from 'lodash';
 
 type AntdTokens = ReturnType<typeof antdThemeImport.getDesignToken>;
 /* eslint-disable theme-colors/no-literal-colors */
@@ -327,16 +326,18 @@ const allowedAntdTokens = [
   'wireframe',
   'zIndexBase',
   'zIndexPopupBase',
-];
+] as const;
 
-// Generating a type
+// Create a type from the array
+type AllowedAntdTokenKeys = (typeof allowedAntdTokens)[number];
+
+// Generate a runtime object with literal keys
 const allowedAntdTokensObject = Object.fromEntries(
   allowedAntdTokens.map(key => [key, '']),
-) as Record<string, string>;
+) as Record<AllowedAntdTokenKeys, string>;
 
 // Derive the type dynamically
-export type SharedAntdTokens = typeof allowedAntdTokensObject;
-type SharedAntdTokens = Pick<AntdTokens, SharedAntdTokens>;
+export type SharedAntdTokens = Pick<AntdTokens, AllowedAntdTokenKeys>;
 
 export type SupersetTheme = LegacySupersetTheme & SharedAntdTokens;
 
@@ -512,10 +513,10 @@ export class Theme {
   }
 
   mergeTheme(partialTheme: Partial<LegacySupersetTheme>): void {
-    const mergedTheme = merge({}, this.theme, partialTheme);
-    const isDark = tinycolor(mergedTheme.colorBgBase).isDark();
-    const antdConfig = Theme.getAntdConfig(systemColors, isDark);
-    this.updateTheme(mergedTheme, antdConfig, isDark);
+    // const mergedTheme = merge({}, this.theme, partialTheme);
+    // const isDark = tinycolor(mergedTheme.colorBgBase).isDark();
+    // const antdConfig = Theme.getAntdConfig(systemColors, isDark);
+    // this.updateTheme(mergedTheme, antdConfig, isDark);
   }
 
   private updateTheme(theme: SupersetTheme, antdConfig: AntdThemeConfig): void {

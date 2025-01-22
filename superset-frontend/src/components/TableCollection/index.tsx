@@ -157,7 +157,7 @@ export const Table = styled.table`
 
         .actions {
           opacity: 1;
-          transition: opacity ease-in ${theme.motionDurationMid}s;
+          transition: opacity ease-in ${theme.motionDurationMid};
         }
       }
     }

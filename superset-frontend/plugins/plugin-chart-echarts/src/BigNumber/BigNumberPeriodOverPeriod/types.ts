@@ -40,7 +40,7 @@ interface PopKPICustomizeProps {
 }
 
 export interface PopKPIComparisonValueStyleProps {
-  subheaderFontSize?: keyof typeof supersetTheme.typography.sizes;
+  subheaderFontSize?: FontSizeOptions;
 }
 
 export interface PopKPIComparisonSymbolStyleProps {

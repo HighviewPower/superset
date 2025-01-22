@@ -98,7 +98,7 @@ test('renders with custom properties', () => {
   const arrowStyle = window.getComputedStyle(arrow);
 
   expect(headerStyle.fontWeight).toBe(
-    supersetTheme.typography.weights.bold.toString(),
+    supersetTheme.fontWeightStrong.toString(),
   );
   expect(headerStyle.fontSize).toBe(`${supersetTheme.gridUnit * 4}px`);
   expect(headerStyle.color).toBe(

@@ -228,7 +228,7 @@ export default function AsyncAceEditor(
                       solid;
                     padding: 0 ${supersetTheme.gridUnit * 2}px;
                     color: ${supersetTheme.colors.grayscale.dark1};
-                    font-size: ${supersetTheme.typography.sizes.xs}px;
+                    font-size: ${supersetTheme.fontSizeXS}px;
                   }
                   & .tooltip-detail-meta {
                     & > .ant-tag {
