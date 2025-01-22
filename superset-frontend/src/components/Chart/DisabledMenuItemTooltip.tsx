@@ -33,7 +33,7 @@ export const MenuItemTooltip = ({
     <Icons.InfoCircleOutlined
       data-test="tooltip-trigger"
       css={(theme: SupersetTheme) => css`
-        color: ${color || theme.colors.grayscale.textLabel};
+        color: ${color || theme.colorTextLabel};
         margin-left: ${theme.gridUnit * 2}px;
         &.anticon {
           font-size: unset;

@@ -59,24 +59,12 @@ const BackgroundStyleOption = styled.div`
     &.background--transparent:before {
       background-image: linear-gradient(
           45deg,
-          ${theme.colors.grayscale.textLabel} 25%,
+          ${theme.colorTextLabel} 25%,
           transparent 25%
         ),
-        linear-gradient(
-          -45deg,
-          ${theme.colors.grayscale.textLabel} 25%,
-          transparent 25%
-        ),
-        linear-gradient(
-          45deg,
-          transparent 75%,
-          ${theme.colors.grayscale.textLabel} 75%
-        ),
-        linear-gradient(
-          -45deg,
-          transparent 75%,
-          ${theme.colors.grayscale.textLabel} 75%
-        );
+        linear-gradient(-45deg, ${theme.colorTextLabel} 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, ${theme.colorTextLabel} 75%),
+        linear-gradient(-45deg, transparent 75%, ${theme.colorTextLabel} 75%);
       background-size: ${theme.gridUnit * 2}px ${theme.gridUnit * 2}px;
       background-position:
         0 0,

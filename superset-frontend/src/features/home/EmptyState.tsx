@@ -57,7 +57,7 @@ export interface EmptyStateProps {
 const EmptyContainer = styled.div`
   min-height: 200px;
   display: flex;
-  color: ${({ theme }) => theme.colors.grayscale.textTertiary};
+  color: ${({ theme }) => theme.colorTextTertiary};
   flex-direction: column;
   justify-content: space-around;
 `;

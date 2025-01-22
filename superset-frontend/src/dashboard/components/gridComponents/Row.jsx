@@ -131,7 +131,7 @@ const emptyRowContentStyles = theme => css`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${theme.colors.grayscale.textLabel};
+  color: ${theme.colorTextLabel};
 `;
 
 const Row = props => {

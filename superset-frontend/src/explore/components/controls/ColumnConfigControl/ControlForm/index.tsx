@@ -128,7 +128,7 @@ export default function ControlForm({
     <div
       css={{
         label: {
-          color: theme.colors.grayscale.textLabel,
+          color: theme.colorTextLabel,
           fontSize: theme.typography.sizes.s,
         },
       }}

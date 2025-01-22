@@ -103,7 +103,7 @@ export const HeaderContainer = styled.div`
 
 export const LabelsContainer = styled.div`
   padding: ${({ theme }) => theme.gridUnit}px;
-  border: solid 1px ${({ theme }) => theme.colors.grayscale.borderSecondary};
+  border: solid 1px ${({ theme }) => theme.colorBorderSecondary};
   border-radius: ${({ theme }) => theme.gridUnit}px;
 `;
 

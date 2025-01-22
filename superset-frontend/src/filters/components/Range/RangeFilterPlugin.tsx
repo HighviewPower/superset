@@ -46,7 +46,7 @@ const StyledMinSlider = styled(AntdSlider)<{
   }
 
   .ant-slider-track {
-    background-color: ${theme.color.colorbgBase};
+    background-color: ${theme.colorBgBase};
   }
 
   &:hover {
