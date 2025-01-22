@@ -180,7 +180,7 @@ const StyledSqlEditor = styled.div`
     height: 100%;
 
     .schemaPane {
-      transition: transform ${theme.transitionTiming}s ease-in-out;
+      transition: transform ${theme.motionDurationMid}s ease-in-out;
     }
 
     .queryPane {

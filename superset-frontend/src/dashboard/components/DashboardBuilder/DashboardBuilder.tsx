@@ -332,9 +332,9 @@ const StyledDashboardContent = styled.div<{
 
       // transitionable traits to show filter relevance
       transition:
-        opacity ${theme.transitionTiming}s ease-in-out,
-        border-color ${theme.transitionTiming}s ease-in-out,
-        box-shadow ${theme.transitionTiming}s ease-in-out;
+        opacity ${theme.motionDurationMid}s ease-in-out,
+        border-color ${theme.motionDurationMid}s ease-in-out,
+        box-shadow ${theme.motionDurationMid}s ease-in-out;
 
       &.fade-in {
         border-radius: ${theme.borderRadius}px;

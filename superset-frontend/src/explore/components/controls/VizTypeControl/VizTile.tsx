@@ -31,7 +31,7 @@ export const VizTile = ({
   const { mountedPluginMetadata } = usePluginContext();
   const chartNameRef = useRef<HTMLSpanElement>(null);
   const theme = useTheme();
-  const TILE_TRANSITION_TIME = theme.transitionTiming * 2;
+  const TILE_TRANSITION_TIME = theme.motionDurationMid * 2;
   const [tooltipVisible, setTooltipVisible] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
@@ -105,7 +105,7 @@ export const VizTile = ({
             transition: none;
             &:hover svg path {
               fill: ${theme.colors.primary.base};
-              transition: fill ${theme.transitionTiming}s ease-out;
+              transition: fill ${theme.motionDurationMid}s ease-out;
             }
           `}
 

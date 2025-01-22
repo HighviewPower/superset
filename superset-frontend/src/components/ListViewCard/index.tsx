@@ -40,7 +40,7 @@ const StyledCard = styled(Card)`
     }
     &:hover {
       box-shadow: 8px 8px 28px 0px ${theme.colors.grayscale.light1};
-      transition: box-shadow ${theme.transitionTiming}s ease-in-out;
+      transition: box-shadow ${theme.motionDurationMid}s ease-in-out;
 
       .cover-footer {
         transform: translateY(0);
@@ -56,7 +56,7 @@ const Cover = styled.div`
 
   .cover-footer {
     transform: translateY(${({ theme }) => theme.gridUnit * 9}px);
-    transition: ${({ theme }) => theme.transitionTiming}s ease-out;
+    transition: ${({ theme }) => theme.motionDurationMid}s ease-out;
   }
 `;
 

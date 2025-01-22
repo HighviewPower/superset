@@ -273,7 +273,7 @@ const thumbnailContainerCss = (theme: SupersetTheme) => css`
     min-height: ${theme.gridUnit * THUMBNAIL_GRID_UNITS}px;
     border: 1px solid ${theme.colors.grayscale.light2};
     border-radius: ${theme.gridUnit}px;
-    transition: border-color ${theme.transitionTiming};
+    transition: border-color ${theme.motionDurationMid};
   }
 
   &.selected img {

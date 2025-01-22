@@ -49,8 +49,8 @@ const StyledToastPresenter = styled.div<VisualProps>`
     white-space: pre-line;
     will-change: transform, opacity;
     transition:
-      transform ${({ theme }) => theme.transitionTiming}s,
-      opacity ${({ theme }) => theme.transitionTiming}s;
+      transform ${({ theme }) => theme.motionDurationMid}s,
+      opacity ${({ theme }) => theme.motionDurationMid}s;
 
     &:after {
       content: '';

@@ -90,7 +90,7 @@ export const FilterItem = styled.button`
     & i svg {
       opacity: ${theme.opacity.mediumLight};
       margin-right: ${theme.gridUnit}px;
-      transition: opacity ease-in-out ${theme.transitionTiming};
+      transition: opacity ease-in-out ${theme.motionDurationMid};
     }
 
     &:hover i svg,

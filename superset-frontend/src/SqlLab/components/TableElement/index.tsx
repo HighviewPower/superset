@@ -65,7 +65,7 @@ const StyledSpan = styled.span`
 `;
 
 const Fade = styled.div`
-  transition: all ${({ theme }) => theme.transitionTiming}s;
+  transition: all ${({ theme }) => theme.motionDurationMid}s;
   opacity: ${(props: { hovered: boolean }) => (props.hovered ? 1 : 0)};
 `;
 

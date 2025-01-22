@@ -41,7 +41,7 @@ const BreadcrumbItem = styled(AntdBreadcrumb.Item)<{
   ${({ theme, isClickable, isHidden }) => css`
     cursor: ${isClickable ? 'pointer' : 'auto'};
     color: ${theme.colors.grayscale.light1};
-    transition: color ease-in ${theme.transitionTiming}s;
+    transition: color ease-in ${theme.motionDurationMid}s;
     .ant-breadcrumb > span:last-child > & {
       color: ${theme.colors.grayscale.dark1};
     }

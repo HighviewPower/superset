@@ -88,12 +88,6 @@ interface LegacySupersetTheme {
     mediumHeavy: string;
     heavy: string;
   };
-  typography: {
-    families: {
-      sansSerif: string;
-      monospace: string;
-    };
-  };
   zIndex: {
     aboveDashboardCharts: number;
     dropdown: number;
@@ -474,12 +468,6 @@ export class Theme {
         mediumHeavy: '60%',
         heavy: '80%',
       },
-      typography: {
-        families: {
-          sansSerif: `'Inter', Helvetica, Arial`,
-          monospace: `'Fira Code', 'Courier New', monospace`,
-        },
-      },
       zIndex: {
         aboveDashboardCharts: 10,
         dropdown: 11,
@@ -494,6 +482,8 @@ export class Theme {
       fontWeightNormal: '400',
       fontWeightLight: '300',
       fontWeightMedium: '500',
+      fontFamily: `'Inter', Helvetica, Arial`,
+      fontFamilyCode: `'Fira Code', 'Courier New', monospace`,
       ...Theme.getFilteredAntdTheme(antdConfig),
     };
     return theme;
@@ -598,10 +588,6 @@ export class Theme {
         heavy: '80%',
       },
       typography: {
-        families: {
-          sansSerif: tokens.fontFamily,
-          monospace: tokens.fontFamilyCode,
-        },
         weights: {
           light: 200,
           normal: 400,
