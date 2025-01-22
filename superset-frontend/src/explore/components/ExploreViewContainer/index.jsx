@@ -101,7 +101,7 @@ const ExplorePanelContainer = styled.div`
     position: relative;
     width: 100%;
     max-height: 100%;
-    background-color: ${theme.colors.grayscale.bgBase};
+    background-color: ${theme.colorBgBase};
     min-height: 0;
     display: flex;
     flex: 1;

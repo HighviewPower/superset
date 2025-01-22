@@ -41,7 +41,7 @@ import { DataTablesPaneProps, ResultTypes } from './types';
 const SouthPane = styled.div`
   ${({ theme }) => `
     position: relative;
-    background-color: ${theme.colors.grayscale.bgBase};
+    background-color: ${theme.colorBgBase};
     z-index: 5;
     overflow: hidden;
 

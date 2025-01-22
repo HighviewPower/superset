@@ -30,6 +30,7 @@ import {
   CacheProvider as EmotionCacheProvider,
 } from '@emotion/react';
 import createCache from '@emotion/cache';
+import { merge } from 'lodash';
 
 /* eslint-disable theme-colors/no-literal-colors */
 
@@ -542,7 +543,7 @@ export class Theme {
   mergeTheme(partialTheme: Partial<LegacySupersetTheme>): void {
     const mergedTheme = merge({}, this.theme, partialTheme);
     const isDark = tinycolor(mergedTheme.colorBgBase).isDark();
-    this.updateTheme(mergedTheme, isDark);
+    // this.updateTheme(mergedTheme, isDark);
   }
 
   private updateTheme(theme: SupersetTheme, antdConfig: AntdThemeConfig): void {

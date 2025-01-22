@@ -68,7 +68,7 @@ const StyledHeader = styled.div`
     padding-left: 10px;
   }
   .menu {
-    background-color: ${({ theme }) => theme.colors.grayscale.bgBase};
+    background-color: ${({ theme }) => theme.colorBgBase};
     .ant-menu-horizontal {
       line-height: inherit;
       .ant-menu-item {

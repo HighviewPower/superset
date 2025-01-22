@@ -76,7 +76,7 @@ const SqlLabStyles = styled.div`
       .ant-tabs-content {
         height: 100%;
         position: relative;
-        background-color: ${theme.colors.grayscale.bgBase};
+        background-color: ${theme.colorBgBase};
         overflow-x: auto;
         overflow-y: auto;
 

@@ -36,7 +36,7 @@ interface TableCollectionProps {
 
 export const Table = styled.table`
   ${({ theme }) => `
-    background-color: ${theme.colors.grayscale.bgBase};
+    background-color: ${theme.colorBgBase};
     border-collapse: separate;
     border-radius: ${theme.borderRadius}px;
 

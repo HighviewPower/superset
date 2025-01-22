@@ -43,7 +43,7 @@ interface MenuProps {
 
 const StyledHeader = styled.header`
   ${({ theme }) => `
-      background-color: ${theme.colors.grayscale.bgBase};
+      background-color: ${theme.colorBgBase};
       margin-bottom: 2px;
       z-index: 10;
 

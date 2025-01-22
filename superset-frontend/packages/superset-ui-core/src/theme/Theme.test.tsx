@@ -25,14 +25,14 @@ describe('Theme Class', () => {
     const theme = Theme.fromSystemColors();
     const themeConfig = theme.theme;
     expect(themeConfig.colors.primary.base).toBe('#20a7c9');
-    expect(themeConfig.colors.grayscale.bgBase).toBe('#FFF');
+    expect(themeConfig.colorBgBase).toBe('#FFF');
   });
 
   test('should apply custom system colors and dark mode', () => {
     const theme = Theme.fromSystemColors();
     const themeConfig = theme.theme;
     expect(themeConfig.colors.primary.base).toBe('#20a7c9');
-    expect(themeConfig.colors.grayscale.bgBase).toBe('#000');
+    expect(themeConfig.colorBgBase).toBe('#000');
   });
 });
 

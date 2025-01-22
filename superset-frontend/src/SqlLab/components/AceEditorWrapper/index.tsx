@@ -61,14 +61,14 @@ const StyledAceEditor = styled(AceEditor)`
       .ace_editor {
         font-family: 'Roboto Mono', monospace;
         font-size: 14px;
-        background-color: ${theme.colors.grayscale.bgContainerDisabled};
+        background-color: ${theme.colorBgContainerDisabled};
       }
       .ace-github {
         color: ${theme.colors.grayscale.text};
       }
 
       .ace_gutter {
-        background: ${theme.colors.grayscale.bgTextHover};
+        background-color: ${theme.colorBgTextHover};
         color: ${theme.colors.grayscale.text};
       }
 
@@ -77,11 +77,11 @@ const StyledAceEditor = styled(AceEditor)`
       }
 
       .ace_marker-layer .ace_active-line {
-        background: ${theme.colors.grayscale.bgTextHover};
+        background: ${theme.colorBgTextHover};
       }
 
       .ace_marker-layer .ace_selection {
-        background: ${theme.colors.primary.bgHover};
+        background: ${theme.colorPrimaryBgHover};
       }
     }
   `}
