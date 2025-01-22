@@ -403,7 +403,11 @@ export class Theme {
     isDark = false,
   ): Theme {
     const theme = new Theme();
-    theme.setThemeWithSystemColors(systemColors, isDark);
+    const allSystemColors: SystemColors = {
+      ...DEFAULT_SYSTEM_COLORS,
+      ...systemColors,
+    };
+    theme.setThemeWithSystemColors(allSystemColors, isDark);
     return theme;
   }
 
@@ -450,12 +454,25 @@ export class Theme {
     systemColors: SystemColors,
     isDark: boolean,
   ): ThemeColors {
-    return Object.fromEntries(
-      Theme.namedColors.map(k => [
-        k,
-        Theme.generateColorVariations(k, systemColors[k], isDark),
-      ]),
-    );
+    return {
+      primary: Theme.generateColorVariations(
+        'primary',
+        systemColors.primary,
+        isDark,
+      ),
+      error: Theme.generateColorVariations('error', systemColors.error, isDark),
+      warning: Theme.generateColorVariations(
+        'warning',
+        systemColors.warning,
+        isDark,
+      ),
+      success: Theme.generateColorVariations(
+        'success',
+        systemColors.success,
+        isDark,
+      ),
+      info: Theme.generateColorVariations('info', systemColors.info, isDark),
+    };
   }
 
   private static getSupersetTheme(
@@ -542,7 +559,7 @@ export class Theme {
 
   mergeTheme(partialTheme: Partial<LegacySupersetTheme>): void {
     const mergedTheme = merge({}, this.theme, partialTheme);
-    const isDark = tinycolor(mergedTheme.colorBgBase).isDark();
+    // const isDark = tinycolor(mergedTheme.colorBgBase).isDark();
     // this.updateTheme(mergedTheme, isDark);
   }
 
@@ -575,7 +592,14 @@ export class Theme {
     this.antdConfig = themeConfig;
     const tokens = Theme.getAntdTokens(themeConfig);
     const isDark = tinycolor(tokens.colorBgBase).isDark();
-    const colors = Theme.getColors(tokens, isDark);
+    const systemColors: SystemColors = {
+      primary: tokens.colorPrimary,
+      error: tokens.colorError,
+      warning: tokens.colorWarning,
+      success: tokens.colorSuccess,
+      info: tokens.colorInfo,
+    };
+    const colors: ThemeColors = Theme.getColors(systemColors, isDark);
 
     this.theme = {
       colors,
