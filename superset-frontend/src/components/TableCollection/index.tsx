@@ -114,7 +114,7 @@ export const Table = styled.table`
       position: relative;
 
       .loading-bar {
-        background-color: ${theme.colors.grayscale.bgTextHover};
+        background-color: ${theme.colorBgTextHover};
         border-radius: 7px;
 
         span {
@@ -153,7 +153,7 @@ export const Table = styled.table`
       }
 
       &:hover {
-        background-color: ${theme.colors.grayscale.bgTextHover};
+        background-color: ${theme.colorBgTextHover};
 
         .actions {
           opacity: 1;
