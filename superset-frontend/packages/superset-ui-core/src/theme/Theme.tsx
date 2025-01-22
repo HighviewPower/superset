@@ -68,19 +68,6 @@ interface ColorVariations {
 }
 
 interface ThemeColors {
-  text: {
-    label: string;
-    help: string;
-  };
-  primary: ColorVariations;
-  error: ColorVariations;
-  warning: ColorVariations;
-  success: ColorVariations;
-  info: ColorVariations;
-  grayscale: ColorVariations;
-}
-
-interface LegacyThemeColors {
   primary: ColorVariations;
   error: ColorVariations;
   warning: ColorVariations;
@@ -90,7 +77,7 @@ interface LegacyThemeColors {
 }
 
 interface LegacySupersetTheme {
-  colors: LegacyThemeColors;
+  colors: ThemeColors;
   borderRadius: number;
   body: {
     backgroundColor: string;
@@ -382,15 +369,6 @@ const DEFAULT_SYSTEM_COLORS = {
 export class Theme {
   theme: SupersetTheme;
 
-  private static namedColors = [
-    'primary',
-    'error',
-    'warning',
-    'success',
-    'info',
-    'grayscale',
-  ];
-
   private antdConfig: AntdThemeConfig;
 
   private constructor() {
@@ -403,11 +381,10 @@ export class Theme {
     isDark = false,
   ): Theme {
     const theme = new Theme();
-    const allSystemColors: SystemColors = {
-      ...DEFAULT_SYSTEM_COLORS,
-      ...systemColors,
-    };
-    theme.setThemeWithSystemColors(allSystemColors, isDark);
+    theme.setThemeWithSystemColors(
+      Theme.allSystemColors(systemColors || {}),
+      isDark,
+    );
     return theme;
   }
 
@@ -472,20 +449,31 @@ export class Theme {
         isDark,
       ),
       info: Theme.generateColorVariations('info', systemColors.info, isDark),
+      grayscale: Theme.generateColorVariations(
+        'grayscale',
+        systemColors.grayscale,
+        isDark,
+      ),
     };
   }
 
-  private static getSupersetTheme(
+  private static allSystemColors(
     systemColors: Partial<SystemColors>,
-    isDark = false,
-  ): SupersetTheme {
-    const antdConfig = Theme.getAntdConfig(systemColors, isDark);
+  ): SystemColors {
     const allSystemColors: SystemColors = {
       ...DEFAULT_SYSTEM_COLORS,
       ...systemColors,
     };
+    return allSystemColors;
+  }
+
+  private static getSupersetTheme(
+    systemColors: SystemColors,
+    isDark = false,
+  ): SupersetTheme {
+    const antdConfig = Theme.getAntdConfig(systemColors, isDark);
     const theme: SupersetTheme = {
-      colors: Theme.getColors(allSystemColors, isDark),
+      colors: Theme.getColors(systemColors, isDark),
       borderRadius: 4,
       body: {
         backgroundColor: isDark ? '#000' : '#FFF',
@@ -559,8 +547,9 @@ export class Theme {
 
   mergeTheme(partialTheme: Partial<LegacySupersetTheme>): void {
     const mergedTheme = merge({}, this.theme, partialTheme);
-    // const isDark = tinycolor(mergedTheme.colorBgBase).isDark();
-    // this.updateTheme(mergedTheme, isDark);
+    const isDark = tinycolor(mergedTheme.colorBgBase).isDark();
+    const antdConfig = Theme.getAntdConfig(systemColors, isDark);
+    this.updateTheme(mergedTheme, antdConfig, isDark);
   }
 
   private updateTheme(theme: SupersetTheme, antdConfig: AntdThemeConfig): void {
@@ -577,7 +566,10 @@ export class Theme {
     systemColors: Partial<SystemColors>,
     isDark: boolean,
   ): void {
-    const theme = Theme.getSupersetTheme(systemColors || {}, isDark);
+    const theme = Theme.getSupersetTheme(
+      Theme.allSystemColors(systemColors),
+      isDark,
+    );
     const antdConfig = Theme.getAntdConfig(systemColors, isDark);
     this.updateTheme(theme, antdConfig);
   }
@@ -598,11 +590,11 @@ export class Theme {
       warning: tokens.colorWarning,
       success: tokens.colorSuccess,
       info: tokens.colorInfo,
+      grayscale: '#666666',
     };
-    const colors: ThemeColors = Theme.getColors(systemColors, isDark);
 
     this.theme = {
-      colors,
+      colors: Theme.getColors(systemColors, isDark),
       borderRadius: tokens.borderRadius,
       body: {
         backgroundColor: tokens.colorBgLayout,
