@@ -49,23 +49,23 @@ export default styled(NVD3)`
     svg {
       &.nvd3-svg {
         width: auto;
-        font-size: ${({ theme }) => theme.typography.sizes.m};
+        font-size: ${({ theme }) => theme.fontSize};
       }
     }
   }
   .superset-legacy-chart-nvd3 {
     nv-x text {
-      font-size: ${({ theme }) => theme.typography.sizes.m};
+      font-size: ${({ theme }) => theme.fontSize};
     }
     g.superset path {
       stroke-dasharray: 5, 5;
     }
     .nvtooltip tr.highlight td {
       font-weight: ${({ theme }) => theme.typography.weights.bold};
-      font-size: ${({ theme }) => theme.typography.sizes.m}px !important;
+      font-size: ${({ theme }) => theme.fontSize}px !important;
     }
     text.nv-axislabel {
-      font-size: ${({ theme }) => theme.typography.sizes.m} !important;
+      font-size: ${({ theme }) => theme.fontSize} !important;
     }
     g.solid path,
     line.solid {
@@ -134,7 +134,7 @@ export default styled(NVD3)`
       stroke-dasharray: 5, 5, 1, 5;
     }
     .nv-noData.body {
-      font-size: ${({ theme }) => theme.typography.sizes.m};
+      font-size: ${({ theme }) => theme.fontSize};
       font-weight: ${({ theme }) => theme.typography.weights.normal};
     }
   }
@@ -166,7 +166,7 @@ export default styled(NVD3)`
     color: ${({ theme }) => theme.colors.grayscale.light5};
     &:after {
       content: '\\25BC';
-      font-size: ${({ theme }) => theme.typography.sizes.m};
+      font-size: ${({ theme }) => theme.fontSize};
       color: ${({ theme }) => theme.colors.grayscale.base};
       position: absolute;
       bottom: -14px;

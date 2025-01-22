@@ -51,7 +51,7 @@ export const CellNull = styled('span')`
 `;
 
 export const CopyButton = styled(Button)`
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
 
   // needed to override button's first-of-type margin: 0
   && {
@@ -157,7 +157,7 @@ const FormatPickerContainer = styled.div`
 `;
 
 const FormatPickerLabel = styled.span`
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
   color: ${({ theme }) => theme.colors.grayscale.base};
   margin-bottom: ${({ theme }) => theme.gridUnit * 2}px;
 `;

@@ -24,7 +24,7 @@ import { formatNumber, styled } from '@superset-ui/core';
 
 const StyledLegend = styled.div`
   ${({ theme }) => `
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
     position: absolute;
     background: ${theme.colors.grayscale.light5};
     box-shadow: 0 0 ${theme.gridUnit}px ${theme.colors.grayscale.light2};

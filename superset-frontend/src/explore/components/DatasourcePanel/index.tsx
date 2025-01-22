@@ -94,7 +94,7 @@ const DatasourceContainer = styled.div`
     }
     .field-length {
       margin-bottom: ${theme.gridUnit * 2}px;
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
       color: ${theme.colors.grayscale.light1};
     }
     .form-control.input-md {
@@ -104,7 +104,7 @@ const DatasourceContainer = styled.div`
       margin: ${theme.gridUnit * 2}px auto;
     }
     .type-label {
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
       color: ${theme.colors.grayscale.base};
     }
     .Control {

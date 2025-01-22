@@ -93,7 +93,7 @@ const StyledHeader = styled.div`
     div {
       a,
       div {
-        font-size: ${({ theme }) => theme.typography.sizes.s}px;
+        font-size: ${({ theme }) => theme.fontSizeSM}px;
 
         a {
           margin: 0;

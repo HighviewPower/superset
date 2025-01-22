@@ -40,7 +40,7 @@ export const OptionControlContainer = styled.div<{
   display: flex;
   align-items: center;
   width: 100%;
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
   height: ${({ theme }) => theme.gridUnit * 6}px;
   background-color: ${({ theme }) => theme.colors.grayscale.bg};
   border-radius: 3px;
@@ -200,7 +200,7 @@ export const AddControlLabel = styled.div<{
   width: 100%;
   height: ${({ theme }) => theme.gridUnit * 6}px;
   padding-left: ${({ theme }) => theme.gridUnit}px;
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
   color: ${({ theme }) => theme.colors.grayscale.light1};
   border: dashed 1px ${({ theme }) => theme.colors.grayscale.light2};
   border-radius: ${({ theme }) => theme.gridUnit}px;

@@ -67,7 +67,7 @@ const FilterBarEmptyStateContainer = styled.div`
   ${({ theme }) => `
     font-weight: ${theme.typography.weights.bold};
     color: ${theme.colors.grayscale.base};
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
     padding-left: ${theme.gridUnit * 2}px;
   `}
 `;

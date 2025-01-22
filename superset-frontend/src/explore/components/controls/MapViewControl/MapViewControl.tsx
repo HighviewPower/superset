@@ -34,7 +34,7 @@ export const StyledExtentButton = styled(Button)`
     border-radius: ${theme.borderRadius}px;
     background-color: ${theme.colors.primary.light4};
     color: ${theme.colors.primary.dark1};
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
     font-weight: ${theme.typography.weights.bold};
     text-transform: uppercase;
     min-width: ${theme.gridUnit * 36};

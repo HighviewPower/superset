@@ -49,7 +49,7 @@ const StyledFilterableTable = styled.div`
     .virtual-table-cell {
       min-width: 0px;
       align-self: center;
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
     }
 
     .even-row {
@@ -62,7 +62,7 @@ const StyledFilterableTable = styled.div`
 
     .cell-text-for-measuring {
       font-family: ${theme.typography.families.sansSerif};
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
     }
   `}
 `;

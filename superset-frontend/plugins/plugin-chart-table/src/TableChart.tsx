@@ -557,7 +557,7 @@ export default function TableChart<D extends DataRecord = DataRecord>(
                 max-width: 242px;
                 padding: 0 ${theme.gridUnit * 2}px;
                 color: ${theme.colors.grayscale.base};
-                font-size: ${theme.typography.sizes.s}px;
+                font-size: ${theme.fontSizeSM}px;
               `}
             >
               {t(
@@ -576,7 +576,7 @@ export default function TableChart<D extends DataRecord = DataRecord>(
                 <span
                   css={css`
                     float: right;
-                    font-size: ${theme.typography.sizes.s}px;
+                    font-size: ${theme.fontSizeSM}px;
                   `}
                 >
                   {selectedComparisonColumns.includes(column.key) && (

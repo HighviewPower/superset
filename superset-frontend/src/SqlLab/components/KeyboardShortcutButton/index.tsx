@@ -73,7 +73,7 @@ const KeyMapByCommand = Object.entries(KEY_MAP).reduce(
 );
 
 const ShortcutDescription = styled.span`
-  font-size: ${({ theme }) => theme.typography.sizes.m}px;
+  font-size: ${({ theme }) => theme.fontSize}px;
   color: ${({ theme }) => theme.colorTextLabel};
   padding-left: ${({ theme }) => theme.gridUnit * 2}px;
 `;
@@ -86,7 +86,7 @@ const ShortcutWrapper = styled.div`
 `;
 
 const ShortcutCode = styled.code`
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
   color: ${({ theme }) => theme.colors.grayscale.dark1};
   border-radius: ${({ theme }) => theme.borderRadius}px;
   padding: ${({ theme }) => `${theme.gridUnit}px ${theme.gridUnit * 2}px`};

@@ -23,7 +23,7 @@ export const Row = styled.div`
     display: flex;
     align-items: center;
     margin: ${theme.gridUnit}px 0;
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
 
     &:first-of-type {
       margin-top: 0;

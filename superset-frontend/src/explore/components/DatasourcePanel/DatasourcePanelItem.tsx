@@ -77,7 +77,7 @@ const LabelWrapper = styled.div`
   ${({ theme }) => css`
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
     background-color: ${theme.colors.grayscale.light4};
     margin: ${theme.gridUnit * 2}px 0;
     border-radius: 4px;
@@ -128,7 +128,7 @@ const SectionHeaderButton = styled.button`
 
 const SectionHeader = styled.span`
   ${({ theme }) => `
-    font-size: ${theme.typography.sizes.m}px;
+    font-size: ${theme.fontSize}px;
     line-height: 1.3;
   `}
 `;
@@ -137,7 +137,7 @@ const Box = styled.div`
   ${({ theme }) => `
     border: 1px ${theme.colors.grayscale.light4} solid;
     border-radius: ${theme.gridUnit}px;
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
     padding: ${theme.gridUnit}px;
     color: ${theme.colors.grayscale.light1};
     text-overflow: ellipsis;

@@ -75,7 +75,7 @@ const StyledFilterCount = styled.div`
     }
 
     .incompatible-count {
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
     }
     &:focus-visible {
       outline: 2px solid ${theme.colors.primary.dark2};
@@ -92,7 +92,7 @@ const StyledBadge = styled(Badge)`
       height: ${theme.gridUnit * 4}px;
       line-height: 1.5;
       font-weight: ${theme.typography.weights.medium};
-      font-size: ${theme.typography.sizes.s - 1}px;
+      font-size: ${parseInt(theme.fontSizeSM, 10) - 1}px;
       box-shadow: none;
       padding: 0 ${theme.gridUnit}px;
     }

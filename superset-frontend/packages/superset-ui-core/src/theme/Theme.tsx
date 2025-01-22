@@ -78,7 +78,6 @@ interface ThemeColors {
 
 interface LegacySupersetTheme {
   colors: ThemeColors;
-  borderRadius: number;
   body: {
     backgroundColor: string;
     color: string;
@@ -100,15 +99,6 @@ interface LegacySupersetTheme {
       medium: number;
       bold: number;
     };
-    sizes: {
-      xxs: number;
-      xs: number;
-      s: number;
-      m: number;
-      l: number;
-      xl: number;
-      xxl: number;
-    };
   };
   zIndex: {
     aboveDashboardCharts: number;
@@ -118,6 +108,9 @@ interface LegacySupersetTheme {
   transitionTiming: number;
   gridUnit: number;
   brandIconMaxWidth: number;
+  // Extra things
+  fontSizeXS: string;
+  fontSizeXXL: string;
 }
 
 const sharedAntdTokens = [
@@ -474,7 +467,6 @@ export class Theme {
     const antdConfig = Theme.getAntdConfig(systemColors, isDark);
     const theme: SupersetTheme = {
       colors: Theme.getColors(systemColors, isDark),
-      borderRadius: 4,
       body: {
         backgroundColor: isDark ? '#000' : '#FFF',
         color: isDark ? '#FFF' : '#000',
@@ -496,15 +488,6 @@ export class Theme {
           medium: 500,
           bold: 600,
         },
-        sizes: {
-          xxs: 9,
-          xs: 10,
-          s: 12,
-          m: 14,
-          l: 16,
-          xl: 21,
-          xxl: 28,
-        },
       },
       zIndex: {
         aboveDashboardCharts: 10,
@@ -514,6 +497,9 @@ export class Theme {
       transitionTiming: 0.3,
       gridUnit: 4,
       brandIconMaxWidth: 37,
+      // Extra things
+      fontSizeXS: '8',
+      fontSizeXXL: '28',
       ...Theme.getFilteredAntdTheme(antdConfig),
     };
     return theme;
@@ -562,6 +548,18 @@ export class Theme {
     );
   }
 
+  public getFontSize(size?: string): string {
+    const sizeMap: Record<string, any> = {
+      xs: 'fontSizeXS',
+      s: 'fontSizeSM',
+      m: 'fontSize',
+      l: 'fontSizeLG',
+      xl: 'fontSizeXL',
+      xxl: 'fontSizeXXL',
+    };
+    return this.theme[sizeMap[size || 'm']] || this.theme.fontSize;
+  }
+
   setThemeWithSystemColors(
     systemColors: Partial<SystemColors>,
     isDark: boolean,
@@ -595,7 +593,6 @@ export class Theme {
 
     this.theme = {
       colors: Theme.getColors(systemColors, isDark),
-      borderRadius: tokens.borderRadius,
       body: {
         backgroundColor: tokens.colorBgLayout,
         color: tokens.colorTextBase,
@@ -616,15 +613,6 @@ export class Theme {
           normal: 400,
           medium: 500,
           bold: 600,
-        },
-        sizes: {
-          xxs: tokens.fontSizeSM - 3,
-          xs: tokens.fontSizeSM - 2,
-          s: tokens.fontSizeSM,
-          m: tokens.fontSize,
-          l: tokens.fontSizeLG,
-          xl: tokens.fontSizeXL,
-          xxl: tokens.fontSizeXL + 4,
         },
       },
       zIndex: {

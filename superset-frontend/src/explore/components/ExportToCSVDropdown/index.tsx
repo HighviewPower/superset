@@ -40,7 +40,7 @@ const MenuItemContent = styled.div`
   justify-content: space-between;
 
   span[role='img'] {
-    font-size: ${({ theme }) => theme.typography.sizes.l}px;
+    font-size: ${({ theme }) => theme.fontSizeLG}px;
     margin-left: ${({ theme }) => theme.gridUnit * 4}px;
   }
 `;

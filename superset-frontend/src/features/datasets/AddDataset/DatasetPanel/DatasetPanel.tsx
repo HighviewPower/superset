@@ -117,7 +117,7 @@ const StyledLoader = styled.div`
     margin-top: ${theme.gridUnit * MARGIN_MULTIPLIER}px;
     text-align: center;
     font-weight: ${theme.typography.weights.normal};
-    font-size: ${theme.typography.sizes.l}px;
+    font-size: ${theme.fontSizeLG}px;
     color: ${theme.colors.grayscale.light1};
   }
   `}

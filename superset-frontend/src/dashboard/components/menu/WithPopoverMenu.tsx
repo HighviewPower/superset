@@ -81,7 +81,7 @@ const PopoverMenuStyles = styled.div`
         theme.colors.grayscale.dark2,
         parseFloat(theme.opacity.mediumLight) / 100,
       )};
-    font-size: ${theme.typography.sizes.m}px;
+    font-size: ${theme.fontSize}px;
     cursor: default;
     z-index: 3000;
 

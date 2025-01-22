@@ -41,7 +41,7 @@ export const StyledFlatLayerTree = styled(FlatLayerTree)`
       margin: 4px;
 
       color: ${theme.colors.grayscale.light1};
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
       font-weight: ${theme.typography.weights.normal};
 
       &:hover {

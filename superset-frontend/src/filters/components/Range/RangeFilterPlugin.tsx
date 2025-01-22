@@ -108,7 +108,7 @@ const Wrapper = styled.div<{
         }
       }
       & .ant-slider-mark {
-        font-size: ${theme.typography.sizes.s}px;
+        font-size: ${theme.fontSizeSM}px;
       }
 
       &:hover {

@@ -37,7 +37,7 @@ export const Tooltip = ({
   return (
     <BaseTooltip
       overlayStyle={{
-        fontSize: theme.typography.sizes.s,
+        fontSize: theme.fontSizeSM,
         lineHeight: '1.6',
         maxWidth: theme.gridUnit * 62,
         minWidth: theme.gridUnit * 30,

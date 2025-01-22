@@ -104,7 +104,7 @@ const VizPickerLayout = styled.div<{ isSelectedVizMetadata: boolean }>`
 const SectionTitle = styled.h3`
   margin-top: 0;
   margin-bottom: ${({ theme }) => theme.gridUnit * 2}px;
-  font-size: ${({ theme }) => theme.typography.sizes.l}px;
+  font-size: ${({ theme }) => theme.fontSizeLG}px;
   font-weight: ${({ theme }) => theme.typography.weights.bold};
   line-height: ${({ theme }) => theme.gridUnit * 6}px;
 `;
@@ -118,7 +118,7 @@ const LeftPane = styled.div`
 
   .ant-collapse .ant-collapse-item {
     .ant-collapse-header {
-      font-size: ${({ theme }) => theme.typography.sizes.s}px;
+      font-size: ${({ theme }) => theme.fontSizeSM}px;
       color: ${({ theme }) => theme.colors.grayscale.base};
       padding-left: ${({ theme }) => theme.gridUnit * 2}px;
       padding-bottom: ${({ theme }) => theme.gridUnit}px;
@@ -298,7 +298,7 @@ const HighlightLabel = styled.div`
     background: ${theme.colors.grayscale.light5};
     line-height: ${theme.gridUnit * 2.5}px;
     color: ${theme.colors.primary.dark1};
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
     font-weight: ${theme.typography.weights.bold};
     text-align: center;
     padding: ${theme.gridUnit * 0.5}px ${theme.gridUnit}px;

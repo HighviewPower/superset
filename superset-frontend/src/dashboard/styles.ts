@@ -23,7 +23,7 @@ export const headerStyles = (theme: SupersetTheme) => css`
     h1 {
       font-weight: ${theme.typography.weights.bold};
       line-height: 1.4;
-      font-size: ${theme.typography.sizes.xxl}px;
+      font-size: ${theme.fontSizeXXL}px;
       letter-spacing: -0.2px;
       margin-top: ${theme.gridUnit * 3}px;
       margin-bottom: ${theme.gridUnit * 3}px;
@@ -32,7 +32,7 @@ export const headerStyles = (theme: SupersetTheme) => css`
     h2 {
       font-weight: ${theme.typography.weights.bold};
       line-height: 1.4;
-      font-size: ${theme.typography.sizes.xl}px;
+      font-size: ${theme.fontSizeXL}px;
       margin-top: ${theme.gridUnit * 3}px;
       margin-bottom: ${theme.gridUnit * 2}px;
     }
@@ -43,7 +43,7 @@ export const headerStyles = (theme: SupersetTheme) => css`
     h6 {
       font-weight: ${theme.typography.weights.bold};
       line-height: 1.4;
-      font-size: ${theme.typography.sizes.l}px;
+      font-size: ${theme.fontSizeLG}px;
       letter-spacing: 0.2px;
       margin-top: ${theme.gridUnit * 2}px;
       margin-bottom: ${theme.gridUnit}px;

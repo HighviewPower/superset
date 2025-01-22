@@ -55,7 +55,7 @@ const ScopeContainer = styled.div`
     flex-direction: column;
     height: 80%;
     margin-right: ${theme.gridUnit * -6}px;
-    font-size: ${theme.typography.sizes.m}px;
+    font-size: ${theme.fontSize}px;
 
     & .nav.nav-tabs {
       border: none;
@@ -135,7 +135,7 @@ const ScopeSelector = styled.div`
       .react-checkbox-tree .rct-icon.rct-icon-expand-all,
       .react-checkbox-tree .rct-icon.rct-icon-collapse-all {
         font-family: ${theme.typography.families.sansSerif};
-        font-size: ${theme.typography.sizes.m}px;
+        font-size: ${theme.fontSize}px;
         color: ${theme.colors.primary.base};
 
         &::before {
@@ -201,7 +201,7 @@ const ScopeSelector = styled.div`
       .react-checkbox-tree {
         flex-direction: column;
         color: ${theme.colors.grayscale.text};
-        font-size: ${theme.typography.sizes.m}px;
+        font-size: ${theme.fontSize}px;
 
         .filter-scope-type {
           padding: ${theme.gridUnit * 2}px 0;
@@ -294,7 +294,7 @@ const ScopeSelector = styled.div`
         border-radius: ${theme.borderRadius}px;
         border: 1px solid ${theme.colors.grayscale.light2};
         padding: ${theme.gridUnit}px ${theme.gridUnit * 2}px;
-        font-size: ${theme.typography.sizes.m}px;
+        font-size: ${theme.fontSize}px;
         outline: none;
 
         &:focus {

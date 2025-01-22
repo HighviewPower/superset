@@ -38,7 +38,7 @@ const StyledTooltip = (props: any) => {
                 border: none;
                 text-align: left;
                 color: ${theme.colors.grayscale.light5};
-                font-size: ${theme.typography.sizes.xs}px;
+                font-size: ${theme.fontSizeXS}px;
               }
             }
           `}

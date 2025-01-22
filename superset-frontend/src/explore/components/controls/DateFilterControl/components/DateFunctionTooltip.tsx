@@ -118,18 +118,18 @@ const StyledTooltip = (props: any) => {
               .antd5-tooltip-inner {
                 max-width: ${theme.gridUnit * 125}px;
                 h3 {
-                  font-size: ${theme.typography.sizes.m}px;
+                  font-size: ${theme.fontSize}px;
                   font-weight: ${theme.typography.weights.bold};
                 }
                 h4 {
-                  font-size: ${theme.typography.sizes.m}px;
+                  font-size: ${theme.fontSize}px;
                   font-weight: ${theme.typography.weights.bold};
                 }
                 pre {
                   border: none;
                   text-align: left;
                   word-break: break-word;
-                  font-size: ${theme.typography.sizes.s}px;
+                  font-size: ${theme.fontSizeSM}px;
                 }
               }
             }

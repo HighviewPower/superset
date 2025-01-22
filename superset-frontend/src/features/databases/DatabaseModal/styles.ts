@@ -48,7 +48,7 @@ export const StyledFormHeader = styled.header`
   .helper-top {
     padding-bottom: 0;
     color: ${({ theme }) => theme.colors.grayscale.base};
-    font-size: ${({ theme }) => theme.typography.sizes.s}px;
+    font-size: ${({ theme }) => theme.fontSizeSM}px;
     margin: 0;
   }
 
@@ -59,13 +59,13 @@ export const StyledFormHeader = styled.header`
   .helper-bottom {
     padding-top: 0;
     color: ${({ theme }) => theme.colors.grayscale.base};
-    font-size: ${({ theme }) => theme.typography.sizes.s}px;
+    font-size: ${({ theme }) => theme.fontSizeSM}px;
     margin: 0;
   }
 
   h4 {
     color: ${({ theme }) => theme.colors.grayscale.dark2};
-    font-size: ${({ theme }) => theme.typography.sizes.l}px;
+    font-size: ${({ theme }) => theme.fontSizeLG}px;
     margin: 0;
     padding: 0;
     line-height: ${({ theme }) => theme.gridUnit * 8}px;
@@ -196,7 +196,7 @@ export const formHelperStyles = (theme: SupersetTheme) => css`
     display: block;
     padding: ${theme.gridUnit}px 0;
     color: ${theme.colors.grayscale.light1};
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
     text-align: left;
   }
 `;
@@ -225,11 +225,11 @@ export const formStyles = (theme: SupersetTheme) => css`
   }
   .control-label {
     color: ${theme.colors.grayscale.dark1};
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
   }
   .helper {
     color: ${theme.colors.grayscale.light1};
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
     margin-top: ${theme.gridUnit * 1.5}px;
   }
   .ant-tabs-content-holder {
@@ -241,7 +241,7 @@ export const formStyles = (theme: SupersetTheme) => css`
 export const validatedFormStyles = (theme: SupersetTheme) => css`
   label {
     color: ${theme.colors.grayscale.dark1};
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
     margin-bottom: 0;
   }
 `;
@@ -258,7 +258,7 @@ export const StyledInputContainer = styled.div`
 
     .control-label {
       color: ${theme.colors.grayscale.dark1};
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
       margin-bottom: ${theme.gridUnit * 2}px;
     }
 
@@ -275,7 +275,7 @@ export const StyledInputContainer = styled.div`
         margin-left: ${theme.gridUnit * 2}px;
         margin-top: ${theme.gridUnit * 0.75}px;
         font-family: ${theme.typography.families.sansSerif};
-        font-size: ${theme.typography.sizes.m}px;
+        font-size: ${theme.fontSize}px;
       }
 
       i {
@@ -388,7 +388,7 @@ export const TabHeader = styled.div`
 
   .helper {
     color: ${({ theme }) => theme.colors.grayscale.base};
-    font-size: ${({ theme }) => theme.typography.sizes.s}px;
+    font-size: ${({ theme }) => theme.fontSizeSM}px;
     margin: 0px;
   }
 `;
@@ -396,22 +396,22 @@ export const TabHeader = styled.div`
 export const CreateHeaderTitle = styled.div`
   color: ${({ theme }) => theme.colors.grayscale.dark2};
   font-weight: ${({ theme }) => theme.typography.weights.bold};
-  font-size: ${({ theme }) => theme.typography.sizes.m}px;
+  font-size: ${({ theme }) => theme.fontSize}px;
 `;
 
 export const CreateHeaderSubtitle = styled.div`
   color: ${({ theme }) => theme.colors.grayscale.dark1};
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
 `;
 
 export const EditHeaderTitle = styled.div`
   color: ${({ theme }) => theme.colors.grayscale.light1};
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
 `;
 
 export const EditHeaderSubtitle = styled.div`
   color: ${({ theme }) => theme.colors.grayscale.dark1};
-  font-size: ${({ theme }) => theme.typography.sizes.l}px;
+  font-size: ${({ theme }) => theme.fontSizeLG}px;
   font-weight: ${({ theme }) => theme.typography.weights.bold};
 `;
 
@@ -483,7 +483,7 @@ export const SelectDatabaseStyles = styled.div`
   .available {
     margin: ${({ theme }) => theme.gridUnit * 4}px;
     .available-label {
-      font-size: ${({ theme }) => theme.typography.sizes.l}px;
+      font-size: ${({ theme }) => theme.fontSizeLG}px;
       font-weight: ${({ theme }) => theme.typography.weights.bold};
       margin: ${({ theme }) => theme.gridUnit * 6}px 0;
     }
@@ -493,12 +493,12 @@ export const SelectDatabaseStyles = styled.div`
   }
 
   .label-available-select {
-    font-size: ${({ theme }) => theme.typography.sizes.s}px;
+    font-size: ${({ theme }) => theme.fontSizeSM}px;
   }
 
   .control-label {
     color: ${({ theme }) => theme.colors.grayscale.dark1};
-    font-size: ${({ theme }) => theme.typography.sizes.s}px;
+    font-size: ${({ theme }) => theme.fontSizeSM}px;
     margin-bottom: ${({ theme }) => theme.gridUnit * 2}px;
   }
 `;
@@ -523,7 +523,7 @@ export const StyledCatalogTable = styled.div`
   }
 
   .gsheet-title {
-    font-size: ${({ theme }) => theme.typography.sizes.l}px;
+    font-size: ${({ theme }) => theme.fontSizeLG}px;
     font-weight: ${({ theme }) => theme.typography.weights.bold};
     margin: ${({ theme }) => theme.gridUnit * 10}px 0 16px;
   }

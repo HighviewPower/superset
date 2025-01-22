@@ -309,7 +309,7 @@ const ColorSchemeControl = ({
           width: 100%;
           & .ant-select-item.ant-select-item-group {
             padding-left: ${theme.gridUnit}px;
-            font-size: ${theme.typography.sizes.m}px;
+            font-size: ${theme.fontSize}px;
           }
           & .ant-select-item-option-grouped {
             padding-left: ${theme.gridUnit * 3}px;

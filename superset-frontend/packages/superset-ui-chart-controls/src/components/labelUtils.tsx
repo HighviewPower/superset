@@ -25,7 +25,7 @@ const TooltipSectionWrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
     line-height: 1.2;
 
     &:not(:last-of-type) {

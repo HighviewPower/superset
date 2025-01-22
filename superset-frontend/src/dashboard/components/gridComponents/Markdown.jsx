@@ -100,7 +100,7 @@ const MarkdownStyles = styled.div`
       }
 
       h6 {
-        font-size: ${theme.typography.sizes.s}px;
+        font-size: ${theme.fontSizeSM}px;
       }
 
       .dashboard-component-chart-holder {

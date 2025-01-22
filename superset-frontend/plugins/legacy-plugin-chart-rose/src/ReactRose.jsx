@@ -34,7 +34,7 @@ const Rose = ({ className, ...otherProps }) => (
           border-radius: 4px;
           pointer-events: none;
           z-index: 1000;
-          font-size: ${theme.typography.sizes.s}px;
+          font-size: ${theme.fontSizeSM}px;
         }
       `}
     />
@@ -54,7 +54,7 @@ export default styled(Rose)`
 
     .superset-legacy-chart-rose text {
         font-weight: ${theme.typography.weights.normal};
-        font-size: ${theme.typography.sizes.s}px;
+        font-size: ${theme.fontSizeSM}px;
         font-family: ${theme.typography.families.sansSerif};
         pointer-events: none;
     }

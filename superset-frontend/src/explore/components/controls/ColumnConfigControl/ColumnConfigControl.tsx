@@ -140,7 +140,7 @@ export default function ColumnConfigControl<T extends ColumnConfig>({
               padding: theme.gridUnit * 2,
               textAlign: 'center',
               cursor: 'pointer',
-              fontSize: theme.typography.sizes.xs,
+              fontSize: theme.fontSizeXS,
               color: theme.colorTextLabel,
               ':hover': {
                 backgroundColor: theme.colors.grayscale.light4,

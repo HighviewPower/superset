@@ -39,13 +39,13 @@ const Container = styled.div<{
     padding: ${theme.gridUnit * 4}px;
 
     & .no-results-title {
-      font-size: ${theme.typography.sizes.l}px;
+      font-size: ${theme.fontSizeLG}px;
       font-weight: ${theme.typography.weights.bold};
       padding-bottom: ${theme.gridUnit * 2};
     }
 
     & .no-results-body {
-      font-size: ${theme.typography.sizes.m}px;
+      font-size: ${theme.fontSize}px;
     }
   `}
 `;

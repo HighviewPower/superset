@@ -37,13 +37,13 @@ const Calendar = ({ className, ...otherProps }) => {
             border-radius: 4px;
             pointer-events: none;
             z-index: 1000;
-            font-size: ${theme.typography.sizes.s}px;
+            font-size: ${theme.fontSizeSM}px;
           }
           /* Creates a small triangle extender for the tooltip */
           .d3-tip:after {
             box-sizing: border-box;
             display: inline;
-            font-size: ${theme.typography.sizes.xs};
+            font-size: ${theme.fontSizeXS};
             width: 100%;
             line-height: 1;
             color: ${theme.colors.grayscale.dark2};
@@ -125,7 +125,7 @@ export default styled(Calendar)`
 
     .cal-heatmap-container .graph-label {
       fill: ${theme.colors.grayscale.base};
-      font-size: ${theme.typography.sizes.xs}px;
+      font-size: ${theme.fontSizeXS}px;
     }
 
     .cal-heatmap-container .graph,
@@ -143,7 +143,7 @@ export default styled(Calendar)`
     }
 
     .cal-heatmap-container .subdomain-text {
-      font-size: ${theme.typography.sizes.xs}px;
+      font-size: ${theme.fontSizeXS}px;
       pointer-events: none;
     }
 
@@ -208,7 +208,7 @@ export default styled(Calendar)`
       padding: ${theme.gridUnit * 2}px;
       background: ${theme.colors.grayscale.dark1};
       color: ${theme.colors.grayscale.light1};
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
       line-height: 1.4;
       width: 140px;
       position: absolute;

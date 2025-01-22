@@ -31,7 +31,7 @@ import ImportErrorAlert from './ImportErrorAlert';
 const HelperMessage = styled.div`
   display: block;
   color: ${({ theme }) => theme.colors.grayscale.base};
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
 `;
 
 const StyledInputContainer = styled.div`

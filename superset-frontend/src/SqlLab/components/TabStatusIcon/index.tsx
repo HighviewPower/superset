@@ -36,7 +36,7 @@ const Circle = styled.div`
     background-color: ${theme.colors.grayscale.light2};
     text-align: center;
     vertical-align: middle;
-    font-size: ${theme.typography.sizes.m}px;
+    font-size: ${theme.fontSize}px;
     font-weight: ${theme.typography.weights.bold};
     color: ${theme.colors.grayscale.light5};
     position: relative;

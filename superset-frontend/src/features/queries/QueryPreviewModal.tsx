@@ -30,13 +30,13 @@ import { QueryObject } from 'src/views/CRUD/types';
 
 const QueryTitle = styled.div`
   color: ${({ theme }) => theme.colors.primary.light2};
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
   margin-bottom: 0;
 `;
 
 const QueryLabel = styled.div`
   color: ${({ theme }) => theme.colors.grayscale.dark2};
-  font-size: ${({ theme }) => theme.typography.sizes.m}px;
+  font-size: ${({ theme }) => theme.fontSize}px;
   padding: 4px 0 24px 0;
 `;
 
@@ -46,7 +46,7 @@ const QueryViewToggle = styled.div`
 
 const TabButton = styled.div`
   display: inline;
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
   padding: ${({ theme }) => theme.gridUnit * 2}px
     ${({ theme }) => theme.gridUnit * 4}px;
   margin-right: ${({ theme }) => theme.gridUnit * 4}px;
@@ -71,9 +71,9 @@ const StyledModal = styled(Modal)`
   }
 
   pre {
-    font-size: ${({ theme }) => theme.typography.sizes.xs}px;
+    font-size: ${({ theme }) => theme.fontSizeXS}px;
     font-weight: ${({ theme }) => theme.typography.weights.normal};
-    line-height: ${({ theme }) => theme.typography.sizes.l}px;
+    line-height: ${({ theme }) => theme.fontSizeLG}px;
     height: 375px;
     border: none;
   }

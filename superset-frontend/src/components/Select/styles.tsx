@@ -83,7 +83,7 @@ export const NoElement = styled.span`
 export const StyledTag = styled(Tag)`
   ${({ theme }) => `
     background: ${theme.colors.grayscale.light3};
-    font-size: ${theme.typography.sizes.m}px;
+    font-size: ${theme.fontSize}px;
     border: none;
   `}
 `;
@@ -112,7 +112,7 @@ export const StyledHelperText = styled.div`
   ${({ theme }) => `
    padding: ${theme.gridUnit * 2}px ${theme.gridUnit * 3}px;
    color: ${theme.colors.grayscale.base};
-   font-size: ${theme.typography.sizes.s}px;
+   font-size: ${theme.fontSizeSM}px;
    cursor: default;
    border-bottom: 1px solid ${theme.colors.grayscale.light2};
  `}

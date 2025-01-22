@@ -66,7 +66,7 @@ const versionInfoStyles = (theme: SupersetTheme) => css`
   padding: ${theme.gridUnit * 1.5}px ${theme.gridUnit * 4}px
     ${theme.gridUnit * 4}px ${theme.gridUnit * 7}px;
   color: ${theme.colors.grayscale.base};
-  font-size: ${theme.typography.sizes.xs}px;
+  font-size: ${theme.fontSizeXS}px;
   white-space: nowrap;
 `;
 const StyledI = styled.div`

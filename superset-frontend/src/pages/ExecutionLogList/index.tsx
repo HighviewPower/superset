@@ -44,7 +44,7 @@ const StyledHeader = styled.div`
     a,
     Link {
       margin-left: ${theme.gridUnit * 4}px;
-      font-size: ${theme.typography.sizes.s};
+      font-size: ${theme.fontSizeSM};
       font-weight: ${theme.typography.weights.normal};
       text-decoration: underline;
     }

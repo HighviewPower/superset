@@ -24,11 +24,13 @@ import {
   SimpleAdhocFilter,
 } from '@superset-ui/core';
 
+export type FontSizeOptions = 'xs' | 's' | 'm' | 'l' | 'xl' | 'xxl';
+
 export interface PopKPIStylesProps {
   height: number;
   width: number;
-  headerFontSize: keyof typeof supersetTheme.typography.sizes;
-  subheaderFontSize: keyof typeof supersetTheme.typography.sizes;
+  headerFontSize: FontSizeOptions;
+  subheaderFontSize: FontSizeOptions;
   boldText: boolean;
   comparisonColorEnabled: boolean;
 }

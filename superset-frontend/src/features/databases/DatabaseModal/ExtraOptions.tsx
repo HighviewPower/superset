@@ -490,7 +490,7 @@ const ExtraOptions = ({
               {ExtraExtensionLogo && <ExtraExtensionLogo />}
               <span
                 css={(theme: SupersetTheme) => ({
-                  fontSize: theme.typography.sizes.l,
+                  fontSize: theme.fontSizeLG,
                   fontWeight: theme.typography.weights.bold,
                 })}
               >

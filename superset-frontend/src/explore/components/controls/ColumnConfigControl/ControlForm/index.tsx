@@ -129,7 +129,7 @@ export default function ControlForm({
       css={{
         label: {
           color: theme.colorTextLabel,
-          fontSize: theme.typography.sizes.s,
+          fontSize: theme.fontSizeSM,
         },
       }}
     >

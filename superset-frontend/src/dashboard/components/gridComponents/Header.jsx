@@ -64,15 +64,15 @@ const HeaderStyles = styled.div`
     padding: ${theme.gridUnit * 4}px 0;
 
     &.header-small {
-      font-size: ${theme.typography.sizes.l}px;
+      font-size: ${theme.fontSizeLG}px;
     }
 
     &.header-medium {
-      font-size: ${theme.typography.sizes.xl}px;
+      font-size: ${theme.fontSizeXL}px;
     }
 
     &.header-large {
-      font-size: ${theme.typography.sizes.xxl}px;
+      font-size: ${theme.fontSizeXXL}px;
     }
 
     .dashboard--editing .dashboard-grid & {

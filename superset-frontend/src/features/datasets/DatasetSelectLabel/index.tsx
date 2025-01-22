@@ -34,7 +34,7 @@ export type Dataset = {
 const TooltipContent = styled.div`
   ${({ theme }) => `
     .tooltip-header {
-      font-size: ${theme.typography.sizes.m}px;
+      font-size: ${theme.fontSize}px;
       font-weight: ${theme.typography.weights.bold};
     }
 
@@ -77,15 +77,11 @@ const StyledDetailWrapper = styled.div`
 `;
 
 const StyledLabelDetail = styled.span`
-  ${({
-    theme: {
-      typography: { sizes, weights },
-    },
-  }) => `
+  ${({ theme: { fontSizeSM, colorTextSecondary } }) => `
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: ${sizes.s}px;
-    font-weight: ${weights.light};
+    font-size: ${fontSizeSM}px;
+    color: ${colorTextSecondary};
     line-height: 1.6;
   `}
 `;

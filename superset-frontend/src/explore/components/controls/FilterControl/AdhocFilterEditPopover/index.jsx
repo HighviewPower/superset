@@ -72,7 +72,7 @@ const FilterPopoverContentContainer = styled.div`
   }
 
   .filter-edit-clause-info {
-    font-size: ${({ theme }) => theme.typography.sizes.xs}px;
+    font-size: ${({ theme }) => theme.fontSizeXS}px;
   }
 
   .filter-edit-clause-section {

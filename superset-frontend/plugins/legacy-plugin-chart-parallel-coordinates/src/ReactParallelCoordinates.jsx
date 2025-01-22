@@ -46,7 +46,7 @@ export default styled(ParallelCoordinates)`
     }
     .parcoords svg,
     .parcoords canvas {
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
       position: absolute;
     }
     .parcoords > canvas {
@@ -55,7 +55,7 @@ export default styled(ParallelCoordinates)`
 
     .parcoords text.label {
       font: 100%;
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
       cursor: drag;
     }
     .parcoords rect.background {
@@ -100,7 +100,7 @@ export default styled(ParallelCoordinates)`
     .parcoords .row,
     .parcoords .header {
       clear: left;
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
       line-height: 18px;
       height: 18px;
       margin: 0px;

@@ -102,7 +102,7 @@ const StyledBadge = styled(Badge)`
 `;
 
 const EditLockContainer = styled.div`
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
   display: flex;
   align-items: center;
   a {

@@ -64,14 +64,14 @@ const NewComponentPlaceholder = styled.div`
     align-items: center;
     justify-content: center;
     color: ${theme.colorTextLabel};
-    font-size: ${theme.typography.sizes.xxl}px;
+    font-size: ${theme.fontSizeXXL}px;
 
     &.fa-window-restore {
-      font-size: ${theme.typography.sizes.l}px;
+      font-size: ${theme.fontSizeLG}px;
     }
 
     &.fa-area-chart {
-      font-size: ${theme.typography.sizes.xl}px;
+      font-size: ${theme.fontSizeXL}px;
     }
 
     &.divider-placeholder:after {

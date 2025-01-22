@@ -70,7 +70,7 @@ const StyledMenu = styled(Menu)`
         0 9px 28px 8px
       ${addAlpha(theme.colors.grayscale.dark2, 0.05)};
     .info {
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
       color: ${theme.colors.grayscale.base};
       padding: ${theme.gridUnit}px ${theme.gridUnit * 3}px ${
         theme.gridUnit

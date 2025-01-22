@@ -24,7 +24,7 @@ export const Styles = styled.div`
     table.pvtTable {
       position: ${isDashboardEditMode ? 'inherit' : 'relative'};
       width: calc(100% - ${theme.gridUnit}px);
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
       text-align: left;
       margin: ${theme.gridUnit}px;
       border-collapse: separate;
@@ -46,7 +46,7 @@ export const Styles = styled.div`
       background-color: ${theme.colors.grayscale.light5};
       border-top: 1px solid ${theme.colors.grayscale.light2};
       border-left: 1px solid ${theme.colors.grayscale.light2};
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
       padding: ${theme.gridUnit}px;
       font-weight: ${theme.typography.weights.normal};
     }

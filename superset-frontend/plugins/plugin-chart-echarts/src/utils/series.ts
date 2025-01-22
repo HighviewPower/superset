@@ -438,7 +438,7 @@ export function getLegendProps(
     selector: ['all', 'inverse'],
     selectorLabel: {
       fontFamily: theme.typography.families.sansSerif,
-      fontSize: theme.typography.sizes.s,
+      fontSize: theme.fontSizeSM,
       color: theme.colors.grayscale.base,
       borderColor: theme.colors.grayscale.base,
     },

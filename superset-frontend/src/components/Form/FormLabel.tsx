@@ -27,20 +27,20 @@ export type FormLabelProps = {
 };
 
 const Label = styled.label`
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
   color: ${({ theme }) => theme.colors.grayscale.dark2};
   margin-bottom: ${({ theme }) => theme.gridUnit}px;
 `;
 
 const RequiredLabel = styled.label`
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
   color: ${({ theme }) => theme.colors.grayscale.dark2};
   margin-bottom: ${({ theme }) => theme.gridUnit}px;
   &::after {
     display: inline-block;
     margin-left: ${({ theme }) => theme.gridUnit}px;
     color: ${({ theme }) => theme.colors.error.base};
-    font-size: ${({ theme }) => theme.typography.sizes.m}px;
+    font-size: ${({ theme }) => theme.fontSize}px;
     content: '*';
   }
 `;

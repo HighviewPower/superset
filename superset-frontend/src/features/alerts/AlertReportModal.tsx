@@ -256,7 +256,7 @@ export const StyledInputContainer = styled.div`
     .helper {
       display: block;
       color: ${theme.colors.grayscale.base};
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
       padding: ${theme.gridUnit}px 0;
       text-align: left;
     }

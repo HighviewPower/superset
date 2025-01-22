@@ -42,7 +42,7 @@ const AlertContainer = styled.div`
     border-radius: 2px;
 
     color: ${theme.colors.info.dark2};
-    font-size: ${theme.typography.sizes.m}px;
+    font-size: ${theme.fontSize}px;
 
     p {
       margin-bottom: ${theme.gridUnit}px;

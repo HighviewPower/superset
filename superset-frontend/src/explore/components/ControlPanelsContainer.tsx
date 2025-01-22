@@ -180,12 +180,12 @@ const ControlPanelsTabs = styled(Tabs)`
       }
 
       & > .ant-collapse-header {
-        font-size: ${theme.typography.sizes.s}px;
+        font-size: ${theme.fontSizeSM}px;
       }
 
       & > .ant-collapse-content > .ant-collapse-content-box {
         padding-bottom: 0;
-        font-size: ${theme.typography.sizes.s}px;
+        font-size: ${theme.fontSizeSM}px;
       }
     }
   `}
@@ -593,7 +593,7 @@ export const ControlPanelsContainer = (props: ControlPanelsContainerProps) => {
       <span data-test="collapsible-control-panel-header">
         <span
           css={(theme: SupersetTheme) => css`
-            font-size: ${theme.typography.sizes.m}px;
+            font-size: ${theme.fontSize}px;
             line-height: 1.3;
             font-weight: ${theme.typography.weights.medium};
           `}

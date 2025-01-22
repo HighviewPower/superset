@@ -33,7 +33,7 @@ export const StyledTopSection = styled.div`
   padding: ${({ theme }) =>
     `${theme.gridUnit * 3}px ${theme.gridUnit * 4}px ${theme.gridUnit * 2}px`};
   label {
-    font-size: ${({ theme }) => theme.typography.sizes.s}px;
+    font-size: ${({ theme }) => theme.fontSizeSM}px;
     color: ${({ theme }) => theme.colors.grayscale.light1};
   }
 `;
@@ -46,7 +46,7 @@ export const StyledBottomSection = styled.div`
     width: 100%;
   }
   .control-label {
-    font-size: ${({ theme }) => theme.typography.sizes.s}px;
+    font-size: ${({ theme }) => theme.fontSizeSM}px;
     color: ${({ theme }) => theme.colors.grayscale.light1};
   }
 `;

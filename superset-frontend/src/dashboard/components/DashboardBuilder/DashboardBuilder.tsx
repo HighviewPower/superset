@@ -360,7 +360,7 @@ const StyledDashboardContent = styled.div<{
         justify-content: center;
 
         .missing-chart-body {
-          font-size: ${theme.typography.sizes.s}px;
+          font-size: ${theme.fontSizeSM}px;
           position: relative;
           display: flex;
         }

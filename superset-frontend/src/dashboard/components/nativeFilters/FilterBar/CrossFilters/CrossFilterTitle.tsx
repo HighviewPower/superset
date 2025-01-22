@@ -32,7 +32,7 @@ import { ellipsisCss } from './styles';
 const StyledCrossFilterTitle = styled.div`
   ${({ theme }) => `
     display: flex;
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
     color: ${theme.colors.grayscale.base};
     vertical-align: middle;
     align-items: center;

@@ -40,7 +40,7 @@ const StyledIcon = styled.div`
 `;
 
 const VerticalFilterControlTitle = styled.h4`
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
   color: ${({ theme }) => theme.colors.grayscale.dark1};
   margin: 0;
   overflow-wrap: anywhere;
@@ -178,7 +178,7 @@ const useFilterControlDisplay = (
   }, [orientation, overflow]);
 
 const ToolTipContainer = styled.div`
-  font-size: ${({ theme }) => theme.typography.sizes.m}px;
+  font-size: ${({ theme }) => theme.fontSize}px;
   display: flex;
 `;
 
@@ -186,7 +186,7 @@ const RequiredFieldIndicator = () => (
   <span
     css={(theme: SupersetTheme) => ({
       color: theme.colors.error.base,
-      fontSize: `${theme.typography.sizes.s}px`,
+      fontSize: `${theme.fontSizeSM}px`,
       paddingLeft: '1px',
     })}
   >

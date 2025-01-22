@@ -135,7 +135,7 @@ const MonospaceDiv = styled.div`
 `;
 
 const ReturnedRows = styled.div`
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
   line-height: 1;
 `;
 
@@ -497,13 +497,13 @@ const ResultSet = ({
             >
               <Label
                 css={css`
-                  line-height: ${theme.typography.sizes.l}px;
+                  line-height: ${theme.fontSizeLG}px;
                 `}
               >
                 {limitMessage && (
                   <Icons.ExclamationCircleOutlined
                     css={css`
-                      font-size: ${theme.typography.sizes.m}px;
+                      font-size: ${theme.fontSize}px;
                       margin-right: ${theme.gridUnit}px;
                     `}
                   />

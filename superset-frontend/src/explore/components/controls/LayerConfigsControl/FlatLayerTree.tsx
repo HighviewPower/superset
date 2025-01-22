@@ -37,7 +37,7 @@ export const StyledLayerTreeItem = styled(LayerTreeItem)`
     border: none;
     border-radius: ${theme.borderRadius}px;
     background-color: ${theme.colors.grayscale.light3};
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
     font-weight: ${theme.typography.weights.normal};
 
     &:hover {
@@ -63,7 +63,7 @@ export const StyledLayerTreeItem = styled(LayerTreeItem)`
 
     & .layer-tree-item-type {
       padding-left: 4px;
-      font-size: ${theme.typography.sizes.xs}px;
+      font-size: ${theme.fontSizeXS}px;
       font-family: ${theme.typography.families.monospace};
     }
 

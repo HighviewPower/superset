@@ -54,7 +54,7 @@ const IconBlock = styled.div`
     margin-top: ${({ theme }) =>
       2 * theme.gridUnit}px; // Add spacing between icon and name
     font-size: ${({ theme }) =>
-      theme.typography.sizes.s}; // Optional: adjust font size for elegance
+      theme.fontSizeSM}; // Optional: adjust font size for elegance
     color: ${({ theme }) =>
       theme.colors.grayscale.base}; // Optional: subtle color for the name
   }

@@ -60,7 +60,7 @@ const StyledNotificationMethod = styled.div`
 
       .helper {
         margin-top: ${theme.gridUnit * 2}px;
-        font-size: ${theme.typography.sizes.s}px;
+        font-size: ${theme.fontSizeSM}px;
         color: ${theme.colors.grayscale.base};
       }
     }
@@ -82,14 +82,14 @@ const StyledNotificationMethod = styled.div`
       color: ${theme.colors.primary.dark1};
       display: inline-flex;
       align-items: center;
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
       cursor: pointer;
       margin-top: ${theme.gridUnit}px;
 
       .icon {
         width: ${theme.gridUnit * 3}px;
         height: ${theme.gridUnit * 3}px;
-        font-size: ${theme.typography.sizes.s}px;
+        font-size: ${theme.fontSizeSM}px;
         margin-right: ${theme.gridUnit}px;
       }
     }

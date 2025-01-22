@@ -83,7 +83,7 @@ const MetadataItem: FC<{
 }> = ({ label, value, tooltipText }) => (
   <div
     css={(theme: Theme) => css`
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
       display: flex;
       justify-content: space-between;
 
@@ -123,7 +123,7 @@ const SliceAddedBadgePlaceholder: FC<{
       border: 1px solid ${theme.colors.primary.dark1};
       border-radius: ${theme.gridUnit}px;
       color: ${theme.colors.primary.dark1};
-      font-size: ${theme.typography.sizes.xs}px;
+      font-size: ${theme.fontSizeXS}px;
       letter-spacing: 0.02em;
       padding: ${theme.gridUnit / 2}px ${theme.gridUnit * 2}px;
       margin-left: ${theme.gridUnit * 4}px;
@@ -149,7 +149,7 @@ const SliceAddedBadge: FC<{ placeholder?: HTMLDivElement }> = ({
       border: 1px solid ${theme.colors.primary.dark1};
       border-radius: ${theme.gridUnit}px;
       color: ${theme.colors.primary.dark1};
-      font-size: ${theme.typography.sizes.xs}px;
+      font-size: ${theme.fontSizeXS}px;
       letter-spacing: 0.02em;
       padding: ${theme.gridUnit / 2}px ${theme.gridUnit * 2}px;
       margin-left: ${theme.gridUnit * 4}px;

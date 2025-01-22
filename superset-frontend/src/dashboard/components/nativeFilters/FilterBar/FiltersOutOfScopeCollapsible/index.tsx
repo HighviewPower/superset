@@ -86,7 +86,7 @@ export const FiltersOutOfScopeCollapsible = ({
       header={
         <span
           css={(theme: SupersetTheme) => css`
-            font-size: ${theme.typography.sizes.s}px;
+            font-size: ${theme.fontSizeSM}px;
           `}
         >
           {t('Filters out of scope (%d)', filtersOutOfScope.length)}

@@ -61,7 +61,7 @@ const HorizontalDivider = ({ title, description }: FilterDividerProps) => {
           css={css`
             ${truncationCSS};
             max-width: ${theme.gridUnit * 32.5}px;
-            font-size: ${theme.typography.sizes.m}px;
+            font-size: ${theme.fontSize}px;
             font-weight: ${theme.typography.weights.normal};
             margin: 0;
             color: ${theme.colors.grayscale.dark1};
@@ -115,7 +115,7 @@ const HorizontalOverflowDivider = ({
             display: block;
             color: ${theme.colors.grayscale.dark1};
             font-weight: ${theme.typography.weights.normal};
-            font-size: ${theme.typography.sizes.m}px;
+            font-size: ${theme.fontSize}px;
             margin: 0 0 ${theme.gridUnit}px 0;
           `}
         >
@@ -130,7 +130,7 @@ const HorizontalOverflowDivider = ({
             css={css`
               ${truncationCSS};
               display: block;
-              font-size: ${theme.typography.sizes.s}px;
+              font-size: ${theme.fontSizeSM}px;
               color: ${theme.colors.grayscale.base};
               margin: ${theme.gridUnit}px 0 0 0;
             `}

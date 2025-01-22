@@ -66,7 +66,7 @@ const StyledTable = styled(AntTable)<{ height?: number }>(
       }
     }
     .ant-table.ant-table-small {
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
     }
 `,
 );

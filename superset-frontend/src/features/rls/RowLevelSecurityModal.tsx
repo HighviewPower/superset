@@ -68,7 +68,7 @@ const StyledSectionContainer = styled.div`
   label,
   .control-label {
     display: inline-block;
-    font-size: ${({ theme }) => theme.typography.sizes.s}px;
+    font-size: ${({ theme }) => theme.fontSizeSM}px;
     color: ${({ theme }) => theme.colors.grayscale.base};
     vertical-align: middle;
   }

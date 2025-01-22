@@ -341,7 +341,7 @@ export default styled(BigNumberVis)`
       justify-content: center;
       align-items: flex-start;
       .alert {
-        font-size: ${theme.typography.sizes.s};
+        font-size: ${theme.fontSizeSM};
         margin: -0.5em 0 0.4em;
         line-height: 1;
         padding: ${theme.gridUnit}px;

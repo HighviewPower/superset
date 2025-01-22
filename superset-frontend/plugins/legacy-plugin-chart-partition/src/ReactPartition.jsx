@@ -36,7 +36,7 @@ export default styled(Partition)`
     .superset-legacy-chart-partition .chart {
       display: block;
       margin: auto;
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
     }
 
     .superset-legacy-chart-partition rect {
@@ -73,7 +73,7 @@ export default styled(Partition)`
 
     .partition-tooltip td {
       padding-left: ${theme.gridUnit}px;
-      font-size: ${theme.typography.sizes.s}px;
+      font-size: ${theme.fontSizeSM}px;
       color: ${theme.colors.grayscale.light5};
     }
   `}

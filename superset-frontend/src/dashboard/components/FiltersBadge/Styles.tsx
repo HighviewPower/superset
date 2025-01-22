@@ -26,7 +26,7 @@ export const Pill = styled.div`
     border-radius: 1em;
     vertical-align: text-top;
     padding: ${theme.gridUnit}px ${theme.gridUnit * 2}px;
-    font-size: ${theme.typography.sizes.m}px;
+    font-size: ${theme.fontSize}px;
     font-weight: ${theme.typography.weights.bold};
     min-width: 1em;
     min-height: 1em;

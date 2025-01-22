@@ -72,7 +72,7 @@ const StyledTabs = ({
         flex: 1 1 auto;
         align-items: center;
         justify-content: center;
-        font-size: ${theme.typography.sizes.s}px;
+        font-size: ${theme.fontSizeSM}px;
         text-align: center;
         user-select: none;
         .required {
@@ -151,7 +151,7 @@ export const StyledLineEditableTabs = styled(EditableTabs)`
   }
 
   .ant-tabs-tab-btn {
-    font-size: ${({ theme }) => theme.typography.sizes.m}px;
+    font-size: ${({ theme }) => theme.fontSize}px;
   }
 
   .ant-tabs-tab-remove {

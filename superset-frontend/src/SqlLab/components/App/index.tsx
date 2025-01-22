@@ -51,7 +51,7 @@ const SqlLabStyles = styled.div`
         padding: 0 !important;
         margin: 0;
         border: none;
-        font-size: ${theme.typography.sizes.s}px;
+        font-size: ${theme.fontSizeSM}px;
         background: transparent !important;
       }
 

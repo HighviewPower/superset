@@ -21,7 +21,7 @@ import { styled } from '@superset-ui/core';
 
 const StyledForm = styled(AntdForm)`
   &.ant-form label {
-    font-size: ${({ theme }) => theme.typography.sizes.s}px;
+    font-size: ${({ theme }) => theme.fontSizeSM}px;
   }
   .ant-form-item {
     margin-bottom: ${({ theme }) => theme.gridUnit * 4}px;

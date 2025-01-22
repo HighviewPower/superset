@@ -137,7 +137,7 @@ const ExplorePanelContainer = styled.div`
       padding: 0 ${theme.gridUnit * 2}px 0 ${theme.gridUnit * 4}px;
       justify-content: space-between;
       .horizontal-text {
-        font-size: ${theme.typography.sizes.m}px;
+        font-size: ${theme.fontSize}px;
       }
     }
     .no-show {

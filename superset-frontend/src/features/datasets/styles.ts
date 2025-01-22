@@ -76,7 +76,7 @@ export const StyledLayoutHeader = styled.div`
 export const StyledCreateDatasetTitle = styled.div`
   ${({ theme }) => `
   margin: ${theme.gridUnit * 4}px;
-  font-size: ${theme.typography.sizes.xl}px;
+  font-size: ${theme.fontSizeXL}px;
   font-weight: ${theme.typography.weights.bold};
   `}
 `;

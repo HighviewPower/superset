@@ -99,7 +99,7 @@ const QueryData = styled.div`
   }
   .query-title {
     padding: ${({ theme }) => theme.gridUnit * 2 + 2}px;
-    font-size: ${({ theme }) => theme.typography.sizes.l}px;
+    font-size: ${({ theme }) => theme.fontSizeLG}px;
   }
 `;
 

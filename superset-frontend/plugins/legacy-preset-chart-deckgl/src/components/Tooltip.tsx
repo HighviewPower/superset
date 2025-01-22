@@ -41,7 +41,7 @@ const StyledDiv = styled.div<{ top: number; left: number }>`
     background: ${theme.colors.grayscale.dark2};
     color: ${theme.colors.grayscale.light5};
     maxWidth: 300px;
-    fontSize: ${theme.typography.sizes.s}px;
+    fontSize: ${theme.fontSizeSM}px;
     zIndex: 9;
     pointerEvents: none;
   `}

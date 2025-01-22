@@ -34,7 +34,7 @@ const TitleArea = styled.div`
     padding: 0 ${theme.gridUnit * 2}px ${theme.gridUnit * 2}px;
 
     & > span {
-      font-size: ${theme.typography.sizes.l}px;
+      font-size: ${theme.fontSizeLG}px;
       flex-grow: 1;
       font-weight: ${theme.typography.weights.bold};
     }

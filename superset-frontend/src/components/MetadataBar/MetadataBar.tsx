@@ -43,7 +43,7 @@ const Bar = styled.div<{ count: number }>`
     padding: ${VERTICAL_PADDING}px ${HORIZONTAL_PADDING}px;
     background-color: ${theme.colorBgElevated};
     color: ${theme.colorTextTertiary};
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
     min-width: ${
       HORIZONTAL_PADDING * 2 +
       (ICON_WIDTH + SPACE_BETWEEN_ITEMS) * count -

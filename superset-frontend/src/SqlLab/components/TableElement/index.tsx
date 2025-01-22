@@ -87,7 +87,7 @@ const StyledCollapsePanel = styled(Collapse.Panel)`
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
-          font-size: ${theme.typography.sizes.l}px;
+          font-size: ${theme.fontSizeLG}px;
           flex: 1;
         }
 

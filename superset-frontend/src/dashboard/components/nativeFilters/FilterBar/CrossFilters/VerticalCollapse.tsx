@@ -33,7 +33,7 @@ const StyledCollapse = styled(Collapse)`
       padding-bottom: 0;
     }
     .ant-collapse-item > .ant-collapse-header > .ant-collapse-arrow {
-      font-size: ${theme.typography.sizes.xs}px;
+      font-size: ${theme.fontSizeXS}px;
       padding-top: ${theme.gridUnit * 3}px;
     }
     .ant-collapse-item > .ant-collapse-content > .ant-collapse-content-box {
@@ -44,7 +44,7 @@ const StyledCollapse = styled(Collapse)`
 
 const StyledCrossFiltersTitle = styled.span`
   ${({ theme }) => `
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
   `}
 `;
 

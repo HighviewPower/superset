@@ -196,7 +196,7 @@ export const StyledRowSubFormItem = styled(FormItem)<{ expanded: boolean }>`
 
 export const StyledLabel = styled.span`
   color: ${({ theme }) => theme.colors.grayscale.base};
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
 `;
 
 const CleanFormItem = styled(FormItem)`
@@ -259,7 +259,7 @@ const StyledTabs = styled(Tabs)`
 
 const StyledAsterisk = styled.span`
   color: ${({ theme }) => theme.colors.error.base};
-  font-size: ${({ theme }) => theme.typography.sizes.s}px;
+  font-size: ${({ theme }) => theme.fontSizeSM}px;
   margin-left: ${({ theme }) => theme.gridUnit - 1}px;
   &:before {
     content: '*';
@@ -269,7 +269,7 @@ const StyledAsterisk = styled.span`
 const FilterTypeInfo = styled.div<{ expanded: boolean }>`
   ${({ theme, expanded }) => `
     width: ${expanded ? '49%' : `${FORM_ITEM_WIDTH}px`};
-    font-size: ${theme.typography.sizes.s}px;
+    font-size: ${theme.fontSizeSM}px;
     color: ${theme.colors.grayscale.light1};
     margin:
       ${-theme.gridUnit * 2}px
