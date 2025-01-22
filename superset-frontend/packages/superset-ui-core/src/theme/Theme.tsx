@@ -31,7 +31,9 @@ import {
 } from '@emotion/react';
 import createCache from '@emotion/cache';
 import { merge } from 'lodash';
+import * as yoyo from 'antd-v5';
 
+type AntdTokens = ReturnType<typeof antdThemeImport.getDesignToken>;
 /* eslint-disable theme-colors/no-literal-colors */
 
 interface SystemColors {
@@ -100,7 +102,7 @@ interface LegacySupersetTheme {
   fontWeightMedium: string;
 }
 
-const sharedAntdTokens = [
+const allowedAntdTokens = [
   'borderRadius',
   'borderRadiusLG',
   'borderRadiusOuter',
@@ -328,12 +330,13 @@ const sharedAntdTokens = [
 ];
 
 // Generating a type
-const sharedAntdTokensObject = Object.fromEntries(
-  sharedAntdTokens.map(key => [key, '']),
+const allowedAntdTokensObject = Object.fromEntries(
+  allowedAntdTokens.map(key => [key, '']),
 ) as Record<string, string>;
 
 // Derive the type dynamically
-export type SharedAntdTokens = typeof sharedAntdTokensObject;
+export type SharedAntdTokens = typeof allowedAntdTokensObject;
+type SharedAntdTokens = Pick<AntdTokens, SharedAntdTokens>;
 
 export type SupersetTheme = LegacySupersetTheme & SharedAntdTokens;
 
@@ -490,9 +493,7 @@ export class Theme {
     const theme = Theme.getAntdTokens(antdConfig);
 
     return Object.fromEntries(
-      sharedAntdTokens
-        .sort((a, b) => a.localeCompare(b)) // Sort keys alphabetically
-        .map(key => [key, theme[key]]), // Map keys to their values from the theme
+      allowedAntdTokens.map(key => [key, theme[key]]), // Map keys to their values from the theme
     );
   }
 
