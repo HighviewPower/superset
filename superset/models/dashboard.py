@@ -271,12 +271,29 @@ class Dashboard(AuditMixinNullable, ImportExportMixin, Model):
         for slc in self.slices:
             slices_by_datasource[(slc.cls_model, slc.datasource_id)].add(slc)
 
+        datasource_ids_by_cls: dict[type[BaseDatasource], set[int]] = (
+            defaultdict(set[int])
+        )
+        for (cls_model, datasource_id), _ in slices_by_datasource.items():
+            datasource_ids_by_cls[cls_model].add(datasource_id)
+
+        datasource_lookup: dict[tuple[type[BaseDatasource], int], Any] = (
+            defaultdict(Any)
+        )
+        for cls_model, datasource_ids in datasource_ids_by_cls.items():
+            if datasource_ids:
+                datasource_list: list[Any] = (
+                    db.session.query(cls_model)
+                        .filter(cls_model.id.in_(datasource_ids))
+                        .all()
+                )
+                for datasource in datasource_list:
+                    datasource_lookup[(cls_model, datasource.id)] = datasource
+
         result: list[dict[str, Any]] = []
 
         for (cls_model, datasource_id), slices in slices_by_datasource.items():
-            datasource = (
-                db.session.query(cls_model).filter_by(id=datasource_id).one_or_none()
-            )
+            datasource = datasource_lookup.get((cls_model, datasource_id))
 
             if datasource:
                 # Filter out unneeded fields from the datasource payload
