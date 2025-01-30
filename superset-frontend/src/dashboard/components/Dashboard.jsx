@@ -226,6 +226,7 @@ class Dashboard extends PureComponent {
     );
     let relatedFromApplied = null;
     let relatedFromActive = null;
+    const filterAffectedChartIds = [];
     [...allKeys].forEach(filterKey => {
       if (
         !currFilterKeys.includes(filterKey) &&
@@ -239,7 +240,7 @@ class Dashboard extends PureComponent {
             slices,
           );
         }
-        affectedChartIds.push(...relatedFromApplied[filterKey]);
+        filterAffectedChartIds.push(...relatedFromApplied[filterKey]);
       } else if (!appliedFilterKeys.includes(filterKey)) {
         // filterKey is newly added?
         if (!relatedFromActive) {
@@ -249,7 +250,7 @@ class Dashboard extends PureComponent {
             slices,
           );
         }
-        affectedChartIds.push(...relatedFromActive[filterKey]);
+        filterAffectedChartIds.push(...relatedFromActive[filterKey]);
       } else {
         // if filterKey changes value,
         // update charts in its scope
@@ -269,7 +270,7 @@ class Dashboard extends PureComponent {
               slices,
             );
           }
-          affectedChartIds.push(...relatedFromActive[filterKey]);
+          filterAffectedChartIds.push(...relatedFromActive[filterKey]);
         }
 
         // if filterKey changes scope,
@@ -283,11 +284,14 @@ class Dashboard extends PureComponent {
           const chartsInScope = (activeFilters[filterKey].scope || []).concat(
             appliedFilters[filterKey].scope || [],
           );
-          affectedChartIds.push(...chartsInScope);
+          filterAffectedChartIds.push(...chartsInScope);
         }
       }
     });
 
+    if (filterAffectedChartIds.length > 0) {
+      affectedChartIds.push(...filterAffectedChartIds);
+    }
     // remove dup in affectedChartIds
     this.refreshCharts([...new Set(affectedChartIds)]);
     this.appliedFilters = activeFilters;
