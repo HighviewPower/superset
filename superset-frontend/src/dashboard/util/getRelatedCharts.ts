@@ -88,13 +88,19 @@ export function getRelatedCharts(
   slices: Record<string, Slice>,
 ) {
   const related = Object.entries(filters).reduce((acc, [filterKey, filter]) => {
-    const isCrossFilter =
-      Object.keys(slices).includes(filterKey) &&
-      isAppliedCrossFilterType(filter);
-
     const chartsInScope = Array.isArray(filter.scope)
       ? filter.scope
       : (filter as Filter).chartsInScope ?? [];
+    if (chartsInScope.length === 0) {
+      return {
+        ...acc,
+        [filterKey]: [],
+      };
+    }
+
+    const isCrossFilter =
+      Object.keys(slices).includes(filterKey) &&
+      isAppliedCrossFilterType(filter);
 
     if (isCrossFilter) {
       const checkFilter = checkFilters?.[filterKey] as AppliedCrossFilterType;

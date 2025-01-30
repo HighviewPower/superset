@@ -224,20 +224,32 @@ class Dashboard extends PureComponent {
       ownDataCharts,
       this.appliedOwnDataCharts,
     );
+    let relatedFromApplied = null;
+    let relatedFromActive = null;
     [...allKeys].forEach(filterKey => {
       if (
         !currFilterKeys.includes(filterKey) &&
         appliedFilterKeys.includes(filterKey)
       ) {
         // filterKey is removed?
-        affectedChartIds.push(
-          ...getRelatedCharts(appliedFilters, activeFilters, slices)[filterKey],
-        );
+        if (!relatedFromApplied) {
+          relatedFromApplied = getRelatedCharts(
+            appliedFilters,
+            activeFilters,
+            slices,
+          );
+        }
+        affectedChartIds.push(...relatedFromApplied[filterKey]);
       } else if (!appliedFilterKeys.includes(filterKey)) {
         // filterKey is newly added?
-        affectedChartIds.push(
-          ...getRelatedCharts(activeFilters, appliedFilters, slices)[filterKey],
-        );
+        if (!relatedFromActive) {
+          relatedFromActive = getRelatedCharts(
+            activeFilters,
+            appliedFilters,
+            slices,
+          );
+        }
+        affectedChartIds.push(...relatedFromActive[filterKey]);
       } else {
         // if filterKey changes value,
         // update charts in its scope
@@ -250,11 +262,14 @@ class Dashboard extends PureComponent {
             },
           )
         ) {
-          affectedChartIds.push(
-            ...getRelatedCharts(activeFilters, appliedFilters, slices)[
-              filterKey
-            ],
-          );
+          if (!relatedFromActive) {
+            relatedFromActive = getRelatedCharts(
+              activeFilters,
+              appliedFilters,
+              slices,
+            );
+          }
+          affectedChartIds.push(...relatedFromActive[filterKey]);
         }
 
         // if filterKey changes scope,
