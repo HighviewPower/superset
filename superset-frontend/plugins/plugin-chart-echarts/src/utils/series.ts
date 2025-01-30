@@ -80,6 +80,9 @@ export function extractDataTotalValues(
           return prev;
         }
         const value = datum[curr] || 0;
+        if (value === 0) {
+          return prev;
+        }
         return prev + (value as number);
       }, 0);
       totalStackedValues.push(values);

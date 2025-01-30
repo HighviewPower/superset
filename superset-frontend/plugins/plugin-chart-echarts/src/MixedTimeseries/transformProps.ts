@@ -221,13 +221,15 @@ export default function transformProps(
 
   const rebasedDataA = rebaseForecastDatum(data1, verboseMap);
   const [rawSeriesA] = extractSeries(rebasedDataA, {
-    fillNeighborValue: stack ? 0 : undefined,
+    fillNeighborValue: undefined, // stack ? 0 : undefined,
     xAxis: xAxisLabel,
+    removeNulls: true,
   });
   const rebasedDataB = rebaseForecastDatum(data2, verboseMap);
   const [rawSeriesB] = extractSeries(rebasedDataB, {
-    fillNeighborValue: stackB ? 0 : undefined,
+    fillNeighborValue: undefined, // stackB ? 0 : undefined,
     xAxis: xAxisLabel,
+    removeNulls: true,
   });
 
   const dataTypes = getColtypesMapping(queriesData[0]);
