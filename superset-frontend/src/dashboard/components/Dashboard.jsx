@@ -291,9 +291,9 @@ class Dashboard extends PureComponent {
 
     if (filterAffectedChartIds.length > 0) {
       affectedChartIds.push(...filterAffectedChartIds);
+      // remove dup in affectedChartIds
+      this.refreshCharts([...new Set(affectedChartIds)]);
     }
-    // remove dup in affectedChartIds
-    this.refreshCharts([...new Set(affectedChartIds)]);
     this.appliedFilters = activeFilters;
     this.appliedOwnDataCharts = ownDataCharts;
   }
