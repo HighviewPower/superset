@@ -41,6 +41,7 @@ import Loading from 'src/components/Loading';
 import DeleteModal from 'src/components/DeleteModal';
 import PropertiesModal from 'src/dashboard/components/PropertiesModal';
 import DashboardCard from 'src/features/dashboards/DashboardCard';
+import { userHasPermission } from 'src/dashboard/util/permissionUtils';
 import EmptyState from './EmptyState';
 import SubMenu from './SubMenu';
 import { WelcomeTable } from './types';
@@ -95,6 +96,9 @@ function DashboardTable({
   const [dashboardToDelete, setDashboardToDelete] = useState<Dashboard | null>(
     null,
   );
+  const canWriteDashboards = user
+    ? userHasPermission(user, 'Dashboard', 'can_write')
+    : false;
 
   const getData = (tab: TableTab) =>
     fetchData({
@@ -183,37 +187,59 @@ function DashboardTable({
   if (loading) return <LoadingCards cover={showThumbnails} />;
   return (
     <>
-      <SubMenu
-        activeChild={activeTab}
-        tabs={menuTabs}
-        buttons={[
-          {
-            name: (
-              <>
-                <i className="fa fa-plus" />
-                {t('Dashboard')}
-              </>
-            ),
-            buttonStyle: 'tertiary',
-            onClick: () => {
-              window.location.assign('/dashboard/new');
+      {canWriteDashboards ? (
+        <SubMenu
+          activeChild={activeTab}
+          tabs={menuTabs}
+          buttons={[
+            {
+              name: (
+                <>
+                  <i className="fa fa-plus" />
+                  {t('Dashboard')}
+                </>
+              ),
+              buttonStyle: 'tertiary',
+              onClick: () => {
+                window.location.assign('/dashboard/new');
+              },
             },
-          },
-          {
-            name: t('View All »'),
-            buttonStyle: 'link',
-            onClick: () => {
-              const target =
-                activeTab === TableTab.Favorite
-                  ? `/dashboard/list/?filters=(favorite:(label:${t(
-                      'Yes',
-                    )},value:!t))`
-                  : '/dashboard/list/';
-              history.push(target);
+            {
+              name: t('View All »'),
+              buttonStyle: 'link',
+              onClick: () => {
+                const target =
+                  activeTab === TableTab.Favorite
+                    ? `/dashboard/list/?filters=(favorite:(label:${t(
+                        'Yes',
+                      )},value:!t))`
+                    : '/dashboard/list/';
+                history.push(target);
+              },
             },
-          },
-        ]}
-      />
+          ]}
+        />
+      ) : (
+        <SubMenu
+          activeChild={activeTab}
+          tabs={menuTabs}
+          buttons={[
+            {
+              name: t('View All »'),
+              buttonStyle: 'link',
+              onClick: () => {
+                const target =
+                  activeTab === TableTab.Favorite
+                    ? `/dashboard/list/?filters=(favorite:(label:${t(
+                        'Yes',
+                      )},value:!t))`
+                    : '/dashboard/list/';
+                history.push(target);
+              },
+            },
+          ]}
+        />
+      )}
       {editModal && (
         <PropertiesModal
           dashboardId={editModal?.id}

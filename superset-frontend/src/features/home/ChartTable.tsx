@@ -45,6 +45,7 @@ import Chart from 'src/types/Chart';
 import handleResourceExport from 'src/utils/export';
 import Loading from 'src/components/Loading';
 import ErrorBoundary from 'src/components/ErrorBoundary';
+import { userHasPermission } from 'src/dashboard/util/permissionUtils';
 import EmptyState from './EmptyState';
 import { WelcomeTable } from './types';
 import SubMenu from './SubMenu';
@@ -110,6 +111,9 @@ function ChartTable({
   const [activeTab, setActiveTab] = useState(initialTab);
   const [preparingExport, setPreparingExport] = useState<boolean>(false);
   const [loaded, setLoaded] = useState<boolean>(false);
+  const canWriteCharts = user
+    ? userHasPermission(user, 'Chart', 'can_write')
+    : false;
 
   const getData = (tab: TableTab) =>
     fetchData({
@@ -180,37 +184,59 @@ function ChartTable({
         />
       )}
 
-      <SubMenu
-        activeChild={activeTab}
-        tabs={menuTabs}
-        buttons={[
-          {
-            name: (
-              <>
-                <i className="fa fa-plus" />
-                {t('Chart')}
-              </>
-            ),
-            buttonStyle: 'tertiary',
-            onClick: () => {
-              window.location.assign('/chart/add');
+      {canWriteCharts ? (
+        <SubMenu
+          activeChild={activeTab}
+          tabs={menuTabs}
+          buttons={[
+            {
+              name: (
+                <>
+                  <i className="fa fa-plus" />
+                  {t('Chart')}
+                </>
+              ),
+              buttonStyle: 'tertiary',
+              onClick: () => {
+                window.location.assign('/chart/add');
+              },
             },
-          },
-          {
-            name: t('View All »'),
-            buttonStyle: 'link',
-            onClick: () => {
-              const target =
-                activeTab === TableTab.Favorite
-                  ? `/chart/list/?filters=(favorite:(label:${t(
-                      'Yes',
-                    )},value:!t))`
-                  : '/chart/list/';
-              history.push(target);
+            {
+              name: t('View All »'),
+              buttonStyle: 'link',
+              onClick: () => {
+                const target =
+                  activeTab === TableTab.Favorite
+                    ? `/chart/list/?filters=(favorite:(label:${t(
+                        'Yes',
+                      )},value:!t))`
+                    : '/chart/list/';
+                history.push(target);
+              },
             },
-          },
-        ]}
-      />
+          ]}
+        />
+      ) : (
+        <SubMenu
+          activeChild={activeTab}
+          tabs={menuTabs}
+          buttons={[
+            {
+              name: t('View All »'),
+              buttonStyle: 'link',
+              onClick: () => {
+                const target =
+                  activeTab === TableTab.Favorite
+                    ? `/chart/list/?filters=(favorite:(label:${t(
+                        'Yes',
+                      )},value:!t))`
+                    : '/chart/list/';
+                history.push(target);
+              },
+            },
+          ]}
+        />
+      )}
       {charts?.length ? (
         <CardContainer showThumbnails={showThumbnails}>
           {charts.map(e => (

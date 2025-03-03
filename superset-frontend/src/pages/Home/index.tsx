@@ -156,6 +156,12 @@ export const LoadingCards = ({ cover }: LoadingProps) => (
 );
 
 function Welcome({ user, addDangerToast }: WelcomeProps) {
+  const accessToDashboards =
+    userHasPermission(user, 'Dashboards', 'menu_access') &&
+    userHasPermission(user, 'Dashboard', 'can_read');
+  const accessToCharts =
+    userHasPermission(user, 'Charts', 'menu_access') &&
+    userHasPermission(user, 'Chart', 'can_read');
   const canReadSavedQueries = userHasPermission(user, 'SavedQuery', 'can_read');
   const userid = user.userId;
   const id = userid!.toString(); // confident that user is not a guest user
@@ -387,34 +393,38 @@ function Welcome({ user, addDangerToast }: WelcomeProps) {
                   <LoadingCards />
                 )}
               </Collapse.Panel>
-              <Collapse.Panel header={t('Dashboards')} key="2">
-                {!dashboardData || isRecentActivityLoading ? (
-                  <LoadingCards cover={checked} />
-                ) : (
-                  <DashboardTable
-                    user={user}
-                    mine={dashboardData}
-                    showThumbnails={checked}
-                    otherTabData={activityData?.[TableTab.Other]}
-                    otherTabFilters={otherTabFilters}
-                    otherTabTitle={otherTabTitle}
-                  />
-                )}
-              </Collapse.Panel>
-              <Collapse.Panel header={t('Charts')} key="3">
-                {!chartData || isRecentActivityLoading ? (
-                  <LoadingCards cover={checked} />
-                ) : (
-                  <ChartTable
-                    showThumbnails={checked}
-                    user={user}
-                    mine={chartData}
-                    otherTabData={activityData?.[TableTab.Other]}
-                    otherTabFilters={otherTabFilters}
-                    otherTabTitle={otherTabTitle}
-                  />
-                )}
-              </Collapse.Panel>
+              {accessToDashboards && (
+                <Collapse.Panel header={t('Dashboards')} key="2">
+                  {!dashboardData || isRecentActivityLoading ? (
+                    <LoadingCards cover={checked} />
+                  ) : (
+                    <DashboardTable
+                      user={user}
+                      mine={dashboardData}
+                      showThumbnails={checked}
+                      otherTabData={activityData?.[TableTab.Other]}
+                      otherTabFilters={otherTabFilters}
+                      otherTabTitle={otherTabTitle}
+                    />
+                  )}
+                </Collapse.Panel>
+              )}
+              {accessToCharts && (
+                <Collapse.Panel header={t('Charts')} key="3">
+                  {!chartData || isRecentActivityLoading ? (
+                    <LoadingCards cover={checked} />
+                  ) : (
+                    <ChartTable
+                      showThumbnails={checked}
+                      user={user}
+                      mine={chartData}
+                      otherTabData={activityData?.[TableTab.Other]}
+                      otherTabFilters={otherTabFilters}
+                      otherTabTitle={otherTabTitle}
+                    />
+                  )}
+                </Collapse.Panel>
+              )}
               {canReadSavedQueries && (
                 <Collapse.Panel header={t('Saved queries')} key="4">
                   {!queryData ? (

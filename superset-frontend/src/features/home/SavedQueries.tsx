@@ -39,6 +39,7 @@ import {
   PAGE_SIZE,
   shortenSQL,
 } from 'src/views/CRUD/utils';
+import { userHasPermission } from 'src/dashboard/util/permissionUtils';
 import SubMenu from './SubMenu';
 import EmptyState from './EmptyState';
 import { WelcomeTable } from './types';
@@ -142,6 +143,11 @@ const SavedQueries = ({
   const [ifMine, setMine] = useState(true);
   const canEdit = hasPerm('can_edit');
   const canDelete = hasPerm('can_delete');
+  const canWriteSavedQueries = userHasPermission(
+    user,
+    'SavedQuery',
+    'can_write',
+  );
 
   const theme = useTheme();
 
@@ -240,35 +246,58 @@ const SavedQueries = ({
           title={t('Delete Query?')}
         />
       )}
-      <SubMenu
-        activeChild={activeTab}
-        tabs={[
-          {
-            name: TableTab.Mine,
-            label: t('Mine'),
-            onClick: () =>
-              getData(TableTab.Mine).then(() => setActiveTab(TableTab.Mine)),
-          },
-        ]}
-        buttons={[
-          {
-            name: (
-              <Link to="/sqllab?new=true">
-                <i className="fa fa-plus" />
-                {t('SQL Query')}
-              </Link>
-            ),
-            buttonStyle: 'tertiary',
-          },
-          {
-            name: t('View All »'),
-            buttonStyle: 'link',
-            onClick: () => {
-              window.location.href = '/savedqueryview/list';
+      {canWriteSavedQueries ? (
+        <SubMenu
+          activeChild={activeTab}
+          tabs={[
+            {
+              name: TableTab.Mine,
+              label: t('Mine'),
+              onClick: () =>
+                getData(TableTab.Mine).then(() => setActiveTab(TableTab.Mine)),
             },
-          },
-        ]}
-      />
+          ]}
+          buttons={[
+            {
+              name: (
+                <Link to="/sqllab?new=true">
+                  <i className="fa fa-plus" />
+                  {t('SQL Query')}
+                </Link>
+              ),
+              buttonStyle: 'tertiary',
+            },
+            {
+              name: t('View All »'),
+              buttonStyle: 'link',
+              onClick: () => {
+                window.location.href = '/savedqueryview/list';
+              },
+            },
+          ]}
+        />
+      ) : (
+        <SubMenu
+          activeChild={activeTab}
+          tabs={[
+            {
+              name: TableTab.Mine,
+              label: t('Mine'),
+              onClick: () =>
+                getData(TableTab.Mine).then(() => setActiveTab(TableTab.Mine)),
+            },
+          ]}
+          buttons={[
+            {
+              name: t('View All »'),
+              buttonStyle: 'link',
+              onClick: () => {
+                window.location.href = '/savedqueryview/list';
+              },
+            },
+          ]}
+        />
+      )}
       {queries.length > 0 ? (
         <CardContainer showThumbnails={showThumbnails}>
           {queries.map(q => (
